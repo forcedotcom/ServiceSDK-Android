@@ -1,0 +1,18 @@
+[
+  {
+    "changelog": "common/1.0.1/changelog.md",
+    "date": "2016-11-07",
+    "example": "common/1.0.1/example.md",
+    "reference": "common/1.0.1/api/",
+    "sdk": "common",
+    "version": "1.0.1"
+  },
+  {
+    "changelog": "common/2.0.0/changelog.md",
+    "date": "2016-12-08",
+    "example": "common/2.0.0/example.md",
+    "reference": "common/2.0.0/api/",
+    "sdk": "common",
+    "version": "2.0.0"
+  }
+]
