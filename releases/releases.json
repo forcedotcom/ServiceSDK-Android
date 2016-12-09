@@ -1,5 +1,13 @@
 [
   {
+    "changelog": "case/0.1.0/changelog.md",
+    "date": "2016-12-08",
+    "example": "case/0.1.0/example.md",
+    "reference": "case/0.1.0/api/",
+    "sdk": "case",
+    "version": "0.1.0"
+  },
+  {
     "changelog": "chat/0.1.0/changelog.md",
     "date": "2016-12-08",
     "example": "chat/0.1.0/example.md",
