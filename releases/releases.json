@@ -1,5 +1,13 @@
 [
   {
+    "changelog": "knowledge/0.4.0/changelog.md",
+    "date": "2016-11-10",
+    "example": "knowledge/0.4.0/example.md",
+    "reference": "knowledge/0.4.0/api/",
+    "sdk": "knowledge",
+    "version": "0.4.0"
+  },
+  {
     "changelog": "sos/2.1.0/changelog.md",
     "date": "2016-12-02",
     "example": "sos/2.1.0/example.md",
