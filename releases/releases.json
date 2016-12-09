@@ -1,5 +1,13 @@
 [
   {
+    "changelog": "sos/2.1.0/changelog.md",
+    "date": "2016-12-02",
+    "example": "sos/2.1.0/example.md",
+    "reference": "sos/2.1.0/api/",
+    "sdk": "sos",
+    "version": "2.1.0"
+  },
+  {
     "changelog": "common/1.0.1/changelog.md",
     "date": "2016-11-07",
     "example": "common/1.0.1/example.md",
