@@ -1,0 +1,602 @@
+<api>
+<package name="com.salesforce.android.chat.core"
+>
+<interface name="AgentListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onAgentIsTyping"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isAgentTyping" type="boolean">
+</parameter>
+</method>
+<method name="onAgentJoined"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentInformation" type="com.salesforce.android.chat.core.model.AgentInformation">
+</parameter>
+</method>
+<method name="onChatMessageReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatMessage" type="com.salesforce.android.chat.core.model.ChatMessage">
+</parameter>
+</method>
+</interface>
+<interface name="ChatClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addAgentListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentListener" type="com.salesforce.android.chat.core.AgentListener">
+</parameter>
+</method>
+<method name="addSessionStateListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="endChatSession"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSessionState"
+ return="com.salesforce.android.chat.core.model.ChatSessionState"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="removeAgentListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentListener" type="com.salesforce.android.chat.core.AgentListener">
+</parameter>
+</method>
+<method name="removeSessionStateListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="sendChatMessage"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="setIsUserTyping"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isUserTyping" type="boolean">
+</parameter>
+</method>
+</interface>
+<class name="ChatConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="getButtonId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCustomData"
+ return="java.util.Map&lt;java.lang.String, java.lang.Object&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeploymentId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLiveAgentPod"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOrganizationId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatConfiguration.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="organizationId" type="java.lang.String">
+</parameter>
+<parameter name="buttonId" type="java.lang.String">
+</parameter>
+<parameter name="deploymentId" type="java.lang.String">
+</parameter>
+<parameter name="liveAgentPod" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.chat.core.ChatConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="customData"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="customData" type="M">
+</parameter>
+</method>
+</class>
+<class name="ChatCore"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="configure"
+ return="com.salesforce.android.chat.core.ChatCore"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</method>
+<method name="createClient"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.core.ChatClient&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+</class>
+<interface name="SessionStateListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onSessionEnded"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="endReason" type="com.salesforce.android.chat.core.model.ChatEndReason">
+</parameter>
+</method>
+<method name="onSessionStateChange"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="com.salesforce.android.chat.core.model.ChatSessionState">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.chat.core.model"
+>
+<interface name="AgentInformation"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getAgentId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAgentName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="ChatEndReason"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.chat.core.model.ChatEndReason"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.chat.core.model.ChatEndReason[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="ChatMessage"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getText"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTimestamp"
+ return="java.util.Date"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="ChatSessionState"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.chat.core.model.ChatSessionState"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.chat.core.model.ChatSessionState[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.chat.ui"
+>
+<class name="ChatUI"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="configure"
+ return="com.salesforce.android.chat.ui.ChatUI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatUIConfiguration" type="com.salesforce.android.chat.ui.ChatUIConfiguration">
+</parameter>
+</method>
+<method name="createClient"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.ui.ChatUIClient&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+</class>
+<interface name="ChatUIClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addSessionStateListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="getCurrentSessionState"
+ return="com.salesforce.android.chat.core.model.ChatSessionState"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="removeSessionStateListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="startChatSession"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.support.v4.app.FragmentActivity">
+</parameter>
+</method>
+</interface>
+<class name="ChatUIConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="create"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatConfiguration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</method>
+<method name="getChatCoreConfiguration"
+ return="com.salesforce.android.chat.core.ChatConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+</api>

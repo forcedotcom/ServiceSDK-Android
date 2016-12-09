@@ -1,5 +1,37 @@
 [
   {
+    "changelog": "case/0.1.0/changelog.md",
+    "date": "2016-12-08",
+    "example": "case/0.1.0/example.md",
+    "reference": "case/0.1.0/api/",
+    "sdk": "case",
+    "version": "0.1.0"
+  },
+  {
+    "changelog": "chat/0.1.0/changelog.md",
+    "date": "2016-12-08",
+    "example": "chat/0.1.0/example.md",
+    "reference": "chat/0.1.0/api/",
+    "sdk": "chat",
+    "version": "0.1.0"
+  },
+  {
+    "changelog": "knowledge/0.4.0/changelog.md",
+    "date": "2016-11-10",
+    "example": "knowledge/0.4.0/example.md",
+    "reference": "knowledge/0.4.0/api/",
+    "sdk": "knowledge",
+    "version": "0.4.0"
+  },
+  {
+    "changelog": "sos/2.1.0/changelog.md",
+    "date": "2016-12-02",
+    "example": "sos/2.1.0/example.md",
+    "reference": "sos/2.1.0/api/",
+    "sdk": "sos",
+    "version": "2.1.0"
+  },
+  {
     "changelog": "common/1.0.1/changelog.md",
     "date": "2016-11-07",
     "example": "common/1.0.1/example.md",
