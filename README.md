@@ -1,2 +1,3 @@
 # ServiceSDK-Android
-This repo is for the Android version of the Salesforce Service SDK
+
+To see the Android reference documentation, go [here](http://forcedotcom.github.io/ServiceSDK-Android/).
