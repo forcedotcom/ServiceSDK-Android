@@ -24,6 +24,14 @@
     "version": "0.4.0"
   },
   {
+    "changelog": "knowledge/1.0.0-RC.1/changelog.md",
+    "date": "2017-01-23",
+    "example": "knowledge/1.0.0-RC.1/example.md",
+    "reference": "knowledge/1.0.0-RC.1/api/",
+    "sdk": "knowledge",
+    "version": "1.0.0-RC.1"
+  },
+  {
     "changelog": "sos/2.1.0/changelog.md",
     "date": "2016-12-02",
     "example": "sos/2.1.0/example.md",
