@@ -54,5 +54,13 @@
       "reference": "common/2.1.0/api/",
       "sdk": "common",
       "version": "2.1.0"
+  },
+  {
+      "changelog": "common/3.0.0/changelog.md",
+      "date": "2017-02-03",
+      "example": "common/3.0.0/example.md",
+      "reference": "common/3.0.0/api/",
+      "sdk": "common",
+      "version": "3.0.0"
   }
 ]
