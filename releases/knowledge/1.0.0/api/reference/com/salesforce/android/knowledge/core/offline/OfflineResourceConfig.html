@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for ServiceSDK - Knowledge 1.0.0-RC.2." />
+  <meta name="description" content="Javadoc API documentation for ServiceSDK - Knowledge 1.0.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   OfflineResourceConfig
 
 
-| ServiceSDK - Knowledge 1.0.0-RC.2
+| ServiceSDK - Knowledge 1.0.0
 
 </title>
 <link href="../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">ServiceSDK - Knowledge 1.0.0-RC.2</span>
+      <span id="masthead-title">ServiceSDK - Knowledge 1.0.0</span>
     
     </div>
     <div id="headerRight">
@@ -323,12 +323,10 @@ Summary:
  An instance of this class must be passed to <code><a href="../../../../../../com/salesforce/android/knowledge/core/KnowledgeConfiguration.Builder.html#offlineResourceConfig(com.salesforce.android.knowledge.core.offline.OfflineResourceConfig)">offlineResourceConfig(OfflineResourceConfig)</a></code>
  in order to enable offline resource caching. The default value is for offline resource caching
  to be disabled.
- </p>
  <p>
- Resources are always cached to the application's cache directory, by default they will be stored
- in a <code>salesforce_kb</code> subdirectory. You can change the subdirectory using the
+ Resources are cached in the application's cache directory. By default, they're stored in a
+ `salesforce_kb` subdirectory. You can change the directory using the
  <code><a href="../../../../../../com/salesforce/android/knowledge/core/offline/OfflineResourceConfig.html#withPath(android.content.Context, java.lang.String)">withPath(Context, String)</a></code> Builder accessor.
- </p>
  <p>
  Applications should tune the <code><a href="../../../../../../com/salesforce/android/knowledge/core/offline/OfflineResourceConfig.Builder.html#maxSize(int)">maxSize(int)</a></code> and <code><a href="../../../../../../com/salesforce/android/knowledge/core/offline/OfflineResourceConfig.Builder.html#concurrentRequests(int)">concurrentRequests(int)</a></code>
  values to best fit the performance and business requirements of their use case. If, for example,

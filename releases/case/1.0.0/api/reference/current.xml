@@ -3465,39 +3465,6 @@
  visibility="public"
 >
 </constructor>
-<field name="AGENT"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;agent&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="CASE_LAYOUT_EVENT"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;caseLayoutEvent&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="CUSTOMER"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;customer&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
 <field name="DATA_CASE_COUNT"
  type="java.lang.String"
  transient="false"
@@ -3564,6 +3531,17 @@
  visibility="public"
 >
 </field>
+<field name="DATA_EVENT_TYPE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;eventType&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="DATA_SENDER"
  type="java.lang.String"
  transient="false"
@@ -3597,29 +3575,117 @@
  visibility="public"
 >
 </field>
-<field name="DATA_USER_TYPE_AUTHENTICATED"
+<field name="DATA_WORD_COUNT"
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;authenticated&quot;"
+ value="&quot;wordCount&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
  visibility="public"
 >
 </field>
-<field name="DATA_USER_TYPE_GUEST"
+<field name="RESPONSE_MESSAGE_EVENT"
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;guest&quot;"
+ value="&quot;CASE_RESPONSE_MESSAGE_EVENT&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
  visibility="public"
 >
 </field>
-<field name="DETAIL_DISMISSED"
+<field name="RESPONSE_NOTIFICATION_EVENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CASE_RESPONSE_NOTIFICATION_EVENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_CASE_DETAIL_EVENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CASE_USER_CASE_DETAIL_EVENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_CASE_LIST_EVENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CASE_USER_CASE_LIST_EVENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_CASE_PUBLISHER_LAYOUT_EVENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CASE_USER_CASE_PUBLISHER_LAYOUT_EVENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_CASE_SUBMISSION_EVENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CASE_USER_CASE_SUBMISSION_EVENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CASE_USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="VALUE_CASE_ACTOR_AGENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;agent&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="VALUE_CASE_ACTOR_CUSTOMER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;customer&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="VALUE_CASE_DETAIL_DISMISSED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3630,18 +3696,7 @@
  visibility="public"
 >
 </field>
-<field name="DETAIL_EVENT"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;caseDetailEvent&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="DETAIL_LAUNCHED"
+<field name="VALUE_CASE_DETAIL_LAUNCHED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3652,7 +3707,7 @@
  visibility="public"
 >
 </field>
-<field name="DETAIL_LOADED"
+<field name="VALUE_CASE_DETAIL_LOADED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3663,29 +3718,7 @@
  visibility="public"
 >
 </field>
-<field name="EVENT_TYPE"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;eventType&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="FAILURE"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;failure&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="LIST_DISMISSED"
+<field name="VALUE_CASE_LIST_DISMISSED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3696,18 +3729,7 @@
  visibility="public"
 >
 </field>
-<field name="LIST_EVENT"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;caseListEvent&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="LIST_LAUNCHED"
+<field name="VALUE_CASE_LIST_LAUNCHED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3718,7 +3740,7 @@
  visibility="public"
 >
 </field>
-<field name="LIST_LOADED"
+<field name="VALUE_CASE_LIST_LOADED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3729,29 +3751,29 @@
  visibility="public"
 >
 </field>
-<field name="MESSAGE_EVENT"
+<field name="VALUE_CASE_OPERATION_FAILURE"
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;caseMessageEvent&quot;"
+ value="&quot;failure&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
  visibility="public"
 >
 </field>
-<field name="NOTIFICATION_EVENT"
+<field name="VALUE_CASE_OPERATION_SUCCESS"
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;caseNotificationEvent&quot;"
+ value="&quot;success&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
  visibility="public"
 >
 </field>
-<field name="PUBLISHER_DISMISSED"
+<field name="VALUE_CASE_PUBLISHER_DISMISSED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3762,7 +3784,7 @@
  visibility="public"
 >
 </field>
-<field name="PUBLISHER_LAUNCHED"
+<field name="VALUE_CASE_PUBLISHER_LAUNCHED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3773,7 +3795,7 @@
  visibility="public"
 >
 </field>
-<field name="PUBLISHER_LOADED"
+<field name="VALUE_CASE_PUBLISHER_LOADED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3784,18 +3806,7 @@
  visibility="public"
 >
 </field>
-<field name="SUBMISSION_EVENT"
- type="java.lang.String"
- transient="false"
- volatile="false"
- value="&quot;caseSubmissionEvent&quot;"
- static="true"
- final="true"
- deprecated="not deprecated"
- visibility="public"
->
-</field>
-<field name="SUBMIT_COMPLETE"
+<field name="VALUE_CASE_SUBMIT_COMPLETE"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3806,7 +3817,7 @@
  visibility="public"
 >
 </field>
-<field name="SUBMIT_STARTED"
+<field name="VALUE_CASE_SUBMIT_STARTED"
  type="java.lang.String"
  transient="false"
  volatile="false"
@@ -3817,11 +3828,22 @@
  visibility="public"
 >
 </field>
-<field name="SUCCESS"
+<field name="VALUE_CASE_USER_TYPE_AUTHENTICATED"
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;success&quot;"
+ value="&quot;authenticated&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="VALUE_CASE_USER_TYPE_GUEST"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;guest&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"

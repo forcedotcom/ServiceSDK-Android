@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for ServiceSDK - Case 1.0.0-RC.1." />
+  <meta name="description" content="Javadoc API documentation for ServiceSDK - Case 1.0.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   CasesUIAnalytics
 
 
-| ServiceSDK - Case 1.0.0-RC.1
+| ServiceSDK - Case 1.0.0
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">ServiceSDK - Case 1.0.0-RC.1</span>
+      <span id="masthead-title">ServiceSDK - Case 1.0.0</span>
     
     </div>
     <div id="headerRight">
@@ -353,6 +353,11 @@ Summary:
  <td>Map Keys for the Event Data, which provide contextual information regarding an analytics
  event.</td>
  </tr>
+ <tr>
+ <td>VALUE_</td>
+ <td>Map Values for the Event Data, which provide contextual information regarding an analytics
+ event.</td>
+ </tr>
  </table>
 </p>
 
@@ -397,7 +402,7 @@ Summary:
         
         @interface</td>
       <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html">CasesUIAnalytics.CompletionType</a></td>
-      <td class="jd-descrcol" width="100%">&nbsp;</td>
+      <td class="jd-descrcol" width="100%">The result of an operation.&nbsp;</td>
     </tr>
     
     
@@ -409,7 +414,7 @@ Summary:
         
         @interface</td>
       <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html">CasesUIAnalytics.EventType</a></td>
-      <td class="jd-descrcol" width="100%">&nbsp;</td>
+      <td class="jd-descrcol" width="100%">A string representing the type of user event that occurred.&nbsp;</td>
     </tr>
     
     
@@ -421,7 +426,7 @@ Summary:
         
         @interface</td>
       <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html">CasesUIAnalytics.UserType</a></td>
-      <td class="jd-descrcol" width="100%">&nbsp;</td>
+      <td class="jd-descrcol" width="100%">The user who initiated a change.&nbsp;</td>
     </tr>
     
     
@@ -446,64 +451,50 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#AGENT">AGENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#CASE_LAYOUT_EVENT">CASE_LAYOUT_EVENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#CUSTOMER">CUSTOMER</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_CASE_COUNT">DATA_CASE_COUNT</a></td>
-        <td class="jd-descrcol" width="100%">The case count.</td>
+        <td class="jd-descrcol" width="100%">The number of cases in the case list.</td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_CASE_CREATED_RESULT">DATA_CASE_CREATED_RESULT</a></td>
         <td class="jd-descrcol" width="100%">The case created result.</td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_CASE_ID">DATA_CASE_ID</a></td>
         <td class="jd-descrcol" width="100%">The case Id.</td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_CASE_LIST_NAME">DATA_CASE_LIST_NAME</a></td>
         <td class="jd-descrcol" width="100%">The Case List Name that Cases UI has been configured with.</td>
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_COMMUNITY_URL">DATA_COMMUNITY_URL</a></td>
         <td class="jd-descrcol" width="100%">The Community URL that Cases UI has been configured with.</td>
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_CREATE_CASE_ACTION_NAME">DATA_CREATE_CASE_ACTION_NAME</a></td>
         <td class="jd-descrcol" width="100%">The Create Case Action Name that Cases UI has been configured with.</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_EVENT_TYPE">DATA_EVENT_TYPE</a></td>
+        <td class="jd-descrcol" width="100%">The event type.</td>
     </tr>
     
     
@@ -530,148 +521,179 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_USER_TYPE_AUTHENTICATED">DATA_USER_TYPE_AUTHENTICATED</a></td>
-        <td class="jd-descrcol" width="100%">An authenticated user.</td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_WORD_COUNT">DATA_WORD_COUNT</a></td>
+        <td class="jd-descrcol" width="100%">The number of words entered in the case publisher.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DATA_USER_TYPE_GUEST">DATA_USER_TYPE_GUEST</a></td>
-        <td class="jd-descrcol" width="100%">An unauthenticated (guest) user.</td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#RESPONSE_MESSAGE_EVENT">RESPONSE_MESSAGE_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">Emitted when a update to a case feed is received or when a user successfully posts a comment
+ to
+ a case feed.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DETAIL_DISMISSED">DETAIL_DISMISSED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#RESPONSE_NOTIFICATION_EVENT">RESPONSE_NOTIFICATION_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">Emitted when a push notification is received indicating a case has been updated.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DETAIL_EVENT">DETAIL_EVENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#USER_CASE_DETAIL_EVENT">USER_CASE_DETAIL_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">The user has navigated to/from the case details feed.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DETAIL_LAUNCHED">DETAIL_LAUNCHED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#USER_CASE_LIST_EVENT">USER_CASE_LIST_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">The user has navigated to/from the case list.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#DETAIL_LOADED">DETAIL_LOADED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#USER_CASE_PUBLISHER_LAYOUT_EVENT">USER_CASE_PUBLISHER_LAYOUT_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">The user has navigated to/from the case publisher.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#EVENT_TYPE">EVENT_TYPE</a></td>
-        <td class="jd-descrcol" width="100%">The event type.</td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#USER_CASE_SUBMISSION_EVENT">USER_CASE_SUBMISSION_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">The user has submitted a new case via the publisher.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#FAILURE">FAILURE</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT">USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT</a></td>
+        <td class="jd-descrcol" width="100%">Emitted when a user exits the case publisher.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#LIST_DISMISSED">LIST_DISMISSED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_ACTOR_AGENT">VALUE_CASE_ACTOR_AGENT</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating an operation was initiated by a remote user.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#LIST_EVENT">LIST_EVENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_ACTOR_CUSTOMER">VALUE_CASE_ACTOR_CUSTOMER</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating an operation was initiated by the user on the device
+</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#LIST_LAUNCHED">LIST_LAUNCHED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_DETAIL_DISMISSED">VALUE_CASE_DETAIL_DISMISSED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the case detail feed was closed by the user.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#LIST_LOADED">LIST_LOADED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_DETAIL_LAUNCHED">VALUE_CASE_DETAIL_LAUNCHED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user launched the case detail feed.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#MESSAGE_EVENT">MESSAGE_EVENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_DETAIL_LOADED">VALUE_CASE_DETAIL_LOADED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the case detail feed loaded.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#NOTIFICATION_EVENT">NOTIFICATION_EVENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_LIST_DISMISSED">VALUE_CASE_LIST_DISMISSED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user closed the case list.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#PUBLISHER_DISMISSED">PUBLISHER_DISMISSED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_LIST_LAUNCHED">VALUE_CASE_LIST_LAUNCHED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user launched the case list.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#PUBLISHER_LAUNCHED">PUBLISHER_LAUNCHED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_LIST_LOADED">VALUE_CASE_LIST_LOADED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the  case list loaded successfully.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#PUBLISHER_LOADED">PUBLISHER_LOADED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_OPERATION_FAILURE">VALUE_CASE_OPERATION_FAILURE</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating an operation failed.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#SUBMISSION_EVENT">SUBMISSION_EVENT</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_OPERATION_SUCCESS">VALUE_CASE_OPERATION_SUCCESS</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating an operation completed successfully.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#SUBMIT_COMPLETE">SUBMIT_COMPLETE</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_PUBLISHER_DISMISSED">VALUE_CASE_PUBLISHER_DISMISSED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user closed the case publisher.</td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#SUBMIT_STARTED">SUBMIT_STARTED</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_PUBLISHER_LAUNCHED">VALUE_CASE_PUBLISHER_LAUNCHED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user launched the case publisher.</td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#SUCCESS">SUCCESS</a></td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_PUBLISHER_LOADED">VALUE_CASE_PUBLISHER_LOADED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the case publisher completed loading.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_SUBMIT_COMPLETE">VALUE_CASE_SUBMIT_COMPLETE</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating user case submission completed successfully.</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_SUBMIT_STARTED">VALUE_CASE_SUBMIT_STARTED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user submitted a new case.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_USER_TYPE_AUTHENTICATED">VALUE_CASE_USER_TYPE_AUTHENTICATED</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user has logged into a community or org.</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.html#VALUE_CASE_USER_TYPE_GUEST">VALUE_CASE_USER_TYPE_GUEST</a></td>
+        <td class="jd-descrcol" width="100%">A value indicating the user has not logged in.</td>
     </tr>
     
     
@@ -959,123 +981,6 @@ From class
 
 
 
-<a id="AGENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        AGENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "agent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="CASE_LAYOUT_EVENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        CASE_LAYOUT_EVENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "caseLayoutEvent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="CUSTOMER"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        CUSTOMER
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "customer"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
 <a id="DATA_CASE_COUNT"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1098,7 +1003,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The case count.
+  <div class="jd-tagdata jd-tagdescr"><p>The number of cases in the case list.
 </p></div>
 
     
@@ -1138,8 +1043,12 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The case created result.
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>The case created result.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html">CasesUIAnalytics.CompletionType</a></code></li>
+      </ul>
+  </div>
 
     
         <div class="jd-tagdata">
@@ -1316,6 +1225,50 @@ From class
 
 
 
+<a id="DATA_EVENT_TYPE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        DATA_EVENT_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The event type.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html">CasesUIAnalytics.EventType</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "eventType"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <a id="DATA_SENDER"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1338,8 +1291,12 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The sender of a case message.
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>The sender of a case message.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html">CasesUIAnalytics.UserType</a></code></li>
+      </ul>
+  </div>
 
     
         <div class="jd-tagdata">
@@ -1418,7 +1375,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The User Type for the user.
+  <div class="jd-tagdata jd-tagdescr"><p>The User Type for the user. May be guest or authenticated.
 </p></div>
 
     
@@ -1436,7 +1393,7 @@ From class
 
 
 
-<a id="DATA_USER_TYPE_AUTHENTICATED"></a>
+<a id="DATA_WORD_COUNT"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1446,7 +1403,7 @@ From class
         final 
         <a href="http://d.android.com/reference/java/lang/String.html">String</a>
       </span>
-        DATA_USER_TYPE_AUTHENTICATED
+        DATA_WORD_COUNT
     </h4>
       <div class="api-level">
         
@@ -1458,7 +1415,930 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>An authenticated user.
+  <div class="jd-tagdata jd-tagdescr"><p>The number of words entered in the case publisher.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "wordCount"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="RESPONSE_MESSAGE_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        RESPONSE_MESSAGE_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Emitted when a update to a case feed is received or when a user successfully posts a comment
+ to
+ a case feed.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_RESPONSE_MESSAGE_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="RESPONSE_NOTIFICATION_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        RESPONSE_NOTIFICATION_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Emitted when a push notification is received indicating a case has been updated.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_RESPONSE_NOTIFICATION_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="USER_CASE_DETAIL_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        USER_CASE_DETAIL_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user has navigated to/from the case details feed.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_USER_CASE_DETAIL_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="USER_CASE_LIST_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        USER_CASE_LIST_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user has navigated to/from the case list.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_USER_CASE_LIST_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="USER_CASE_PUBLISHER_LAYOUT_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        USER_CASE_PUBLISHER_LAYOUT_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user has navigated to/from the case publisher.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_USER_CASE_PUBLISHER_LAYOUT_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="USER_CASE_SUBMISSION_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        USER_CASE_SUBMISSION_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user has submitted a new case via the publisher.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_USER_CASE_SUBMISSION_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Emitted when a user exits the case publisher. Indicates the number of words in the discarded
+ case.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "CASE_USER_EXIT_PUBLISHER_WITH_DATA_ENTERED_EVENT"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_ACTOR_AGENT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_ACTOR_AGENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating an operation was initiated by a remote user.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "agent"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_ACTOR_CUSTOMER"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_ACTOR_CUSTOMER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating an operation was initiated by the user on the device
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "customer"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_DETAIL_DISMISSED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_DETAIL_DISMISSED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the case detail feed was closed by the user.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "detail_dismissed"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_DETAIL_LAUNCHED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_DETAIL_LAUNCHED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user launched the case detail feed.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "detail_launched"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_DETAIL_LOADED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_DETAIL_LOADED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the case detail feed loaded.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "detail_loaded"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_LIST_DISMISSED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_LIST_DISMISSED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user closed the case list.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "list_dismissed"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_LIST_LAUNCHED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_LIST_LAUNCHED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user launched the case list.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "list_launched"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_LIST_LOADED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_LIST_LOADED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the  case list loaded successfully.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "list_loaded"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_OPERATION_FAILURE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_OPERATION_FAILURE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating an operation failed.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "failure"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_OPERATION_SUCCESS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_OPERATION_SUCCESS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating an operation completed successfully.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "success"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_PUBLISHER_DISMISSED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_PUBLISHER_DISMISSED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user closed the case publisher.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "publisher_dismissed"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_PUBLISHER_LAUNCHED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_PUBLISHER_LAUNCHED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user launched the case publisher.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "publisher_launched"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_PUBLISHER_LOADED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_PUBLISHER_LOADED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the case publisher completed loading.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "publisher_loaded"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_SUBMIT_COMPLETE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_SUBMIT_COMPLETE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating user case submission completed successfully.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "submit_complete"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_SUBMIT_STARTED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_SUBMIT_STARTED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user submitted a new case.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "submit_started"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="VALUE_CASE_USER_TYPE_AUTHENTICATED"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        VALUE_CASE_USER_TYPE_AUTHENTICATED
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user has logged into a community or org.
 </p></div>
 
     
@@ -1476,7 +2356,7 @@ From class
 
 
 
-<a id="DATA_USER_TYPE_GUEST"></a>
+<a id="VALUE_CASE_USER_TYPE_GUEST"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1486,7 +2366,7 @@ From class
         final 
         <a href="http://d.android.com/reference/java/lang/String.html">String</a>
       </span>
-        DATA_USER_TYPE_GUEST
+        VALUE_CASE_USER_TYPE_GUEST
     </h4>
       <div class="api-level">
         
@@ -1498,7 +2378,7 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>An unauthenticated (guest) user.
+  <div class="jd-tagdata jd-tagdescr"><p>A value indicating the user has not logged in.
 </p></div>
 
     
@@ -1507,748 +2387,6 @@ From class
         <span>
             
                 "guest"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="DETAIL_DISMISSED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        DETAIL_DISMISSED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "detail_dismissed"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="DETAIL_EVENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        DETAIL_EVENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "caseDetailEvent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="DETAIL_LAUNCHED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        DETAIL_LAUNCHED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "detail_launched"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="DETAIL_LOADED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        DETAIL_LOADED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "detail_loaded"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="EVENT_TYPE"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        EVENT_TYPE
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The event type.
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "eventType"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="FAILURE"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        FAILURE
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "failure"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="LIST_DISMISSED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        LIST_DISMISSED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "list_dismissed"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="LIST_EVENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        LIST_EVENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "caseListEvent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="LIST_LAUNCHED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        LIST_LAUNCHED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "list_launched"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="LIST_LOADED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        LIST_LOADED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "list_loaded"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="MESSAGE_EVENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        MESSAGE_EVENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "caseMessageEvent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="NOTIFICATION_EVENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        NOTIFICATION_EVENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "caseNotificationEvent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="PUBLISHER_DISMISSED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        PUBLISHER_DISMISSED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "publisher_dismissed"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="PUBLISHER_LAUNCHED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        PUBLISHER_LAUNCHED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "publisher_launched"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="PUBLISHER_LOADED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        PUBLISHER_LOADED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "publisher_loaded"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="SUBMISSION_EVENT"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        SUBMISSION_EVENT
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "caseSubmissionEvent"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="SUBMIT_COMPLETE"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        SUBMIT_COMPLETE
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "submit_complete"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="SUBMIT_STARTED"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        SUBMIT_STARTED
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "submit_started"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<a id="SUCCESS"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-        SUCCESS
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "success"
             
         </span>
         </div>
