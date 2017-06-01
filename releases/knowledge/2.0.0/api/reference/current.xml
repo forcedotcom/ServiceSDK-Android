@@ -1,0 +1,2859 @@
+<api>
+<package name="com.salesforce.android.knowledge.core"
+>
+<interface name="KnowledgeClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addUserLogoutListener"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client" type="com.salesforce.android.knowledge.core.LogoutListener">
+</parameter>
+</method>
+<method name="cleanup"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCommunityUrl"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResourceCacher"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceCacher"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.ArticleList&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="request" type="com.salesforce.android.knowledge.core.requests.ArticleListRequest">
+</parameter>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.ArticleDetails&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="request" type="com.salesforce.android.knowledge.core.requests.ArticleDetailRequest">
+</parameter>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.DataCategoryList&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="request" type="com.salesforce.android.knowledge.core.requests.DataCategoriesRequest">
+</parameter>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.DataCategoryGroup&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="request" type="com.salesforce.android.knowledge.core.requests.DataCategoryGroupRequest">
+</parameter>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.DataCategoryGroupList&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="request" type="com.salesforce.android.knowledge.core.requests.DataCategoryGroupListRequest">
+</parameter>
+</method>
+</interface>
+<class name="KnowledgeConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="communityUrl" type="java.lang.String">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="communityUrl" type="java.lang.String">
+</parameter>
+</method>
+<method name="getCommunityUrl"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFallbackLocale"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getInitialLocale"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOfflineResourceConfig"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getUserAccount"
+ return="com.salesforce.androidsdk.accounts.UserAccount"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="KnowledgeConfiguration.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="fallbackLocale"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="locale" type="java.util.Locale">
+</parameter>
+</method>
+<method name="initialLocale"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="locale" type="java.util.Locale">
+</parameter>
+</method>
+<method name="offlineResourceConfig"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="config" type="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig">
+</parameter>
+</method>
+<method name="withUserAccount"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="account" type="com.salesforce.androidsdk.accounts.UserAccount">
+</parameter>
+</method>
+</class>
+<class name="KnowledgeCore"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="clearCacheForUser"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="account" type="com.salesforce.androidsdk.accounts.UserAccount">
+</parameter>
+</method>
+<method name="configure"
+ return="com.salesforce.android.knowledge.core.KnowledgeCore"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="com.salesforce.android.knowledge.core.KnowledgeConfiguration">
+</parameter>
+</method>
+<method name="createClient"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.KnowledgeClient&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="deleteCache"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+</class>
+<interface name="LogoutListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onUserAccountLoggedOut"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.knowledge.core.exceptions"
+>
+<class name="KnowledgeOfflineException"
+ extends="com.salesforce.android.service.common.fetchsave.exceptions.OfflineException"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="KnowledgeOfflineException"
+ type="com.salesforce.android.knowledge.core.exceptions.KnowledgeOfflineException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="KnowledgeOfflineException"
+ type="com.salesforce.android.knowledge.core.exceptions.KnowledgeOfflineException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+</package>
+<package name="com.salesforce.android.knowledge.core.model"
+>
+<interface name="ArticleDetails"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.knowledge.core.model.ArticleSummary">
+</implements>
+<method name="getCreatedBy"
+ return="com.salesforce.android.knowledge.core.model.ChatterUser"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCreatedDate"
+ return="java.util.Date"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFields"
+ return="java.util.List&lt;com.salesforce.android.knowledge.core.model.ArticleDetails.Field&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastModifiedBy"
+ return="com.salesforce.android.knowledge.core.model.ChatterUser"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastModifiedDate"
+ return="java.util.Date"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVersionNumber"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ArticleDetails.Field"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getLabel"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getType"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="TYPE_LONG_TEXT_AREA"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="3"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TYPE_RICH_TEXT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="4"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TYPE_TEXT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TYPE_TEXT_AREA"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="TYPE_UNKNOWN"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="0"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="ArticleDetails.Field.Type"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+<interface name="ArticleList"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getArticles"
+ return="java.util.List&lt;com.salesforce.android.knowledge.core.model.ArticleSummary&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPageNumber"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasMorePages"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ArticleSummary"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="getArticleId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getArticleNumber"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastPublished"
+ return="java.util.Date"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSummary"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTitle"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatterUser"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="getEmail"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFirstName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getUsername"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="DataCategoryGroup"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getDataCategoryTrees"
+ return="java.util.List&lt;com.salesforce.android.knowledge.core.model.DataCategoryTree&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLabel"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="DataCategoryGroupList"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getDataCategoryGroups"
+ return="java.util.List&lt;com.salesforce.android.knowledge.core.model.DataCategoryGroup&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="DataCategoryList"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getDataCategories"
+ return="java.util.List&lt;com.salesforce.android.knowledge.core.model.DataCategorySummary&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="DataCategorySummary"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="getLabel"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getNumSubCategories"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="DataCategoryTree"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getChildDataCategories"
+ return="java.util.Set&lt;com.salesforce.android.knowledge.core.model.DataCategoryTree&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDataCategory"
+ return="com.salesforce.android.knowledge.core.model.DataCategorySummary"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getParentDataCategory"
+ return="com.salesforce.android.knowledge.core.model.DataCategoryTree"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.knowledge.core.offline"
+>
+<class name="OfflineResourceCache"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="clear"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getConfig"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResource"
+ return="java.io.InputStream"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="url" type="java.lang.String">
+</parameter>
+</method>
+<method name="putResource"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="url" type="java.lang.String">
+</parameter>
+<parameter name="source" type="okio.Source">
+</parameter>
+</method>
+<method name="size"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="OfflineResourceCacher"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.knowledge.core.LogoutListener">
+</implements>
+<method name="downloadAndCacheAllResources"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="details" type="com.salesforce.android.knowledge.core.model.ArticleDetails">
+</parameter>
+</method>
+<method name="downloadAndCacheResource"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="url" type="java.lang.String">
+</parameter>
+</method>
+<method name="getCache"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceCache"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onUserAccountLoggedOut"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="OfflineResourceConfig"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="cacheDir"
+ return="java.io.File"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="concurrentRequests"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="disabled"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="enabled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="fromContext"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="maxSize"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="withPath"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="path" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="OfflineResourceConfig.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="concurrentRequests"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="concurrentRequests" type="int">
+</parameter>
+</method>
+<method name="maxSize"
+ return="com.salesforce.android.knowledge.core.offline.OfflineResourceConfig.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxSize" type="int">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.knowledge.core.requests"
+>
+<class name="ArticleDetailRequest"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.requests.ArticleDetailRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="articleSummary" type="com.salesforce.android.knowledge.core.model.ArticleSummary">
+</parameter>
+</method>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.requests.ArticleDetailRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="articleId" type="java.lang.String">
+</parameter>
+</method>
+<method name="cacheImages"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getArticleId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ArticleDetailRequest.Builder"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest.KnowledgeRequestBuilder"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.requests.ArticleDetailRequest"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="cacheImages"
+ return="com.salesforce.android.knowledge.core.requests.ArticleDetailRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cacheImages" type="boolean">
+</parameter>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.ArticleDetails&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client" type="com.salesforce.android.knowledge.core.KnowledgeClient">
+</parameter>
+</method>
+</class>
+<class name="ArticleListRequest"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDataCategoryGroupName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDataCategoryName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPageNumber"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPageSize"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getQueryMethod"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSearchTerm"
+ return="java.lang.CharSequence"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSortBy"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSortOrder"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="QUERY_BELOW"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SORT_ASC"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SORT_BY_LAST_PUBLISHED_DATE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SORT_BY_TITLE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SORT_BY_VIEW_SCORE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="3"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SORT_DESC"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="ArticleListRequest.Builder"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest.KnowledgeRequestBuilder"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="dataCategory"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="group" type="java.lang.String">
+</parameter>
+<parameter name="category" type="java.lang.String">
+</parameter>
+</method>
+<method name="getThis"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="pageNumber"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pageNumber" type="int">
+</parameter>
+</method>
+<method name="pageSize"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pageSize" type="int">
+</parameter>
+</method>
+<method name="queryMethod"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="queryMethod" type="int">
+</parameter>
+</method>
+<method name="searchTerm"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="searchTerm" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="sortBy"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sortBy" type="int">
+</parameter>
+</method>
+<method name="sortOrder"
+ return="com.salesforce.android.knowledge.core.requests.ArticleListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sortOrder" type="int">
+</parameter>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.ArticleList&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client" type="com.salesforce.android.knowledge.core.KnowledgeClient">
+</parameter>
+</method>
+<field name="DEFAULT_PAGE_NUMBER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_PAGE_SIZE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="3"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_QUERY_METHOD"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_SORT_BY"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_SORT_ORDER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="ArticleListRequest.QueryMethod"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+<class name="ArticleListRequest.SortBy"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+<class name="ArticleListRequest.SortOrder"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+<class name="DataCategoriesRequest"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoriesRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dataCategoryGroup" type="java.lang.String">
+</parameter>
+<parameter name="rootDataCategory" type="java.lang.String">
+</parameter>
+</method>
+<method name="getDataCategoryGroup"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRootDataCategory"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DataCategoriesRequest.Builder"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest.KnowledgeRequestBuilder"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoriesRequest"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getThis"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoriesRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.DataCategoryList&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client" type="com.salesforce.android.knowledge.core.KnowledgeClient">
+</parameter>
+</method>
+</class>
+<class name="DataCategoryGroupListRequest"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoryGroupListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DataCategoryGroupListRequest.Builder"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest.KnowledgeRequestBuilder"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoryGroupListRequest"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getThis"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoryGroupListRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.DataCategoryGroupList&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client" type="com.salesforce.android.knowledge.core.KnowledgeClient">
+</parameter>
+</method>
+</class>
+<class name="DataCategoryGroupRequest"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="builder"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoryGroupRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dataCategoryGroupName" type="java.lang.String">
+</parameter>
+</method>
+<method name="getDataCategoryGroupName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DataCategoryGroupRequest.Builder"
+ extends="com.salesforce.android.knowledge.core.requests.KnowledgeRequest.KnowledgeRequestBuilder"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoryGroupRequest"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getThis"
+ return="com.salesforce.android.knowledge.core.requests.DataCategoryGroupRequest.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="submit"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.core.model.DataCategoryGroup&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client" type="com.salesforce.android.knowledge.core.KnowledgeClient">
+</parameter>
+</method>
+</class>
+<class name="KnowledgeRequest"
+ extends="com.salesforce.android.service.common.fetchsave.requests.FetchSaveRequest"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</class>
+<class name="KnowledgeRequest.KnowledgeRequestBuilder"
+ extends="com.salesforce.android.service.common.fetchsave.requests.FetchSaveRequest.FetchSaveRequestBuilder"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="KnowledgeRequestBuilder"
+ type="com.salesforce.android.knowledge.core.requests.KnowledgeRequest.KnowledgeRequestBuilder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+</package>
+<package name="com.salesforce.android.knowledge.core.util"
+>
+<class name="LanguageManager"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="isValidSfdcLocale"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="locale" type="java.util.Locale">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.knowledge.ui"
+>
+<interface name="KnowledgeImageProvider"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getImageForArticle"
+ return="android.graphics.drawable.Drawable"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="article" type="com.salesforce.android.knowledge.core.model.ArticleSummary">
+</parameter>
+</method>
+<method name="getImageForDataCategory"
+ return="android.graphics.drawable.Drawable"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="dataCategory" type="com.salesforce.android.knowledge.core.model.DataCategorySummary">
+</parameter>
+</method>
+</interface>
+<class name="KnowledgeScene"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.knowledge.ui.KnowledgeScene"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.knowledge.ui.KnowledgeScene[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="KnowledgeUI"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="configure"
+ return="com.salesforce.android.knowledge.ui.KnowledgeUI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration">
+</parameter>
+</method>
+<method name="createClient"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.knowledge.ui.KnowledgeUIClient&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="viewAddition"
+ return="com.salesforce.android.knowledge.ui.KnowledgeUI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="viewAddition" type="com.salesforce.android.knowledge.ui.KnowledgeViewAddition">
+</parameter>
+</method>
+<method name="withCoreClient"
+ return="com.salesforce.android.knowledge.ui.KnowledgeUI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="coreClient" type="com.salesforce.android.knowledge.core.KnowledgeClient">
+</parameter>
+</method>
+</class>
+<class name="KnowledgeUIAnalytics"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="KnowledgeUIAnalytics"
+ type="com.salesforce.android.knowledge.ui.KnowledgeUIAnalytics"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="DATA_ARTICLE_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_ARTICLE_ID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_ARTICLE_TITLE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_ARTICLE_TITLE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_CATEGORY_GROUP_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_CATEGORY_GROUP_NAME&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_CATEGORY_LABEL"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_CATEGORY_LABEL&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_CATEGORY_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_CATEGORY_NAME&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_COMMUNITY_URL"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_COMMUNITY_URL&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_IS_CORE_CLIENT_PROVIDED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_IS_CORE_CLIENT_PROVIDED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_IS_IMAGE_PROVIDER_PRESENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_IS_IMAGE_PROVIDER_PRESENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_KNOWLEDGE_FROM_SCENE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_KNOWLEDGE_FROM_SCENE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_KNOWLEDGE_TO_SCENE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_KNOWLEDGE_TO_SCENE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_ROOT_CATEGORY_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_ROOT_CATEGORY_NAME&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_SEARCH_TERM"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_DATA_SEARCH_TERM&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_CLOSED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_CLOSED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_COLLAPSED_CATEGORY_HEADER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_COLLAPSED_CATEGORY_HEADER&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_EXPANDED_CATEGORY_HEADER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_EXPANDED_CATEGORY_HEADER&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_INITIALIZED_CLIENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_INITIALIZED_CLIENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LAUNCHED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LAUNCHED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_ARTICLE_DETAIL_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_ARTICLE_DETAIL_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_ARTICLE_LIST_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_ARTICLE_LIST_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_CATEGORY_DETAIL_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_CATEGORY_DETAIL_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_MORE_ARTICLES"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_MORE_ARTICLES&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_SEARCH_RESULT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_SEARCH_RESULT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_SEARCH_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_SEARCH_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LOADED_SUPPORT_HOME_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_LOADED_SUPPORT_HOME_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_MAXIMIZED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_MAXIMIZED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_MINIMIZED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_RESPONSE_MINIMIZED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_CLEAR_SEARCH_TERM"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_CLEAR_SEARCH_TERM&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_CLOSE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_CLOSE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_INITIALIZE_CLIENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_INITIALIZE_CLIENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_INPUT_SEARCH_TERM"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_INPUT_SEARCH_TERM&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_LAUNCH"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_LAUNCH&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_MAXIMIZE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_MAXIMIZE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_MINIMIZE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_MINIMIZE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_MOVE_THUMBNAIL"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_MOVE_THUMBNAIL&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_NAVIGATE_BACK"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_NAVIGATE_BACK&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SELECT_ARTICLE_DETAILS"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_SELECT_ARTICLE_DETAILS&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SELECT_ARTICLE_LIST"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_SELECT_ARTICLE_LIST&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SELECT_CATEGORY_DETAIL"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_SELECT_CATEGORY_DETAIL&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SELECT_CATEGORY_HEADER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_SELECT_CATEGORY_HEADER&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SELECT_SEARCH_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_SELECT_SEARCH_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SHOW_MORE_ARTICLES"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;KNOWLEDGE_UI_USER_SHOW_MORE_ARTICLES&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<interface name="KnowledgeUIClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addOnCloseListener"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onCloseListener" type="com.salesforce.android.knowledge.ui.KnowledgeUIClient.OnCloseListener">
+</parameter>
+</method>
+<method name="close"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getConfiguration"
+ return="com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getImageProvider"
+ return="com.salesforce.android.knowledge.ui.KnowledgeImageProvider"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getKnowledgeCoreClient"
+ return="com.salesforce.android.knowledge.core.KnowledgeClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="launchHome"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.app.Activity">
+</parameter>
+</method>
+<method name="removeOnCloseListener"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onCloseListener" type="com.salesforce.android.knowledge.ui.KnowledgeUIClient.OnCloseListener">
+</parameter>
+</method>
+</interface>
+<interface name="KnowledgeUIClient.OnCloseListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onClose"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="KnowledgeUIConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="create"
+ return="com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="knowledgeConfiguration" type="com.salesforce.android.knowledge.core.KnowledgeConfiguration">
+</parameter>
+<parameter name="dataCategoryGroupName" type="java.lang.String">
+</parameter>
+<parameter name="rootDataCategory" type="java.lang.String">
+</parameter>
+</method>
+<method name="getCoreConfiguration"
+ return="com.salesforce.android.knowledge.core.KnowledgeConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDataCategoryGroupName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getImageProvider"
+ return="com.salesforce.android.knowledge.ui.KnowledgeImageProvider"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRootDataCategory"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setImageProvider"
+ return="com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="imageProvider" type="com.salesforce.android.knowledge.ui.KnowledgeImageProvider">
+</parameter>
+</method>
+</class>
+<interface name="KnowledgeViewAddition"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="createView"
+ return="android.view.View"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="root" type="android.view.ViewGroup">
+</parameter>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="getEnterAnimator"
+ return="android.animation.Animator"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="view" type="android.view.View">
+</parameter>
+</method>
+<method name="getExitAnimator"
+ return="android.animation.Animator"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="view" type="android.view.View">
+</parameter>
+</method>
+<method name="initView"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="view" type="android.view.View">
+</parameter>
+<parameter name="visible" type="boolean">
+</parameter>
+</method>
+<method name="visibleFor"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scene" type="com.salesforce.android.knowledge.ui.KnowledgeScene">
+</parameter>
+</method>
+</interface>
+</package>
+</api>
