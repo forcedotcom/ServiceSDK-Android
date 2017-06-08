@@ -110,5 +110,13 @@
     "reference": "chat/1.1.0/api/",
     "sdk": "chat",
     "version": "1.1.0"
+  },
+  {
+    "changelog": "sos/2.1.2/changelog.md",
+    "date": "2017-06-08",
+    "example": "sos/2.1.2/example.md",
+    "reference": "sos/2.1.2/api/",
+    "sdk": "sos",
+    "version": "2.1.2"
   }
 ]
