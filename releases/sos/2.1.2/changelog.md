@@ -1,6 +1,4 @@
-## New Features
-
-## API Changes
+# SOS 2.1.2
 
 ## Upgrade Instructions
 
