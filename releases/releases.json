@@ -94,5 +94,13 @@
     "reference": "knowledge/1.0.0/api/",
     "sdk": "knowledge",
     "version": "1.0.0"
+  },
+  {
+    "changelog": "common/4.0.0/changelog.md",
+    "date": "2017-06-08",
+    "example": "common/4.0.0/example.md",
+    "reference": "common/4.0.0/api/",
+    "sdk": "common",
+    "version": "4.0.0"
   }
 ]

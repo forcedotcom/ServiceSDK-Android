@@ -4,7 +4,7 @@ repositories {
 }
 
 dependencies {
-  compile "com.salesforce.service:utilities:4.0.0-RC.2"
+  compile "com.salesforce.service:utilities:4.0.0"
 }
 ```
 
