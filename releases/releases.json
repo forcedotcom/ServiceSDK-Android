@@ -126,5 +126,13 @@
     "reference": "knowledge/2.0.0/api/",
     "sdk": "knowledge",
     "version": "2.0.0"
+  },
+  {
+    "changelog": "case/2.0.0/changelog.md",
+    "date": "2017-06-08",
+    "example": "case/2.0.0/example.md",
+    "reference": "case/2.0.0/api/",
+    "sdk": "case",
+    "version": "2.0.0"
   }
 ]
