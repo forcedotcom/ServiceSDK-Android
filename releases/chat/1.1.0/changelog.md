@@ -1,25 +1,25 @@
-# Chat <version>
+# Chat 1.1.0
 
 ## New Features
 
 - Now preventing multiple ChatClients from being instantiated. An `IllegalStateException` will
-be passed to your `Async.ErrorHandler` if a chat session is already running. [W-3540098]
+be passed to your `Async.ErrorHandler` if a chat session is already running.
 - Now allowing users to maximize the chat feed after a session has ended so they can review the content of the chat session
 - Displaying a heads-up notification when a message is received from the Agent and the App is backgrounded
 - Added an API to set the Visitor Name in the ChatConfiguration object.
 - Now supports File Transfer. An Agent may request a file upload from the chat visitor.
 - Added a `SessionInfoListener` to `chat-core` in order to expose the unique Visitor ID.
-- Adding support for SneakPeek 
+- Adding support for SneakPeek
 - Added a default PreChat UI which a developer can leverage to allow users to fill in important fields.
-- The default UI experience, `chat-ui`, now has multi-linugal support for 26 languages.
+- The default UI experience, `chat-ui`, now has localization support for 26 languages.
 - Added support for programmatically ending the session when using `chat-ui`.
-- Added support for querying the availability of an agent at any time. [W-3432776](https://gus.my.salesforce.com/apex/adm_userstorydetail?id=a07B0000002SCKWIA4&sfdc.override=1)
+- Added support for querying the availability of an agent at any time.
 - Accessibility improvements
-- Added support for querying the current LiveAgentPod which will service your chat requests. This is part of the Availability API. [W-3717530](https://gus.my.salesforce.com/apex/adm_userstorydetail?id=a07B0000002pcTwIAI&sfdc.override=1)
+- Added support for querying the current LiveAgentPod which will service your chat requests. This is part of the Availability API.
 
-#### Availability & LiveAgentPod Update Example
+### Availability & LiveAgentPod Update Example
 
-```java
+```
 String organizationId = "111112222233333"
 String deploymentId = "333332222211111"
 String buttonId = "444445555566666"
@@ -54,7 +54,7 @@ client.check().onResult(new Async.ResultHandler<AvailabilityState>() {
 
 ## API Changes
 - Added PreChat and PreChatConfiguration classes to allow a developer to define PreChatFields to be used to collect information from
-end users to pass to the agent. (https://gus.my.salesforce.com/apex/ADM_WorkView?id=a07B0000002sNPIIA2&sfdc.override=1)[W-3681676]
+end users to pass to the agent.
 
 - Added a `PreChatUIListener` interface so you can track whether the user has successfully submitted the PreChat form or has closed it without completing.
    - `ChatUIClient.addPreChatUIListener(PreChatUIListener)`
@@ -84,13 +84,6 @@ This allows consumers to attach handlers for complete/error. And allows us to pr
 
 - Adding `ChatUIClient.endChatSession()`
 
-## Upgrade Instructions
-
 ## Bug Fixes
 
-- Fixing a rare crash that would occur if the session was ended during the Connecting state. [W-3801090]
-
-## Notes
-
-## Known Issues
-
+- Fixing a rare crash that would occur if the session was ended during the Connecting state.
