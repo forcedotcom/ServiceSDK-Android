@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_case"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="@string/menu_case"/>
+    <item
+        android:id="@+id/action_chat"
+        android:icon="@android:drawable/sym_action_chat"
+        android:title="@string/menu_chat"/>
+    <item
+        android:id="@+id/action_sos"
+        android:icon="@android:drawable/stat_sys_headset"
+        android:title="@string/menu_sos"/>
+</menu>

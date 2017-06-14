@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.salesforce.snapinssdkexample.SnapinsActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        android:text="Hello Snap-ins!\n\nTap the help action button below to launch Snap-ins...\n\nFrom the Snapins home, use the plus action button to access other Snapins features."
+        app:layout_constraintDimensionRatio="H, 1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+    />
+
+</android.support.constraint.ConstraintLayout>
