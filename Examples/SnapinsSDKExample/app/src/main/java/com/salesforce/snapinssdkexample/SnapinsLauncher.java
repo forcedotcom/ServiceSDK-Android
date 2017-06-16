@@ -95,15 +95,15 @@ public class SnapinsLauncher {
   public void startSnapins(final Context context) {
 
     // Start the Knowledge UI
-    SnapinsLauncher.getInstance().startKnowledge(context);
+    startKnowledge(context);
 
     // NOTE: The Knowledge home screen has a floating action button to launch
     // Case Management, Chat, and SOS. However, if you don't want to
     // use Knowledge at all, you can change this click listener to launch any
     // of the other features. e.g.
-    //   SnapinsLauncher.getInstance().startCases(context);
-    //   SnapinsLauncher.getInstance().startChat(context);
-    //   SnapinsLauncher.getInstance().startSOS(context);
+    //   startCases(context);
+    //   startChat(context);
+    //   startSOS(context);
   }
 
   /**
