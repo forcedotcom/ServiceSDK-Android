@@ -1,4 +1,4 @@
-package com.example.salesforce.snapinssdkexample;
+package com.salesforce.snapinssdkexample;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.salesforce.snapinssdkexample.R;
 import com.salesforce.android.knowledge.ui.KnowledgeScene;
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition;
 
@@ -55,18 +56,15 @@ public class SnapinsViewAddition implements KnowledgeViewAddition {
         switch (menuItem.getItemId()) {
           case (R.id.action_case):
             // Start Cases
-            Log.i("Snapins Example","Starting Case Management...");
-            SnapinsLauncher.getInstance().startCases();
+            SnapinsLauncher.getInstance().startCases(view.getContext());
             break;
           case (R.id.action_chat):
             // Start Chat
-            Log.i("Snapins Example","Starting Live Agent Chat...");
-            SnapinsLauncher.getInstance().startChat();
+            SnapinsLauncher.getInstance().startChat(view.getContext());
             break;
           case (R.id.action_sos):
             // Start SOS
-            Log.i("Snapins Example", "Starting SOS...");
-            SnapinsLauncher.getInstance().startSOS();
+            SnapinsLauncher.getInstance().startSOS(view.getContext());
             break;
           default:
             Log.w("Snapins Example", "Unknown item selected...");

@@ -1,4 +1,4 @@
-package com.example.salesforce.snapinssdkexample;
+package com.salesforce.snapinssdkexample;
 
 import android.app.Activity;
 import android.util.Log;

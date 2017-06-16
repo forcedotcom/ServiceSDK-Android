@@ -1,7 +1,9 @@
-package com.example.salesforce.snapinssdkexample;
+package com.salesforce.snapinssdkexample;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -25,6 +27,9 @@ import com.salesforce.android.sos.api.SosOptions;
  * Singleton that lets you initialize and launch all Snap-ins features.
  *
  * Be sure to update the TODO constants in this class.
+ *
+ * For more help, see the Snap-ins Developer's Guide:
+ * https://developer.salesforce.com/docs/atlas.en-us.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm
  */
 public class SnapinsLauncher {
 
@@ -66,7 +71,6 @@ public class SnapinsLauncher {
   // Singleton instance
   private static final SnapinsLauncher theOneInstance = new SnapinsLauncher();
 
-  private AppCompatActivity mActivity = null;
   private KnowledgeUI mKnowledgeUI = null;
   private KnowledgeUIClient mKnowledgeUIClient = null;
 
@@ -84,12 +88,22 @@ public class SnapinsLauncher {
   }
 
   /**
-   * Passes the activity object to this singleton so that it can launch Snap-ins interfaces.
-   *
-   * @param activity The activity.
+   * Starts the Snap-ins user experience. By default, this method launches
+   * the Knowledge UI, which uses a KnowledgeViewAddition to start other features.
+   * See comments inside method for instructions on launching a different feature instead.
    */
-  public void setActivity(AppCompatActivity activity) {
-    this.mActivity = activity;
+  public void startSnapins(final Context context) {
+
+    // Start the Knowledge UI
+    SnapinsLauncher.getInstance().startKnowledge(context);
+
+    // NOTE: The Knowledge home screen has a floating action button to launch
+    // Case Management, Chat, and SOS. However, if you don't want to
+    // use Knowledge at all, you can change this click listener to launch any
+    // of the other features. e.g.
+    //   SnapinsLauncher.getInstance().startCases(SnapinsActivity.this);
+    //   SnapinsLauncher.getInstance().startChat(SnapinsActivity.this);
+    //   SnapinsLauncher.getInstance().startSOS(SnapinsActivity.this);
   }
 
   /**
@@ -123,29 +137,29 @@ public class SnapinsLauncher {
    *
    * @param feature The name of the feature that isn't configured.
    */
-  private void notYetConfiguredMessage(String feature) {
-    Toast.makeText(mActivity, feature + " not yet configured. Update constant values in `SnapinsLauncher`.",
+  private void notYetConfiguredMessage(Context context, String feature) {
+    Toast.makeText(context, feature + " not configured. Update constants in SnapinsLauncher.java.",
             Toast.LENGTH_LONG).show();
   }
 
   /**
    * Starts the Knowledge UI.
    */
-  public void startKnowledge() {
-    assert (mActivity != null);
+  public void startKnowledge(final Context context) {
     assert (mKnowledgeUI != null);
+    Log.i("Snapins Example","Starting Knowledge...");
 
-    if (COMMUNITY_URL == INCOMPLETE_ORG_SETTING ||
-            CATEGORY_GROUP == INCOMPLETE_ORG_SETTING ||
-            ROOT_CATEGORY == INCOMPLETE_ORG_SETTING) {
-      notYetConfiguredMessage("Knowledge");
+    if (COMMUNITY_URL.equals(INCOMPLETE_ORG_SETTING) ||
+            CATEGORY_GROUP.equals(INCOMPLETE_ORG_SETTING) ||
+            ROOT_CATEGORY.equals(INCOMPLETE_ORG_SETTING)) {
+      notYetConfiguredMessage(context, "Knowledge");
       return;
     }
 
     if (mKnowledgeUIClient == null) {
 
       // Create a knowledge client asynchronously
-      mKnowledgeUI.createClient(mActivity)
+      mKnowledgeUI.createClient(context)
               .onResult(new Async.ResultHandler<KnowledgeUIClient>() {
 
                 @Override
@@ -166,32 +180,23 @@ public class SnapinsLauncher {
                   });
 
                   // Launch the UI
-                  uiClient.launchHome(mActivity);
+                  uiClient.launchHome((Activity) context);
                 }
               });
     }
   }
 
   /**
-   * Shuts down Knowledge UI.
-   */
-  public void stopKnowledge() {
-    if (mKnowledgeUIClient != null) {
-      mKnowledgeUIClient.close();
-    }
-  }
-
-  /**
    * Starts the Case Management UI.
    */
-  public void startCases() {
-    assert (mActivity != null);
+  public void startCases(final Context context) {
 
-    if (COMMUNITY_URL == INCOMPLETE_ORG_SETTING ||
-            CREATE_CASE_ACTION_NAME == INCOMPLETE_ORG_SETTING) {
-      notYetConfiguredMessage("Cases");
+    if (COMMUNITY_URL.equals(INCOMPLETE_ORG_SETTING) ||
+            CREATE_CASE_ACTION_NAME.equals(INCOMPLETE_ORG_SETTING)) {
+      notYetConfiguredMessage(context, "Cases");
       return;
     }
+    Log.i("Snapins Example","Starting Case Management...");
 
     // Create a cases core configuration instance
     CaseConfiguration coreConfiguration =
@@ -199,15 +204,15 @@ public class SnapinsLauncher {
                     .build();
 
     // Create a UI configuration instance from a cases core instance
-    CaseUI.with(mActivity).configure(CaseUIConfiguration.create(coreConfiguration));
+    CaseUI.with(context).configure(CaseUIConfiguration.create(coreConfiguration));
 
     // Create a cases client UI asynchronously
-    CaseUI.with(mActivity).uiClient()
+    CaseUI.with(context).uiClient()
             .onResult(new Async.ResultHandler<CaseUIClient>() {
               @Override
               public void handleResult(Async<?> async,
                                        @NonNull CaseUIClient caseUIClient) {
-                caseUIClient.launch(mActivity);
+                caseUIClient.launch(context);
               }
             });
   }
@@ -215,19 +220,16 @@ public class SnapinsLauncher {
   /**
    * Starts the Live Agent Chat UI.
    */
-  public void startChat() {
-    assert (mActivity != null);
+  public void startChat(final Context context) {
 
-    if (ORG_ID == INCOMPLETE_ORG_SETTING ||
-            POD_NAME == INCOMPLETE_ORG_SETTING ||
-            CHAT_DEPLOYMENT_ID == INCOMPLETE_ORG_SETTING ||
-            CHAT_BUTTON_ID == INCOMPLETE_ORG_SETTING) {
-      notYetConfiguredMessage("Chat");
+    if (ORG_ID.equals(INCOMPLETE_ORG_SETTING) ||
+            POD_NAME.equals(INCOMPLETE_ORG_SETTING) ||
+            CHAT_DEPLOYMENT_ID.equals(INCOMPLETE_ORG_SETTING) ||
+            CHAT_BUTTON_ID.equals(INCOMPLETE_ORG_SETTING)) {
+      notYetConfiguredMessage(context, "Chat");
       return;
     }
-
-    // First lets get rid of the Knowledge UI
-    stopKnowledge();
+    Log.i("Snapins Example","Starting Live Agent Chat...");
 
     // Create a chat core configuration instance
     ChatConfiguration chatConfiguration =
@@ -238,13 +240,13 @@ public class SnapinsLauncher {
     // Create a UI configuration instance from a chat core config object
     // and start session!
     ChatUI.configure(ChatUIConfiguration.create(chatConfiguration))
-            .createClient(mActivity.getApplicationContext())
+            .createClient(context.getApplicationContext())
             .onResult(new Async.ResultHandler<ChatUIClient>() {
               @Override
               public void handleResult(Async<?> operation,
                                        @NonNull ChatUIClient chatUIClient) {
-                chatUIClient.addSessionStateListener(new SnapinsChatSessionListener(mActivity));
-                chatUIClient.startChatSession(mActivity);
+                chatUIClient.addSessionStateListener(new SnapinsChatSessionListener((Activity)context));
+                chatUIClient.startChatSession((FragmentActivity)context);
               }
             });
   }
@@ -252,23 +254,20 @@ public class SnapinsLauncher {
   /**
    * Starts the SOS UI.
    */
-  public void startSOS() {
-    assert (mActivity != null);
+  public void startSOS(final Context context) {
 
-    if (ORG_ID == INCOMPLETE_ORG_SETTING ||
-            POD_NAME == INCOMPLETE_ORG_SETTING ||
-            SOS_DEPLOYMENT_ID == INCOMPLETE_ORG_SETTING) {
-      notYetConfiguredMessage("SOS");
+    if (ORG_ID.equals(INCOMPLETE_ORG_SETTING) ||
+            POD_NAME.equals(INCOMPLETE_ORG_SETTING) ||
+            SOS_DEPLOYMENT_ID.equals(INCOMPLETE_ORG_SETTING)) {
+      notYetConfiguredMessage(context, "SOS");
       return;
     }
-
-    // First lets get rid of the Knowledge UI
-    stopKnowledge();
+    Log.i("Snapins Example","Starting SOS...");
 
     // Create an SOS options object
     SosOptions options = new SosOptions(POD_NAME, ORG_ID, SOS_DEPLOYMENT_ID);
 
     // Start an SOS session
-    Sos.session(options).start(mActivity);
+    Sos.session(options).start((Activity)context);
   }
 }

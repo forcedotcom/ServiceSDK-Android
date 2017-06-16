@@ -5,4 +5,5 @@
     <string name="menu_chat">Live Agent Chat</string>
     <string name="menu_sos">SOS Video Chat</string>
     <string name="account_type">com.salesforce.MySnapinsApp</string>
+    <string name="activity_help_text">Hello Snap-ins!\n\nTap the help action button below to launch Snap-ins...\n\nFrom the Knowledge home screen, use the plus action button to access other Snapins features.\n\nCheck out the TODO items throughout the code for more instructions.</string>
 </resources>
