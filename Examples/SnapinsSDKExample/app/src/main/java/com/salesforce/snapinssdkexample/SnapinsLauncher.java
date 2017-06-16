@@ -101,9 +101,9 @@ public class SnapinsLauncher {
     // Case Management, Chat, and SOS. However, if you don't want to
     // use Knowledge at all, you can change this click listener to launch any
     // of the other features. e.g.
-    //   SnapinsLauncher.getInstance().startCases(SnapinsActivity.this);
-    //   SnapinsLauncher.getInstance().startChat(SnapinsActivity.this);
-    //   SnapinsLauncher.getInstance().startSOS(SnapinsActivity.this);
+    //   SnapinsLauncher.getInstance().startCases(context);
+    //   SnapinsLauncher.getInstance().startChat(context);
+    //   SnapinsLauncher.getInstance().startSOS(context);
   }
 
   /**
