@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.salesforce.snapinssdkexample.com.salesforce.snapinssdkexample.SnapinsActivity"
+    tools:context="com.salesforce.snapinssdkexample.SnapinsActivity"
     tools:showIn="@layout/activity_main">
 
 
