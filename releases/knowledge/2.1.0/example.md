@@ -4,7 +4,7 @@ repositories {
 }
 
 dependencies {
-  compile "com.salesforce.service:knowledge-ui:2.1.0-RC.1"
+  compile "com.salesforce.service:knowledge-ui:2.1.0"
 }
 ```
 
