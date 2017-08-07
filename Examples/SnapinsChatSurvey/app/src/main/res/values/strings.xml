@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Snap-ins Chat Survey</string>
+    <string name="title_activity_main">Chat Survey</string>
+    <string name="thank_you_message">Thanks for your input!</string>
+    <string name="submit_survey_button">Submit</string>
+    <string name="rating_bar_text">Overall Rating</string>
+    <string name="survey_answer_text_caption">Were you satisfied with your support?</string>
+    <string name="survey_prompt_title">Session Ended.</string>
+    <string name="survey_prompt_question">Would you like to take a minute to provide us with feedback about your experience today?</string>
+    <string name="survey_prompt_positive">Take Survey</string>
+    <string name="survey_prompt_negative">Cancel</string>
+    <string name="feedback_label">FEEDBACK</string>
+</resources>
