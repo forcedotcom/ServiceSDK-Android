@@ -10,4 +10,5 @@
     <string name="survey_prompt_positive">Take Survey</string>
     <string name="survey_prompt_negative">Cancel</string>
     <string name="feedback_label">FEEDBACK</string>
+    <string name="activity_help_text">This sample app demonstrates how to connect your chat experience to a survey at the end of the session. After a successful session, a survey launches. Tap the floating action button below to launch Live Agent Chat...\n\nCheck out the TODO items throughout the code for more instructions.</string>
 </resources>
