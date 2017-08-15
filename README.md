@@ -5,4 +5,4 @@
 * To see the Android developer's guide, go [here](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm).
 * To see some examples, go [here](./Examples/).
 
-Latest version: July 2017 (208.1.0)
+Latest version: August 2017 (208.2.0)
