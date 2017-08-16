@@ -70,28 +70,26 @@ public class MyChatListener implements SessionStateListener {
     surveyPrompt.setPositiveButton(R.string.survey_prompt_positive, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
-
+            Intent intent;
             // Determine whether we should show a web view or a local UI
             // for the survey...
             if (mWebviewSurveyFlag) {
-              
+
               // You can launch a web view to display
               // a survey from the web. For example:
-              Intent intent = new Intent(mContext, WebViewSurveyActivity.class);
-              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-              mContext.startActivity(intent);
-            }
-            else {
+              intent = new Intent(mContext, WebViewSurveyActivity.class);
+            } else {
 
               // Alternatively, you can launch code that
               // displays a survey with a local UI:
-              Intent intent = new Intent(mContext, LocalSurveyActivity.class);
-              intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-              intent.putExtra("visitor_name", mChatConfiguration.getVisitorName());
-              intent.putExtra("button_id", mChatConfiguration.getButtonId());
-              intent.putExtra("live_agent_pod", mChatConfiguration.getLiveAgentPod());
-              mContext.startActivity(intent);
+              intent = new Intent(mContext, LocalSurveyActivity.class);
+
             }
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("visitor_name", mChatConfiguration.getVisitorName());
+            intent.putExtra("button_id", mChatConfiguration.getButtonId());
+            intent.putExtra("live_agent_pod", mChatConfiguration.getLiveAgentPod());
+            mContext.startActivity(intent);
           }
         }
     );
