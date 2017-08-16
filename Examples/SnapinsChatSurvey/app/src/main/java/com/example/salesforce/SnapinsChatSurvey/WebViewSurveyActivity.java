@@ -6,12 +6,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 /**
  * Activity that displays a web view to the survey.
  * This class isn't necessary if you plan to display a local UI survey.
  */
 public class WebViewSurveyActivity extends AppCompatActivity {
+
+  Bundle mExtras;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +43,19 @@ public class WebViewSurveyActivity extends AppCompatActivity {
     webView.getSettings().setJavaScriptEnabled(true);
     webView.setWebViewClient(new WebViewClient());
 
+    // configuration information, potentially to connect a chat session and a survey session later
+    mExtras = getIntent().getExtras();
+
     // TODO: Replace this URL with your real survey URL...
     // URL to the dummy survey
     webView.loadUrl("https://qtrial2017q3az1.az1.qualtrics.com/jfe/form/SV_6mwOzsCqPhHH2eN");
+
+    // TODO: Do something with all this configuration information!
+    mExtras.get("visitor_name");
+    mExtras.get("button_id");
+    mExtras.get("live_agent_pod");
+    Toast.makeText(WebViewSurveyActivity.this, "This is where you do something with the configuration information...",
+        Toast.LENGTH_LONG).show();
   }
 
 }
