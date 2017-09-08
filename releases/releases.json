@@ -150,6 +150,13 @@
     "reference": "sos/2.2.0/api/",
     "sdk": "sos",
     "version": "2.2.0"
+  },
+  {
+    "changelog": "knowledge/2.1.1/changelog.md",
+    "date": "2017-09-08",
+    "example": "knowledge/2.1.1/example.md",
+    "reference": "knowledge/2.1.1/api/",
+    "sdk": "knowledge",
+    "version": "2.1.1"
   }
-
 ]
