@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for ServiceSDK - Case 3.0.0-RC.1." />
+
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+<title>
+
+  Class Index
+
+
+| ServiceSDK - Case 3.0.0-RC.1
+
+</title>
+<link href="./../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="./../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="./../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="./../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="./../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="./../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("./", "./../assets/");
+</script>
+<script src="./../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="./../assets/navtree_data.js" type="text/javascript"></script>
+<script src="./../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">ServiceSDK - Case 3.0.0-RC.1</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, './')"
+                      onkeyup="return search_changed(event, false, './')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="./packages.html"  >Package Index</a> | 
+                <a href="./classes.html" class="selected">Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/cases/core/package-summary.html">com.salesforce.android.cases.core</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/cases/core/model/package-summary.html">com.salesforce.android.cases.core.model</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/cases/core/requests/package-summary.html">com.salesforce.android.cases.core.requests</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/cases/ui/package-summary.html">com.salesforce.android.cases.ui</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+              <script>
+                /*addLoadEvent(maxPackageHeight);*/
+              </script>
+              <p style="padding:10px">Select a package to view its members</p><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="./packages.html"  >Package Index</a> | 
+            <a href="./classes.html" class="selected">Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("./");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="jd-header">
+<h1>Class Index</h1>
+</div>
+
+<div id="jd-content">
+
+<div class="jd-letterlist">
+    <a href="#letter_A">A</a>
+    <a href="#letter_B">B</a>
+    <a href="#letter_C">C</a>
+    <a href="#letter_D">D</a>
+    <a href="#letter_E">E</a>
+    <a href="#letter_F">F</a>
+    <a href="#letter_L">L</a>
+    <a href="#letter_N">N</a>
+    <a href="#letter_P">P</a>
+    <a href="#letter_S">S</a>
+</div>
+
+
+
+<h2 id="letter_A">A</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/Actor.html">Actor</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a chatter user interacting with a case.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_B">B</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/Body.html">Body</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for the text associated with an Element.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_C">C</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/CaseClient.html">CaseClient</a></td>
+            <td class="jd-descrcol" width="100%">Interfaces with the Salesforce case support back-end.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/CaseClientCallbacks.html">CaseClientCallbacks</a></td>
+            <td class="jd-descrcol" width="100%">Provides a mechanism for consumers of the SDK to pass data back to the SDK and handle different
+ events.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/CaseConfiguration.html">CaseConfiguration</a></td>
+            <td class="jd-descrcol" width="100%">Configuration class used in the creation of a <code><a href="./com/salesforce/android/cases/core/CaseClient.html">CaseClient</a></code> instance via <code><a href="./com/salesforce/android/cases/core/CaseCore.html">CaseCore</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/CaseConfiguration.Builder.html">CaseConfiguration.Builder</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/CaseCore.html">CaseCore</a></td>
+            <td class="jd-descrcol" width="100%">Initialization API for Case support.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseDetailRecord.html">CaseDetailRecord</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for the details of a case.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CaseDetailRequest.html">CaseDetailRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a case detail request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CaseDetailRequest.CaseDetailRequestBuilder.html">CaseDetailRequest.CaseDetailRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CaseDetailRequest.html">CaseDetailRequest</a></code> class.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseFeed.html">CaseFeed</a></td>
+            <td class="jd-descrcol" width="100%">Model for a case feed.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CaseFeedRequest.html">CaseFeedRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a case feed request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CaseFeedRequest.CaseFeedRequestBuilder.html">CaseFeedRequest.CaseFeedRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">The builder for the <code><a href="./com/salesforce/android/cases/core/requests/CaseFeedRequest.html">CaseFeedRequest</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseField.html">CaseField</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a field of a case.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseFieldType.html">CaseFieldType</a></td>
+            <td class="jd-descrcol" width="100%">The supported case field types.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseLayoutData.html">CaseLayoutData</a></td>
+            <td class="jd-descrcol" width="100%">The case layout data model contract.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseListFeedRecord.html">CaseListFeedRecord</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a case feed item belonging to a case list item.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CaseListRecord.html">CaseListRecord</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a single element in the case list.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CaseListRequest.html">CaseListRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a case list request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CaseListRequest.CaseListRequestBuilder.html">CaseListRequest.CaseListRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CaseListRequest.html">CaseListRequest</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CasesUIAnalytics.html">CasesUIAnalytics</a></td>
+            <td class="jd-descrcol" width="100%">CasesUIAnalytics contains identifying information for analytics data that is relayed via the
+ ServiceAnalytics API.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html">CasesUIAnalytics.CompletionType</a></td>
+            <td class="jd-descrcol" width="100%">The result of an operation.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html">CasesUIAnalytics.EventType</a></td>
+            <td class="jd-descrcol" width="100%">A string representing the type of user event that occurred.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html">CasesUIAnalytics.UserType</a></td>
+            <td class="jd-descrcol" width="100%">The user who initiated a change.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CaseUI.html">CaseUI</a></td>
+            <td class="jd-descrcol" width="100%"><p>Initialization API for the Case UI Package.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CaseUIClient.html">CaseUIClient</a></td>
+            <td class="jd-descrcol" width="100%">Public API for the CasesUIClient
+&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/ui/CaseUIConfiguration.html">CaseUIConfiguration</a></td>
+            <td class="jd-descrcol" width="100%">Configuration class used in the creation of a <code><a href="./com/salesforce/android/cases/ui/CaseUIClient.html">CaseUIClient</a></code> instance via <code><a href="./com/salesforce/android/cases/ui/CaseUI.html">CaseUI</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CommentPost.html">CommentPost</a></td>
+            <td class="jd-descrcol" width="100%">Model for a case feed comment post.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CommentPostRequest.html">CommentPostRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which posts a comment to a case.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CommentPostRequest.CommentPostRequestBuilder.html">CommentPostRequest.CommentPostRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CommentPostRequest.html">CommentPostRequest</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CommunitiesListRequest.html">CommunitiesListRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which retrieves a list of communities available to an authenticated
+ user.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CommunitiesListRequest.CommunitiesListRequestBuilder.html">CommunitiesListRequest.CommunitiesListRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CaseDetailRequest.html">CaseDetailRequest</a></code> class.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/Community.html">Community</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a community
+&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CommunityIdRequest.html">CommunityIdRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which retrieves the id associated with a given Community URL.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CommunityIdRequest.CommunityIdRequestBuilder.html">CommunityIdRequest.CommunityIdRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CommunityIdRequest.CommunityIdRequestBuilder.html">CommunityIdRequest.CommunityIdRequestBuilder</a></code> class.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CompleteCaseFeed.html">CompleteCaseFeed</a></td>
+            <td class="jd-descrcol" width="100%">A container holding details on a Case and its chatter feed and layout.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CompleteCaseFeedRequest.html">CompleteCaseFeedRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which can be used to request all details required to view a case.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CompleteCaseFeedRequest.CompleteCaseFeedRequestBuilder.html">CompleteCaseFeedRequest.CompleteCaseFeedRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CompleteCaseFeedRequest.html">CompleteCaseFeedRequest</a></code> class.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CreateCaseQuickActionRequest.html">CreateCaseQuickActionRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a create case quick action request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CreateCaseQuickActionRequest.CreateCaseQuickActionRequestBuilder.html">CreateCaseQuickActionRequest.CreateCaseQuickActionRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/CreateCaseQuickActionRequest.html">CreateCaseQuickActionRequest</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CreateCaseRecord.html">CreateCaseRecord</a></td>
+            <td class="jd-descrcol" width="100%">Model for creating a case record.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CreateCaseRecordRequest.html">CreateCaseRecordRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a new case record request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/CreateCaseRecordRequest.NewCaseRecordRequestBuilder.html">CreateCaseRecordRequest.NewCaseRecordRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/CreateCaseRecordResult.html">CreateCaseRecordResult</a></td>
+            <td class="jd-descrcol" width="100%">The result of a case create request.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_D">D</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/DefaultValues.html">DefaultValues</a></td>
+            <td class="jd-descrcol" width="100%">Model for default values.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/DefaultValuesRequest.html">DefaultValuesRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a case layout default values request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/DefaultValuesRequest.DefaultValuesRequestBuilder.html">DefaultValuesRequest.DefaultValuesRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/DefaultValuesRequest.html">DefaultValuesRequest</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_E">E</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/Element.html">Element</a></td>
+            <td class="jd-descrcol" width="100%">Model representing a single item in a case feed.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_F">F</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></td>
+            <td class="jd-descrcol" width="100%">The base fetch save request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/FetchSaveRequestBuilder.html">FetchSaveRequestBuilder</a>&lt;T&nbsp;extends&nbsp;<a href="./com/salesforce/android/cases/core/FetchSaveRequestBuilder.html">FetchSaveRequestBuilder</a>&lt;T&gt;&gt;</td>
+            <td class="jd-descrcol" width="100%">Builder logic for configuration that is common to all fetch save requests into the Salesforce
+ Cases SDK.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_L">L</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/ListView.html">ListView</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a list view
+&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/ListViewDescribe.html">ListViewDescribe</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a list view describe.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/ListViewDescribeRequest.html">ListViewDescribeRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a listView describe request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/ListViewDescribeRequest.ListViewDescribeRequestBuilder.html">ListViewDescribeRequest.ListViewDescribeRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/ListViewRequest.html">ListViewRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> which builds a case listView request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/ListViewRequest.ListViewRequestBuilder.html">ListViewRequest.ListViewRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_N">N</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/NoCacheRequestBuilder.html">NoCacheRequestBuilder</a>&lt;T&nbsp;extends&nbsp;<a href="./com/salesforce/android/cases/core/FetchSaveRequestBuilder.html">FetchSaveRequestBuilder</a>&lt;T&gt;&gt;</td>
+            <td class="jd-descrcol" width="100%"><code><a href="./com/salesforce/android/cases/core/FetchSaveRequestBuilder.html">FetchSaveRequestBuilder</a></code> which builds a <code><a href="./com/salesforce/android/cases/core/requests/FetchSaveRequest.html">FetchSaveRequest</a></code> that does not support
+ caching
+ results.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_P">P</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/Photo.html">Photo</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a photo.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/PickListOption.html">PickListOption</a></td>
+            <td class="jd-descrcol" width="100%">Model interface for a pick list option.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/model/PushNotification.html">PushNotification</a></td>
+            <td class="jd-descrcol" width="100%">Represents a push notification.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_S">S</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/SaveRequest.html">SaveRequest</a></td>
+            <td class="jd-descrcol" width="100%">The base save request object.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/SaveRequestBuilder.html">SaveRequestBuilder</a>&lt;T&nbsp;extends&nbsp;<a href="./com/salesforce/android/cases/core/SaveRequestBuilder.html">SaveRequestBuilder</a>&lt;T&gt;&gt;</td>
+            <td class="jd-descrcol" width="100%">Builder logic for configuration that is common to all save requests into the Salesforce Cases
+ SDK.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/SetCaseHiddenRequest.html">SetCaseHiddenRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/SaveRequest.html">SaveRequest</a></code> which builds a request to set a case as hidden or shown.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/SetCaseHiddenRequest.SetCaseHiddenRequestBuilder.html">SetCaseHiddenRequest.SetCaseHiddenRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">Builder for the <code><a href="./com/salesforce/android/cases/core/requests/SetCaseHiddenRequest.html">SetCaseHiddenRequest</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/SetCaseLastReadDateRequest.html">SetCaseLastReadDateRequest</a></td>
+            <td class="jd-descrcol" width="100%">A <code><a href="./com/salesforce/android/cases/core/requests/SaveRequest.html">SaveRequest</a></code> which builds a request to save a case's last read date.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/cases/core/requests/SetCaseLastReadDateRequest.SetCaseLastReadDateRequestBuilder.html">SetCaseLastReadDateRequest.SetCaseLastReadDateRequestBuilder</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
