@@ -1,0 +1,8028 @@
+<api>
+<package name="com.salesforce.android.service.common.analytics"
+>
+<class name="ServiceAnalytics"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.analytics.ServiceAnalyticsListener">
+</parameter>
+</method>
+<method name="removeListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.analytics.ServiceAnalyticsListener">
+</parameter>
+</method>
+</class>
+<interface name="ServiceAnalyticsListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onServiceAnalyticsEvent"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="behaviorId" type="java.lang.String">
+</parameter>
+<parameter name="eventData" type="java.util.Map&lt;java.lang.String, java.lang.Object&gt;">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.service.common.utilities.activity"
+>
+<class name="ActivityReference"
+ extends="com.salesforce.android.service.common.utilities.functional.OptionalReference"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ActivityReference"
+ type="com.salesforce.android.service.common.utilities.activity.ActivityReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="reference" type="T">
+</parameter>
+</constructor>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityReference&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="T">
+</parameter>
+</method>
+<method name="none"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityReference&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ActivityTracker"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ActivityTracker"
+ type="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getForegroundActivity"
+ return="android.app.Activity"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onCreate"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="createListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnCreateListener">
+</parameter>
+</method>
+<method name="onDestroy"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="destroyListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnDestroyListener">
+</parameter>
+</method>
+<method name="onPause"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pauseListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnPauseListener">
+</parameter>
+</method>
+<method name="onResume"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resumeListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnResumeListener">
+</parameter>
+</method>
+<method name="onStart"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="startListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnStartListener">
+</parameter>
+</method>
+<method name="onStop"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stopListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnStopListener">
+</parameter>
+</method>
+<method name="register"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="removeOnCreate"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="createListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnCreateListener">
+</parameter>
+</method>
+<method name="removeOnDestroy"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="destroyListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnDestroyListener">
+</parameter>
+</method>
+<method name="removeOnPause"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pauseListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnPauseListener">
+</parameter>
+</method>
+<method name="removeOnResume"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resumeListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnResumeListener">
+</parameter>
+</method>
+<method name="removeOnStart"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="startListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnStartListener">
+</parameter>
+</method>
+<method name="removeOnStop"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stopListener" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnStopListener">
+</parameter>
+</method>
+<method name="setForegroundActivity"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="foregroundActivity" type="android.app.Activity">
+</parameter>
+</method>
+<method name="unregister"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="ActivityTracker.OnCreateListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onActivityCreate"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+<interface name="ActivityTracker.OnDestroyListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onActivityDestroy"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+<interface name="ActivityTracker.OnPauseListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onActivityPause"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+<interface name="ActivityTracker.OnResumeListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onActivityResume"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+<interface name="ActivityTracker.OnStartListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onActivityStart"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+<interface name="ActivityTracker.OnStopListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onActivityStop"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.service.common.utilities.control"
+>
+<interface name="Async"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addHandler"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="S">
+</parameter>
+</method>
+<method name="cancel"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="chain"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;S&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mapFunction" type="com.salesforce.android.service.common.utilities.functional.Function&lt;? super T, ? extends com.salesforce.android.service.common.utilities.control.Async&lt;? extends S&gt;&gt;">
+</parameter>
+</method>
+<method name="hasFailed"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="inProgress"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isCancelled"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isComplete"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="map"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;S&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mapFunction" type="com.salesforce.android.service.common.utilities.functional.Function&lt;? super T, ? extends S&gt;">
+</parameter>
+</method>
+<method name="onComplete"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="com.salesforce.android.service.common.utilities.control.Async.CompletionHandler">
+</parameter>
+</method>
+<method name="onError"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="com.salesforce.android.service.common.utilities.control.Async.ErrorHandler">
+</parameter>
+</method>
+<method name="onResult"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="com.salesforce.android.service.common.utilities.control.Async.ResultHandler&lt;? super T&gt;">
+</parameter>
+</method>
+<method name="pipe"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="receiver" type="com.salesforce.android.service.common.utilities.control.ResultReceiver&lt;? super T&gt;">
+</parameter>
+</method>
+<method name="removeCompletionHandler"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="com.salesforce.android.service.common.utilities.control.Async.CompletionHandler">
+</parameter>
+</method>
+<method name="removeErrorHandler"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="com.salesforce.android.service.common.utilities.control.Async.ErrorHandler">
+</parameter>
+</method>
+<method name="removeHandler"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="S">
+</parameter>
+</method>
+<method name="removeResultHandler"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="com.salesforce.android.service.common.utilities.control.Async.ResultHandler&lt;? super T&gt;">
+</parameter>
+</method>
+</interface>
+<interface name="Async.CompletionHandler"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="handleComplete"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="operation" type="com.salesforce.android.service.common.utilities.control.Async&lt;?&gt;">
+</parameter>
+</method>
+</interface>
+<interface name="Async.ErrorHandler"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="handleError"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="operation" type="com.salesforce.android.service.common.utilities.control.Async&lt;?&gt;">
+</parameter>
+<parameter name="throwable" type="java.lang.Throwable">
+</parameter>
+</method>
+</interface>
+<interface name="Async.Handler"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.control.Async.CompletionHandler">
+</implements>
+<implements name="com.salesforce.android.service.common.utilities.control.Async.ErrorHandler">
+</implements>
+<implements name="com.salesforce.android.service.common.utilities.control.Async.ResultHandler">
+</implements>
+</interface>
+<interface name="Async.ResultHandler"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="handleResult"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="operation" type="com.salesforce.android.service.common.utilities.control.Async&lt;?&gt;">
+</parameter>
+<parameter name="result" type="T">
+</parameter>
+</method>
+</interface>
+<interface name="ResultReceiver"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="complete"
+ return="com.salesforce.android.service.common.utilities.control.ResultReceiver&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setError"
+ return="com.salesforce.android.service.common.utilities.control.ResultReceiver&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="error" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="setResult"
+ return="com.salesforce.android.service.common.utilities.control.ResultReceiver&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="result" type="T">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.service.common.utilities.functional"
+>
+<interface name="Consumer"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="consume"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="T">
+</parameter>
+</method>
+</interface>
+<interface name="Function"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="apply"
+ return="S"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="to" type="T">
+</parameter>
+</method>
+</interface>
+<class name="Optional"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="empty"
+ return="com.salesforce.android.service.common.utilities.functional.Optional&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="get"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="ifPresent"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="consumer" type="com.salesforce.android.service.common.utilities.functional.Consumer&lt;? super T&gt;">
+</parameter>
+</method>
+<method name="isPresent"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="of"
+ return="com.salesforce.android.service.common.utilities.functional.Optional&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="T">
+</parameter>
+</method>
+<method name="orElse"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="T">
+</parameter>
+</method>
+</class>
+<class name="OptionalReference"
+ extends="java.lang.ref.WeakReference"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="OptionalReference"
+ type="com.salesforce.android.service.common.utilities.functional.OptionalReference"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="r" type="T">
+</parameter>
+</constructor>
+<method name="clearIfSame"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="object" type="T">
+</parameter>
+</method>
+<method name="ifPresent"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="consumer" type="com.salesforce.android.service.common.utilities.functional.Consumer&lt;? super T&gt;">
+</parameter>
+</method>
+<method name="is"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="object" type="T">
+</parameter>
+</method>
+<method name="isPresent"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="orElse"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="other" type="T">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.hashing"
+>
+<class name="Murmur3_32"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Murmur3_32"
+ type="com.salesforce.android.service.common.utilities.hashing.Murmur3_32"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="hash"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="java.lang.CharSequence">
+</parameter>
+<parameter name="seed" type="int">
+</parameter>
+</method>
+<method name="hash"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="java.lang.CharSequence">
+</parameter>
+<parameter name="offset" type="int">
+</parameter>
+<parameter name="len" type="int">
+</parameter>
+<parameter name="seed" type="int">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.internal.android"
+>
+<class name="AndroidInfo"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AndroidInfo"
+ type="com.salesforce.android.service.common.utilities.internal.android.AndroidInfo"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getDeviceManufacturer"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeviceModel"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeviceOSVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="BackgroundTracker"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnResumeListener">
+</implements>
+<implements name="com.salesforce.android.service.common.utilities.activity.ActivityTracker.OnStopListener">
+</implements>
+<method name="addListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.utilities.internal.android.BackgroundTracker.Listener">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.internal.android.BackgroundTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activityTracker" type="com.salesforce.android.service.common.utilities.activity.ActivityTracker">
+</parameter>
+</method>
+<method name="getActivityTracker"
+ return="com.salesforce.android.service.common.utilities.activity.ActivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isInBackground"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onActivityResume"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+<method name="onActivityStop"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+<method name="removeListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.utilities.internal.android.BackgroundTracker.Listener">
+</parameter>
+</method>
+<method name="start"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="stop"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="BackgroundTracker.Listener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onBackgroundChange"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="inBackground" type="boolean">
+</parameter>
+</method>
+</interface>
+<class name="BitmapHelper"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BitmapHelper"
+ type="com.salesforce.android.service.common.utilities.internal.android.BitmapHelper"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="compress"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bitmap" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="format" type="android.graphics.Bitmap.CompressFormat">
+</parameter>
+<parameter name="quality" type="int">
+</parameter>
+</method>
+<method name="getImageDimensions"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="java.io.InputStream">
+</parameter>
+</method>
+<method name="getScaledBitmap"
+ return="android.graphics.Bitmap"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="java.io.InputStream">
+</parameter>
+<parameter name="sampleSize" type="int">
+</parameter>
+</method>
+<method name="rotate"
+ return="android.graphics.Bitmap"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="source" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="orientationInDegrees" type="float">
+</parameter>
+</method>
+</class>
+<class name="ContentFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ContentFactory"
+ type="com.salesforce.android.service.common.utilities.internal.android.ContentFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="newContentValues"
+ return="android.content.ContentValues"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="CursorFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CursorFactory"
+ type="com.salesforce.android.service.common.utilities.internal.android.CursorFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="newCursorLoader"
+ return="android.support.v4.content.CursorLoader"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="uri" type="android.net.Uri">
+</parameter>
+<parameter name="projection" type="java.lang.String[]">
+</parameter>
+<parameter name="selection" type="java.lang.String">
+</parameter>
+<parameter name="selectionArgs" type="java.lang.String[]">
+</parameter>
+<parameter name="sortOrder" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="IntentFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="IntentFactory"
+ type="com.salesforce.android.service.common.utilities.internal.android.IntentFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="createActivityPendingIntent"
+ return="android.app.PendingIntent"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="requestCode" type="int">
+</parameter>
+<parameter name="intent" type="android.content.Intent">
+</parameter>
+<parameter name="flags" type="int">
+</parameter>
+</method>
+<method name="createIntent"
+ return="android.content.Intent"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="packageContext" type="android.content.Context">
+</parameter>
+<parameter name="cls" type="java.lang.Class&lt;?&gt;">
+</parameter>
+</method>
+<method name="createIntentFilter"
+ return="android.content.IntentFilter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="action" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="UUIDProvider"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="UUIDProvider"
+ type="com.salesforce.android.service.common.utilities.internal.android.UUIDProvider"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="randomUUID"
+ return="java.util.UUID"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.internal.android.notification"
+>
+<interface name="NotificationBuilder"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addAction"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="int">
+</parameter>
+<parameter name="title" type="java.lang.CharSequence">
+</parameter>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+</method>
+<method name="addAction"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="action" type="android.support.v4.app.NotificationCompat.Action">
+</parameter>
+</method>
+<method name="addExtras"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extras" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="addPerson"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="uri" type="java.lang.String">
+</parameter>
+</method>
+<method name="build"
+ return="android.app.Notification"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="extend"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extender" type="android.support.v4.app.NotificationCompat.Extender">
+</parameter>
+</method>
+<method name="getExtras"
+ return="android.os.Bundle"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setAutoCancel"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="autoCancel" type="boolean">
+</parameter>
+</method>
+<method name="setCategory"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="category" type="java.lang.String">
+</parameter>
+</method>
+<method name="setChannelId"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="channelId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setColor"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+</method>
+<method name="setContent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="views" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setContentInfo"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="info" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setContentIntent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+</method>
+<method name="setContentText"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setContentTitle"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setCustomBigContentView"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentView" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setCustomContentView"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentView" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setCustomHeadsUpContentView"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentView" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setDefaults"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="defaults" type="int">
+</parameter>
+</method>
+<method name="setDeleteIntent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+</method>
+<method name="setExtras"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extras" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="setFullScreenIntent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+<parameter name="highPriority" type="boolean">
+</parameter>
+</method>
+<method name="setGroup"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="groupKey" type="java.lang.String">
+</parameter>
+</method>
+<method name="setGroupSummary"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isGroupSummary" type="boolean">
+</parameter>
+</method>
+<method name="setLargeIcon"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="android.graphics.Bitmap">
+</parameter>
+</method>
+<method name="setLights"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+<parameter name="onMs" type="int">
+</parameter>
+<parameter name="offMs" type="int">
+</parameter>
+</method>
+<method name="setLocalOnly"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="boolean">
+</parameter>
+</method>
+<method name="setNumber"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="number" type="int">
+</parameter>
+</method>
+<method name="setOngoing"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ongoing" type="boolean">
+</parameter>
+</method>
+<method name="setOnlyAlertOnce"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onlyAlertOnce" type="boolean">
+</parameter>
+</method>
+<method name="setPriority"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pri" type="int">
+</parameter>
+</method>
+<method name="setProgress"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="max" type="int">
+</parameter>
+<parameter name="progress" type="int">
+</parameter>
+<parameter name="indeterminate" type="boolean">
+</parameter>
+</method>
+<method name="setPublicVersion"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="n" type="android.app.Notification">
+</parameter>
+</method>
+<method name="setRemoteInputHistory"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.CharSequence[]">
+</parameter>
+</method>
+<method name="setShowWhen"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="show" type="boolean">
+</parameter>
+</method>
+<method name="setSmallIcon"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="int">
+</parameter>
+</method>
+<method name="setSmallIcon"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="int">
+</parameter>
+<parameter name="level" type="int">
+</parameter>
+</method>
+<method name="setSortKey"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sortKey" type="java.lang.String">
+</parameter>
+</method>
+<method name="setSound"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+</method>
+<method name="setSound"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+<parameter name="streamType" type="int">
+</parameter>
+</method>
+<method name="setStyle"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="style" type="android.support.v4.app.NotificationCompat.Style">
+</parameter>
+</method>
+<method name="setSubText"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setTicker"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tickerText" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setTicker"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tickerText" type="java.lang.CharSequence">
+</parameter>
+<parameter name="views" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setUsesChronometer"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="boolean">
+</parameter>
+</method>
+<method name="setVibrate"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pattern" type="long[]">
+</parameter>
+</method>
+<method name="setVisibility"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="visibility" type="int">
+</parameter>
+</method>
+<method name="setWhen"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="when" type="long">
+</parameter>
+</method>
+</interface>
+<interface name="NotificationChannel"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="asAndroidNotificationChannel"
+ return="android.app.NotificationChannel"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canBypassDnd"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canShowBadge"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="enableLights"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lights" type="boolean">
+</parameter>
+</method>
+<method name="enableVibration"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibration" type="boolean">
+</parameter>
+</method>
+<method name="getAudioAttributes"
+ return="android.media.AudioAttributes"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDescription"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGroup"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getImportance"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLightColor"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLockscreenVisibility"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.CharSequence"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSound"
+ return="android.net.Uri"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVibrationPattern"
+ return="long[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setBypassDnd"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bypassDnd" type="boolean">
+</parameter>
+</method>
+<method name="setDescription"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="description" type="java.lang.String">
+</parameter>
+</method>
+<method name="setGroup"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="groupId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setImportance"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="importance" type="int">
+</parameter>
+</method>
+<method name="setLightColor"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+</method>
+<method name="setLockscreenVisibility"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lockscreenVisibility" type="int">
+</parameter>
+</method>
+<method name="setName"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setShowBadge"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="showBadge" type="boolean">
+</parameter>
+</method>
+<method name="setSound"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+<parameter name="audioAttributes" type="android.media.AudioAttributes">
+</parameter>
+</method>
+<method name="setVibrationPattern"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibrationPattern" type="long[]">
+</parameter>
+</method>
+<method name="shouldShowLights"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="shouldVibrate"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="NotificationManager"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="areNotificationsEnabled"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="cancel"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="int">
+</parameter>
+</method>
+<method name="cancel"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="id" type="int">
+</parameter>
+</method>
+<method name="cancelAll"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="createNotificationChannel"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="notificationChannel" type="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationChannel">
+</parameter>
+</method>
+<method name="notify"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="int">
+</parameter>
+<parameter name="notification" type="android.app.Notification">
+</parameter>
+</method>
+<method name="notify"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="id" type="int">
+</parameter>
+<parameter name="notification" type="android.app.Notification">
+</parameter>
+</method>
+</interface>
+<class name="SalesforceNotificationBuilder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder">
+</implements>
+<constructor name="SalesforceNotificationBuilder"
+ type="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationBuilder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="notificationCompatBuilder" type="android.support.v4.app.NotificationCompat.Builder">
+</parameter>
+</constructor>
+<method name="addAction"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="action" type="android.support.v4.app.NotificationCompat.Action">
+</parameter>
+</method>
+<method name="addAction"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="int">
+</parameter>
+<parameter name="title" type="java.lang.CharSequence">
+</parameter>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+</method>
+<method name="addExtras"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extras" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="addPerson"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="uri" type="java.lang.String">
+</parameter>
+</method>
+<method name="build"
+ return="android.app.Notification"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="extend"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extender" type="android.support.v4.app.NotificationCompat.Extender">
+</parameter>
+</method>
+<method name="getExtras"
+ return="android.os.Bundle"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setAutoCancel"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="autoCancel" type="boolean">
+</parameter>
+</method>
+<method name="setCategory"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="category" type="java.lang.String">
+</parameter>
+</method>
+<method name="setChannelId"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="channelId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setColor"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+</method>
+<method name="setContent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="views" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setContentInfo"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="info" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setContentIntent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+</method>
+<method name="setContentText"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setContentTitle"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setCustomBigContentView"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentView" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setCustomContentView"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentView" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setCustomHeadsUpContentView"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentView" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setDefaults"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="defaults" type="int">
+</parameter>
+</method>
+<method name="setDeleteIntent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+</method>
+<method name="setExtras"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extras" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="setFullScreenIntent"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="intent" type="android.app.PendingIntent">
+</parameter>
+<parameter name="highPriority" type="boolean">
+</parameter>
+</method>
+<method name="setGroup"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="groupKey" type="java.lang.String">
+</parameter>
+</method>
+<method name="setGroupSummary"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isGroupSummary" type="boolean">
+</parameter>
+</method>
+<method name="setLargeIcon"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="android.graphics.Bitmap">
+</parameter>
+</method>
+<method name="setLights"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+<parameter name="onMs" type="int">
+</parameter>
+<parameter name="offMs" type="int">
+</parameter>
+</method>
+<method name="setLocalOnly"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="boolean">
+</parameter>
+</method>
+<method name="setNumber"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="number" type="int">
+</parameter>
+</method>
+<method name="setOngoing"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ongoing" type="boolean">
+</parameter>
+</method>
+<method name="setOnlyAlertOnce"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onlyAlertOnce" type="boolean">
+</parameter>
+</method>
+<method name="setPriority"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pri" type="int">
+</parameter>
+</method>
+<method name="setProgress"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="max" type="int">
+</parameter>
+<parameter name="progress" type="int">
+</parameter>
+<parameter name="indeterminate" type="boolean">
+</parameter>
+</method>
+<method name="setPublicVersion"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="n" type="android.app.Notification">
+</parameter>
+</method>
+<method name="setRemoteInputHistory"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.CharSequence[]">
+</parameter>
+</method>
+<method name="setShowWhen"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="show" type="boolean">
+</parameter>
+</method>
+<method name="setSmallIcon"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="int">
+</parameter>
+</method>
+<method name="setSmallIcon"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="icon" type="int">
+</parameter>
+<parameter name="level" type="int">
+</parameter>
+</method>
+<method name="setSortKey"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sortKey" type="java.lang.String">
+</parameter>
+</method>
+<method name="setSound"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+</method>
+<method name="setSound"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+<parameter name="streamType" type="int">
+</parameter>
+</method>
+<method name="setStyle"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="style" type="android.support.v4.app.NotificationCompat.Style">
+</parameter>
+</method>
+<method name="setSubText"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="text" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setTicker"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tickerText" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setTicker"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tickerText" type="java.lang.CharSequence">
+</parameter>
+<parameter name="views" type="android.widget.RemoteViews">
+</parameter>
+</method>
+<method name="setUsesChronometer"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="boolean">
+</parameter>
+</method>
+<method name="setVibrate"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pattern" type="long[]">
+</parameter>
+</method>
+<method name="setVisibility"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="visibility" type="int">
+</parameter>
+</method>
+<method name="setWhen"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="when" type="long">
+</parameter>
+</method>
+</class>
+<class name="SalesforceNotificationBuilder.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationBuilder.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="channel"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationBuilder.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="channel" type="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationChannel">
+</parameter>
+</method>
+<method name="notificationCompatBuilder"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationBuilder.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="builder" type="android.support.v4.app.NotificationCompat.Builder">
+</parameter>
+</method>
+</class>
+<class name="SalesforceNotificationChannel"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationChannel">
+</implements>
+<constructor name="SalesforceNotificationChannel"
+ type="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationChannel"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="name" type="java.lang.CharSequence">
+</parameter>
+<parameter name="importance" type="int">
+</parameter>
+</constructor>
+<method name="asAndroidNotificationChannel"
+ return="android.app.NotificationChannel"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canBypassDnd"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canShowBadge"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="enableLights"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lights" type="boolean">
+</parameter>
+</method>
+<method name="enableVibration"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibration" type="boolean">
+</parameter>
+</method>
+<method name="getAudioAttributes"
+ return="android.media.AudioAttributes"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDescription"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGroup"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getImportance"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLightColor"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLockscreenVisibility"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.CharSequence"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSound"
+ return="android.net.Uri"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVibrationPattern"
+ return="long[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setBypassDnd"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bypassDnd" type="boolean">
+</parameter>
+</method>
+<method name="setDescription"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="description" type="java.lang.String">
+</parameter>
+</method>
+<method name="setGroup"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="groupId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setImportance"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="importance" type="int">
+</parameter>
+</method>
+<method name="setLightColor"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+</method>
+<method name="setLockscreenVisibility"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lockscreenVisibility" type="int">
+</parameter>
+</method>
+<method name="setName"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setShowBadge"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="showBadge" type="boolean">
+</parameter>
+</method>
+<method name="setSound"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+<parameter name="audioAttributes" type="android.media.AudioAttributes">
+</parameter>
+</method>
+<method name="setVibrationPattern"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibrationPattern" type="long[]">
+</parameter>
+</method>
+<method name="shouldShowLights"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="shouldVibrate"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="SalesforceNotificationChannel.CompatNotificationChannel"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<implements name="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationChannel">
+</implements>
+<constructor name="CompatNotificationChannel"
+ type="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationChannel.CompatNotificationChannel"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</constructor>
+<method name="asAndroidNotificationChannel"
+ return="android.app.NotificationChannel"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canBypassDnd"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canShowBadge"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="enableLights"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lights" type="boolean">
+</parameter>
+</method>
+<method name="enableVibration"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibration" type="boolean">
+</parameter>
+</method>
+<method name="getAudioAttributes"
+ return="android.media.AudioAttributes"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDescription"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGroup"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getImportance"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLightColor"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLockscreenVisibility"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.CharSequence"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSound"
+ return="android.net.Uri"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVibrationPattern"
+ return="long[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setBypassDnd"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bypassDnd" type="boolean">
+</parameter>
+</method>
+<method name="setDescription"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="description" type="java.lang.String">
+</parameter>
+</method>
+<method name="setGroup"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="groupId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setImportance"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="importance" type="int">
+</parameter>
+</method>
+<method name="setLightColor"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+</method>
+<method name="setLockscreenVisibility"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lockscreenVisibility" type="int">
+</parameter>
+</method>
+<method name="setName"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setShowBadge"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="showBadge" type="boolean">
+</parameter>
+</method>
+<method name="setSound"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+<parameter name="audioAttributes" type="android.media.AudioAttributes">
+</parameter>
+</method>
+<method name="setVibrationPattern"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibrationPattern" type="long[]">
+</parameter>
+</method>
+<method name="shouldShowLights"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="shouldVibrate"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="SalesforceNotificationChannel.OreoNotificationChannel"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<implements name="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationChannel">
+</implements>
+<method name="asAndroidNotificationChannel"
+ return="android.app.NotificationChannel"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canBypassDnd"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="canShowBadge"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="enableLights"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lights" type="boolean">
+</parameter>
+</method>
+<method name="enableVibration"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibration" type="boolean">
+</parameter>
+</method>
+<method name="getAudioAttributes"
+ return="android.media.AudioAttributes"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDescription"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGroup"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getImportance"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLightColor"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLockscreenVisibility"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.CharSequence"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSound"
+ return="android.net.Uri"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVibrationPattern"
+ return="long[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setBypassDnd"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bypassDnd" type="boolean">
+</parameter>
+</method>
+<method name="setDescription"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="description" type="java.lang.String">
+</parameter>
+</method>
+<method name="setGroup"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="groupId" type="java.lang.String">
+</parameter>
+</method>
+<method name="setImportance"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="importance" type="int">
+</parameter>
+</method>
+<method name="setLightColor"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="argb" type="int">
+</parameter>
+</method>
+<method name="setLockscreenVisibility"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lockscreenVisibility" type="int">
+</parameter>
+</method>
+<method name="setName"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="setShowBadge"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="showBadge" type="boolean">
+</parameter>
+</method>
+<method name="setSound"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sound" type="android.net.Uri">
+</parameter>
+<parameter name="audioAttributes" type="android.media.AudioAttributes">
+</parameter>
+</method>
+<method name="setVibrationPattern"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="vibrationPattern" type="long[]">
+</parameter>
+</method>
+<method name="shouldShowLights"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="shouldVibrate"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="SalesforceNotificationManager"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationManager">
+</implements>
+<method name="areNotificationsEnabled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="cancel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="int">
+</parameter>
+</method>
+<method name="cancel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="id" type="int">
+</parameter>
+</method>
+<method name="cancelAll"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="createNotificationChannel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="notificationChannel" type="com.salesforce.android.service.common.utilities.internal.android.notification.NotificationChannel">
+</parameter>
+</method>
+<method name="from"
+ return="com.salesforce.android.service.common.utilities.internal.android.notification.SalesforceNotificationManager"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="notify"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="int">
+</parameter>
+<parameter name="notification" type="android.app.Notification">
+</parameter>
+</method>
+<method name="notify"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="id" type="int">
+</parameter>
+<parameter name="notification" type="android.app.Notification">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.internal.connectivity"
+>
+<class name="ConnectionInfo"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ConnectionInfo"
+ type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo.Builder">
+</parameter>
+</constructor>
+<method name="getRadioType"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.RadioType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTechnology"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.Technology"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isConnected"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isConnectedMobile"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isConnectedWifi"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isFastConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ConnectionInfo.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="networkInfo"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="networkInfo" type="android.net.NetworkInfo">
+</parameter>
+</method>
+<field name="mNetworkInfo"
+ type="android.net.NetworkInfo"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="ConnectivityState"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityState"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityState[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ConnectivityTracker"
+ extends="android.content.BroadcastReceiver"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ConnectivityTracker"
+ type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker.Builder">
+</parameter>
+</constructor>
+<method name="getConnectionInfo"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getConnectivityState"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityState"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onReceive"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="intent" type="android.content.Intent">
+</parameter>
+</method>
+<method name="teardown"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ConnectivityTracker.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="listener"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker.Listener">
+</parameter>
+</method>
+<method name="with"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<field name="mConnectionInfoBuilder"
+ type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo.Builder"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mConnectivityManager"
+ type="android.net.ConnectivityManager"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mContext"
+ type="android.content.Context"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mIntentFactory"
+ type="com.salesforce.android.service.common.utilities.internal.android.IntentFactory"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mListener"
+ type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityTracker.Listener"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<interface name="ConnectivityTracker.Listener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onConnectivityChanged"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="connectionInfo" type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectionInfo">
+</parameter>
+<parameter name="currentState" type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityState">
+</parameter>
+<parameter name="previousState" type="com.salesforce.android.service.common.utilities.internal.connectivity.ConnectivityState">
+</parameter>
+</method>
+</interface>
+<class name="RadioType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getRadioName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getType"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isFastConnection"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.RadioType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.RadioType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Technology"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.Technology"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.service.common.utilities.internal.connectivity.Technology[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.internal.device"
+>
+<class name="BatteryLevelTracker"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BatteryLevelTracker"
+ type="com.salesforce.android.service.common.utilities.internal.device.BatteryLevelTracker"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.internal.device.BatteryLevelTracker.Builder">
+</parameter>
+</constructor>
+<method name="getBatteryLevelPercent"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="BatteryLevelTracker.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.device.BatteryLevelTracker.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.device.BatteryLevelTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="with"
+ return="com.salesforce.android.service.common.utilities.internal.device.BatteryLevelTracker.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<field name="mContext"
+ type="android.content.Context"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mIntentFactory"
+ type="com.salesforce.android.service.common.utilities.internal.android.IntentFactory"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="DeviceIdentifier"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DeviceIdentifier"
+ type="com.salesforce.android.service.common.utilities.internal.device.DeviceIdentifier"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.internal.device.DeviceIdentifier.Builder">
+</parameter>
+</constructor>
+<method name="getDeviceId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="DeviceIdentifier.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.device.DeviceIdentifier.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.device.DeviceIdentifier"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="with"
+ return="com.salesforce.android.service.common.utilities.internal.device.DeviceIdentifier.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<field name="mSharedPreferences"
+ type="android.content.SharedPreferences"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mUUIDProvider"
+ type="com.salesforce.android.service.common.utilities.internal.android.UUIDProvider"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="DeviceInfoLoader"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DeviceInfoLoader"
+ type="com.salesforce.android.service.common.utilities.internal.device.DeviceInfoLoader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.internal.device.DeviceInfoLoader.Builder">
+</parameter>
+</constructor>
+<method name="getAppName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAppVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeviceId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeviceInfo"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeviceOsVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="USER_AGENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;android&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="DeviceInfoLoader.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.device.DeviceInfoLoader.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.device.DeviceInfoLoader"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="with"
+ return="com.salesforce.android.service.common.utilities.internal.device.DeviceInfoLoader.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<field name="mAndroidInfo"
+ type="com.salesforce.android.service.common.utilities.internal.android.AndroidInfo"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mDeviceIdentifier"
+ type="com.salesforce.android.service.common.utilities.internal.device.DeviceIdentifier"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mPackageInfo"
+ type="android.content.pm.PackageInfo"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mPackageName"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="OrientationTracker"
+ extends="android.content.BroadcastReceiver"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="OrientationTracker"
+ type="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker.Builder">
+</parameter>
+</constructor>
+<method name="getOrientation"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onReceive"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="intent" type="android.content.Intent">
+</parameter>
+</method>
+<method name="teardown"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="OrientationTracker.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="listener"
+ return="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker.Listener">
+</parameter>
+</method>
+<method name="with"
+ return="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<field name="mContext"
+ type="android.content.Context"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mIntentFactory"
+ type="com.salesforce.android.service.common.utilities.internal.android.IntentFactory"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mListener"
+ type="com.salesforce.android.service.common.utilities.internal.device.OrientationTracker.Listener"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<interface name="OrientationTracker.Listener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onOrientationChange"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="orientation" type="com.salesforce.android.service.common.utilities.spatial.Orientation">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.service.common.utilities.internal.stream"
+>
+<class name="InputStreamHelper"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="InputStreamHelper"
+ type="com.salesforce.android.service.common.utilities.internal.stream.InputStreamHelper"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="availableBytes"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="java.io.InputStream">
+</parameter>
+</method>
+<method name="close"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="java.io.InputStream">
+</parameter>
+</method>
+<method name="convertToByteArray"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="inputStream" type="java.io.InputStream">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="openContentUri"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.io.InputStream&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="contentResolver" type="android.content.ContentResolver">
+</parameter>
+<parameter name="uri" type="android.net.Uri">
+</parameter>
+</method>
+<method name="reset"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="java.io.InputStream">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.lifecycle"
+>
+<class name="LifecycleEvaluator"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleListener&lt;S, M&gt;">
+</parameter>
+</method>
+<method name="evaluateState"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentState"
+ return="S"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFinalState"
+ return="S"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFirstState"
+ return="S"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isCurrentStateAfter"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="S">
+</parameter>
+</method>
+<method name="isCurrentStateBefore"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="S">
+</parameter>
+</method>
+<method name="isCurrentStateEqual"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="S">
+</parameter>
+</method>
+<method name="moveToMilestone"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="removeListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleListener&lt;S, M&gt;">
+</parameter>
+</method>
+<method name="setMetricSatisfied"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metric" type="M">
+</parameter>
+</method>
+<method name="setMetricUnsatisfied"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metric" type="M">
+</parameter>
+</method>
+<method name="setMilestoneState"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="S">
+</parameter>
+</method>
+<method name="setSatisfied"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metric" type="M">
+</parameter>
+<parameter name="satisfied" type="boolean">
+</parameter>
+</method>
+</class>
+<class name="LifecycleEvaluator.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stateClass" type="java.lang.Class&lt;S&gt;">
+</parameter>
+<parameter name="metricClass" type="java.lang.Class&lt;M&gt;">
+</parameter>
+</method>
+<method name="lifecycleMetricWatcher"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator.Builder&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metricWatcher" type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleMetricWatcher&lt;S, M&gt;">
+</parameter>
+</method>
+<method name="lifecycleStateWatcher"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator.Builder&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stateWatcher" type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleStateWatcher&lt;S, M&gt;">
+</parameter>
+</method>
+<method name="logger"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleEvaluator.Builder&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="logger" type="com.salesforce.android.service.common.utilities.logging.ServiceLogger">
+</parameter>
+</method>
+</class>
+<interface name="LifecycleListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onMetricTimeout"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metric" type="M">
+</parameter>
+</method>
+<method name="onStateChanged"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="current" type="S">
+</parameter>
+<parameter name="previous" type="S">
+</parameter>
+</method>
+</interface>
+<interface name="LifecycleMetric"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getTimeoutMs"
+ return="java.lang.Integer"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="LifecycleMetricWatcher"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</class>
+<class name="LifecycleMetricWatcher.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleMetricWatcher.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleMetricWatcher&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stateClass" type="java.lang.Class&lt;S&gt;">
+</parameter>
+</method>
+<method name="handler"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleMetricWatcher.Builder&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="android.os.Handler">
+</parameter>
+</method>
+<method name="logger"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleMetricWatcher.Builder&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="logger" type="com.salesforce.android.service.common.utilities.logging.ServiceLogger">
+</parameter>
+</method>
+</class>
+<interface name="LifecycleState"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getMetrics"
+ return="M[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="LifecycleStateWatcher"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<field name="mLog"
+ type="com.salesforce.android.service.common.utilities.logging.ServiceLogger"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mStateQueue"
+ type="java.util.concurrent.BlockingDeque"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="LifecycleStateWatcher.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.lifecycle.LifecycleStateWatcher.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleStateWatcher&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stateClass" type="java.lang.Class&lt;S&gt;">
+</parameter>
+</method>
+<method name="handler"
+ return="com.salesforce.android.service.common.utilities.lifecycle.LifecycleStateWatcher.Builder&lt;S, M&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="android.os.Handler">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.logging"
+>
+<interface name="ServiceLogger"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="debug"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="debug"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="format" type="java.lang.String">
+</parameter>
+<parameter name="args" type="java.lang.Object...">
+</parameter>
+</method>
+<method name="error"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="error"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="format" type="java.lang.String">
+</parameter>
+<parameter name="args" type="java.lang.Object...">
+</parameter>
+</method>
+<method name="info"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="info"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="format" type="java.lang.String">
+</parameter>
+<parameter name="args" type="java.lang.Object...">
+</parameter>
+</method>
+<method name="trace"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="trace"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="format" type="java.lang.String">
+</parameter>
+<parameter name="args" type="java.lang.Object...">
+</parameter>
+</method>
+<method name="warn"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="warn"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="format" type="java.lang.String">
+</parameter>
+<parameter name="args" type="java.lang.Object...">
+</parameter>
+</method>
+<field name="PLACEHOLDER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;{}&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="ServiceLogging"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addSink"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sink" type="com.salesforce.android.service.common.utilities.logging.ServiceLoggingSink">
+</parameter>
+</method>
+<method name="getLogLevel"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLogger"
+ return="com.salesforce.android.service.common.utilities.logging.ServiceLogger"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="forClass" type="java.lang.Class&lt;?&gt;">
+</parameter>
+</method>
+<method name="getLogger"
+ return="com.salesforce.android.service.common.utilities.logging.ServiceLogger"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="forClass" type="java.lang.Class&lt;?&gt;">
+</parameter>
+<parameter name="channel" type="java.lang.String">
+</parameter>
+</method>
+<method name="setChannelEnabled"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="channel" type="java.lang.String">
+</parameter>
+<parameter name="enabled" type="boolean">
+</parameter>
+</method>
+<method name="setLogLevel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="level" type="int">
+</parameter>
+</method>
+<field name="LEVEL_DEBUG"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LEVEL_ERROR"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="5"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LEVEL_INFO"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="3"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LEVEL_NONE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="6"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LEVEL_TRACE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LEVEL_WARN"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="4"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LOG_CAT_SINK"
+ type="com.salesforce.android.service.common.utilities.logging.ServiceLoggingSink"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="ServiceLogging.LogLevel"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+<interface name="ServiceLoggingSink"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="handleMessage"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="level" type="int">
+</parameter>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.service.common.utilities.spatial"
+>
+<class name="Coordinate"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Coordinate"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="int">
+</parameter>
+<parameter name="y" type="int">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Coordinate"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="point" type="android.graphics.Point">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Coordinate"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="coordinate" type="com.salesforce.android.service.common.utilities.spatial.CoordinateF">
+</parameter>
+</method>
+<method name="distanceFrom"
+ return="double"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="c" type="com.salesforce.android.service.common.utilities.spatial.Coordinate">
+</parameter>
+</method>
+<method name="getX"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getY"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.Coordinate"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="int">
+</parameter>
+<parameter name="y" type="int">
+</parameter>
+</method>
+<method name="scale"
+ return="com.salesforce.android.service.common.utilities.spatial.Coordinate"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scale" type="com.salesforce.android.service.common.utilities.spatial.Scale">
+</parameter>
+</method>
+<method name="toPoint"
+ return="android.graphics.Point"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="CoordinateF"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="circumference"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="angle" type="float">
+</parameter>
+<parameter name="radius" type="float">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+<parameter name="y" type="float">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="point" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="point" type="android.graphics.Point">
+</parameter>
+</method>
+<method name="distanceFrom"
+ return="double"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="c" type="com.salesforce.android.service.common.utilities.spatial.CoordinateF">
+</parameter>
+</method>
+<method name="getX"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getY"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+<parameter name="y" type="float">
+</parameter>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="size" type="com.salesforce.android.service.common.utilities.spatial.SizeF">
+</parameter>
+</method>
+<method name="scale"
+ return="com.salesforce.android.service.common.utilities.spatial.CoordinateF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scale" type="com.salesforce.android.service.common.utilities.spatial.Scale">
+</parameter>
+</method>
+<method name="toPoint"
+ return="android.graphics.PointF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Orientation"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="equals"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="other" type="com.salesforce.android.service.common.utilities.spatial.Orientation">
+</parameter>
+</method>
+<method name="getValue"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="invert"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isLandscape"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isPortrait"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="orientation" type="com.salesforce.android.service.common.utilities.spatial.Orientation">
+</parameter>
+</method>
+<method name="subtract"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="orientation" type="com.salesforce.android.service.common.utilities.spatial.Orientation">
+</parameter>
+</method>
+<method name="wrap"
+ return="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="int">
+</parameter>
+</method>
+<field name="EAST"
+ type="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LANDSCAPE"
+ type="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NORTH"
+ type="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PORTRAIT"
+ type="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SOUTH"
+ type="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="WEST"
+ type="com.salesforce.android.service.common.utilities.spatial.Orientation"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Scale"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Scale"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scale" type="float">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Scale"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="xScale" type="float">
+</parameter>
+<parameter name="yScale" type="float">
+</parameter>
+</method>
+<method name="getXScale"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getYScale"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="invert"
+ return="com.salesforce.android.service.common.utilities.spatial.Scale"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Size"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="width" type="int">
+</parameter>
+<parameter name="height" type="int">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="point" type="android.graphics.Point">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rect" type="android.graphics.Rect">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sizeF" type="com.salesforce.android.service.common.utilities.spatial.SizeF">
+</parameter>
+</method>
+<method name="getHeight"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRatio"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getWidth"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isHorizontal"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="width" type="int">
+</parameter>
+<parameter name="height" type="int">
+</parameter>
+</method>
+<method name="rotate"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="rotate"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="orientation" type="com.salesforce.android.service.common.utilities.spatial.Orientation">
+</parameter>
+</method>
+<method name="scale"
+ return="com.salesforce.android.service.common.utilities.spatial.Size"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scale" type="com.salesforce.android.service.common.utilities.spatial.Scale">
+</parameter>
+</method>
+</class>
+<class name="SizeF"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<constructor name="SizeF"
+ type="com.salesforce.android.service.common.utilities.spatial.SizeF"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="width" type="float">
+</parameter>
+<parameter name="height" type="float">
+</parameter>
+</constructor>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.SizeF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="width" type="float">
+</parameter>
+<parameter name="height" type="float">
+</parameter>
+</method>
+<method name="create"
+ return="com.salesforce.android.service.common.utilities.spatial.SizeF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="point" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="getHeight"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getWidth"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isHorizontal"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="plus"
+ return="com.salesforce.android.service.common.utilities.spatial.SizeF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="width" type="float">
+</parameter>
+<parameter name="height" type="float">
+</parameter>
+</method>
+<method name="rotate"
+ return="com.salesforce.android.service.common.utilities.spatial.SizeF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="scale"
+ return="com.salesforce.android.service.common.utilities.spatial.SizeF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="scale" type="com.salesforce.android.service.common.utilities.spatial.Scale">
+</parameter>
+</method>
+</class>
+</package>
+<package name="com.salesforce.android.service.common.utilities.threading"
+>
+<class name="BackoffTimer"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.threading.HandlerManager">
+</implements>
+<constructor name="BackoffTimer"
+ type="com.salesforce.android.service.common.utilities.threading.BackoffTimer"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.threading.BackoffTimer.Builder">
+</parameter>
+</constructor>
+<method name="cancel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="execute"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="isScheduled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="schedule"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="DEFAULT_INITIAL_TIMER_DELAY_MS"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="1000L"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_MAX_ITERATIONS"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="10"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="log"
+ type="com.salesforce.android.service.common.utilities.logging.ServiceLogger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mCurrentAttempt"
+ type="java.util.concurrent.atomic.AtomicInteger"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mIsScheduled"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="BackoffTimer.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.threading.HandlerManager.Builder">
+</implements>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.threading.BackoffTimer.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.threading.BackoffTimer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="handler"
+ return="com.salesforce.android.service.common.utilities.threading.BackoffTimer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="android.os.Handler">
+</parameter>
+</method>
+<method name="initialTimerDelayMs"
+ return="com.salesforce.android.service.common.utilities.threading.BackoffTimer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="initialTimerDelayMs" type="long">
+</parameter>
+</method>
+<method name="maxIterations"
+ return="com.salesforce.android.service.common.utilities.threading.BackoffTimer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxIterations" type="int">
+</parameter>
+</method>
+<method name="onTimerElapsedListener"
+ return="com.salesforce.android.service.common.utilities.threading.BackoffTimer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onTimerElapsedListener" type="com.salesforce.android.service.common.utilities.threading.HandlerManager.OnTimerElapsedListener">
+</parameter>
+</method>
+<field name="mHandler"
+ type="android.os.Handler"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mInitialTimerDelayMs"
+ type="long"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mMaxIterations"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mOnTimerElapsedListener"
+ type="com.salesforce.android.service.common.utilities.threading.HandlerManager.OnTimerElapsedListener"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<interface name="BackoffTimer.OnTimerExecutedListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<method name="onTimerExecuted"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="HandlerManager"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="cancel"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isScheduled"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="schedule"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="HandlerManager.Builder"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.threading.HandlerManager"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onTimerElapsedListener"
+ return="com.salesforce.android.service.common.utilities.threading.HandlerManager.Builder"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onTimerElapsedListener" type="com.salesforce.android.service.common.utilities.threading.HandlerManager.OnTimerElapsedListener">
+</parameter>
+</method>
+</interface>
+<interface name="HandlerManager.OnTimerElapsedListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onTimerElapsed"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="Job"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="execute"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="callback" type="com.salesforce.android.service.common.utilities.control.ResultReceiver&lt;T&gt;">
+</parameter>
+</method>
+</interface>
+<class name="JobQueue"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JobQueue"
+ type="com.salesforce.android.service.common.utilities.threading.JobQueue"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="executor" type="java.util.concurrent.Executor">
+</parameter>
+</constructor>
+<method name="add"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="job" type="com.salesforce.android.service.common.utilities.threading.Job&lt;T&gt;">
+</parameter>
+</method>
+<method name="add"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="job" type="com.salesforce.android.service.common.utilities.threading.Job&lt;T&gt;">
+</parameter>
+<parameter name="callbackLooper" type="android.os.Looper">
+</parameter>
+</method>
+<method name="add"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="job" type="com.salesforce.android.service.common.utilities.threading.Job&lt;T&gt;">
+</parameter>
+<parameter name="callbackHandler" type="android.os.Handler">
+</parameter>
+</method>
+<method name="add"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="runnable" type="java.lang.Runnable">
+</parameter>
+</method>
+</class>
+<class name="JobQueue.HandlerFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="HandlerFactory"
+ type="com.salesforce.android.service.common.utilities.threading.JobQueue.HandlerFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="createHandler"
+ return="android.os.Handler"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="looper" type="android.os.Looper">
+</parameter>
+</method>
+</class>
+<class name="PriorityThreadFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PriorityThreadFactory"
+ type="com.salesforce.android.service.common.utilities.threading.PriorityThreadFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="priority" type="int">
+</parameter>
+</constructor>
+<method name="background"
+ return="com.salesforce.android.service.common.utilities.threading.PriorityThreadFactory"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="newThread"
+ return="java.lang.Thread"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="runnable" type="java.lang.Runnable">
+</parameter>
+</method>
+</class>
+<class name="Timer"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.threading.HandlerManager">
+</implements>
+<constructor name="Timer"
+ type="com.salesforce.android.service.common.utilities.threading.Timer"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="builder" type="com.salesforce.android.service.common.utilities.threading.Timer.Builder">
+</parameter>
+</constructor>
+<method name="cancel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isScheduled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="schedule"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="DEFAULT_TIMER_DELAY_MS"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="15000L"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="log"
+ type="com.salesforce.android.service.common.utilities.logging.ServiceLogger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mIsScheduled"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="Timer.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.salesforce.android.service.common.utilities.threading.HandlerManager.Builder">
+</implements>
+<constructor name="Builder"
+ type="com.salesforce.android.service.common.utilities.threading.Timer.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.service.common.utilities.threading.Timer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="handler"
+ return="com.salesforce.android.service.common.utilities.threading.Timer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="android.os.Handler">
+</parameter>
+</method>
+<method name="onTimerElapsedListener"
+ return="com.salesforce.android.service.common.utilities.threading.Timer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="onTimerElapsedListener" type="com.salesforce.android.service.common.utilities.threading.HandlerManager.OnTimerElapsedListener">
+</parameter>
+</method>
+<method name="timerDelayMs"
+ return="com.salesforce.android.service.common.utilities.threading.Timer.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="timerDelayMs" type="long">
+</parameter>
+</method>
+<field name="mHandler"
+ type="android.os.Handler"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mOnTimerElapsedListener"
+ type="com.salesforce.android.service.common.utilities.threading.HandlerManager.OnTimerElapsedListener"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="mTimerDelayMs"
+ type="long"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<interface name="Timer.OnTimerExecutedListener"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<method name="onTimerExecuted"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.service.common.utilities.validation"
+>
+<class name="Arguments"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Arguments"
+ type="com.salesforce.android.service.common.utilities.validation.Arguments"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="check"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="condition" type="boolean">
+</parameter>
+</method>
+<method name="check"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="condition" type="boolean">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="checkNotNull"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="arg" type="T">
+</parameter>
+</method>
+<method name="checkNotNull"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="arg" type="T">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="checkValidAccountType"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="checkValidLiveAgentPod"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pod" type="java.lang.String">
+</parameter>
+</method>
+<method name="checkValidSalesforceId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="type" type="java.lang.String">
+</parameter>
+</method>
+</class>
+</package>
+</api>
