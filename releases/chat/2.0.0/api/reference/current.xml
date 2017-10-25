@@ -1784,7 +1784,7 @@
  visibility="public"
 >
 </method>
-<method name="getLength"
+<method name="getMaxValueLength"
  return="java.lang.Integer"
  abstract="false"
  native="false"
@@ -1807,7 +1807,7 @@
 >
 </method>
 <method name="getSelectedPickListIndex"
- return="java.lang.Integer"
+ return="int"
  abstract="false"
  native="false"
  synchronized="false"
@@ -1872,6 +1872,17 @@
  visibility="public"
 >
 </method>
+<method name="isPickListItemSelected"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isReadOnly"
  return="java.lang.Boolean"
  abstract="false"
@@ -1915,7 +1926,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="index" type="java.lang.Integer">
+<parameter name="index" type="int">
 </parameter>
 </method>
 <method name="setValue"
@@ -1930,6 +1941,17 @@
 >
 <parameter name="value" type="java.io.Serializable">
 </parameter>
+</method>
+<method name="unsetSelectedPickListIndex"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
 </method>
 <field name="EMAIL"
  type="java.lang.String"
@@ -2061,19 +2083,6 @@
 <parameter name="isHidden" type="boolean">
 </parameter>
 </method>
-<method name="length"
- return="com.salesforce.android.chat.core.model.PreChatField.Builder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="length" type="java.lang.Integer">
-</parameter>
-</method>
 <method name="mapToChatTranscriptField"
  return="com.salesforce.android.chat.core.model.PreChatField.Builder"
  abstract="false"
@@ -2087,6 +2096,19 @@
 <parameter name="transcriptFields" type="java.lang.String...">
 </parameter>
 </method>
+<method name="maxValueLength"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxValueLength" type="java.lang.Integer">
+</parameter>
+</method>
 <method name="picklistOptions"
  return="com.salesforce.android.chat.core.model.PreChatField.Builder"
  abstract="false"
@@ -2098,6 +2120,19 @@
  visibility="public"
 >
 <parameter name="picklistOptions" type="java.util.List&lt;com.salesforce.android.chat.core.model.PreChatField.PickListOption&gt;">
+</parameter>
+</method>
+<method name="picklistOptions"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="picklistOptions" type="com.salesforce.android.chat.core.model.PreChatField.PickListOption...">
 </parameter>
 </method>
 <method name="readOnly"

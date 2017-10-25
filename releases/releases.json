@@ -174,5 +174,37 @@
     "reference": "common/5.0.0/api/",
     "sdk": "common",
     "version": "5.0.0"
+  },
+  {
+    "changelog": "chat/2.0.0/changelog.md",
+    "date": "2017-10-25",
+    "example": "chat/2.0.0/example.md",
+    "reference": "chat/2.0.0/api/",
+    "sdk": "chat",
+    "version": "2.0.0"
+  },
+  {
+    "changelog": "knowledge/3.0.0/changelog.md",
+    "date": "2017-10-25",
+    "example": "knowledge/3.0.0/example.md",
+    "reference": "knowledge/3.0.0/api/",
+    "sdk": "knowledge",
+    "version": "3.0.0"
+  },
+  {
+    "changelog": "case/3.0.0/changelog.md",
+    "date": "2017-10-25",
+    "example": "case/3.0.0/example.md",
+    "reference": "case/3.0.0/api/",
+    "sdk": "case",
+    "version": "3.0.0"
+  },
+  {
+    "changelog": "sos/3.0.0/changelog.md",
+    "date": "2017-10-25",
+    "example": "sos/3.0.0/example.md",
+    "reference": "sos/3.0.0/api/",
+    "sdk": "sos",
+    "version": "3.0.0"
   }
 ]
