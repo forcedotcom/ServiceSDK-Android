@@ -166,5 +166,13 @@
     "reference": "chat/1.1.1/api/",
     "sdk": "chat",
     "version": "1.1.1"
+  },
+  {
+    "changelog": "common/5.0.0/changelog.md",
+    "date": "2017-10-25",
+    "example": "common/5.0.0/example.md",
+    "reference": "common/5.0.0/api/",
+    "sdk": "common",
+    "version": "5.0.0"
   }
 ]
