@@ -3,8 +3,6 @@
 ## API Changes
 - Added `ArticleWebView` API to `knowledge-ui` allowing articles to be launched in a WebView using a KnowledgeClient without navigating the Knowledge tree.
 
-## Upgrade Instructions
-
 ## Bug Fixes
 
 - Fixed a bug where long Data Category titles would overlap with the expand/collapse chevron.
@@ -16,4 +14,4 @@
 
 ## Known Issues
 
-## Functional Tests Required
+- When caching content for offline use the log may show "Error inserting <redacted values> using <redacted sql> into <TableName>". There is no impact on the application behavior beyond the log statement.

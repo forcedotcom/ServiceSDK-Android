@@ -10,7 +10,7 @@ var NAVTREE_DATA =
 , "" ] ]
 , "" ], [ "com.salesforce.android.cases.ui", "com/salesforce/android/cases/ui/package-summary.html", [ [ "Interfaces", null, [ [ "CaseUIClient", "com/salesforce/android/cases/ui/CaseUIClient.html", null, "" ] ]
 , "" ], [ "Classes", null, [ [ "CasesUIAnalytics", "com/salesforce/android/cases/ui/CasesUIAnalytics.html", null, "" ], [ "CaseUI", "com/salesforce/android/cases/ui/CaseUI.html", null, "" ], [ "CaseUIConfiguration", "com/salesforce/android/cases/ui/CaseUIConfiguration.html", null, "" ] ]
-, "" ], [ "Annotations", null, [ [ "CasesUIAnalytics.CompletionType", "com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html", null, "" ], [ "CasesUIAnalytics.EventType", "com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html", null, "" ], [ "CasesUIAnalytics.UserType", "com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html", null, "" ] ]
+, "" ], [ "Annotations", null, [ [ "CasesUIAnalytics.CompletionType", "com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html", null, "" ], [ "CasesUIAnalytics.EventType", "com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html", null, "" ], [ "CasesUIAnalytics.UserType", "com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html", null, "" ], [ "CaseUIConfiguration.Importance", "com/salesforce/android/cases/ui/CaseUIConfiguration.Importance.html", null, "" ] ]
 , "" ] ]
 , "" ] ]
 

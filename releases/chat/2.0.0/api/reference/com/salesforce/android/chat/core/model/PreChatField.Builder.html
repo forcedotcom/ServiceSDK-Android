@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for ServiceSDK - Chat 2.0.0-RC.1." />
+  <meta name="description" content="Javadoc API documentation for ServiceSDK - Chat 2.0.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   PreChatField.Builder
 
 
-| ServiceSDK - Chat 2.0.0-RC.1
+| ServiceSDK - Chat 2.0.0
 
 </title>
 <link href="../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">ServiceSDK - Chat 2.0.0-RC.1</span>
+      <span id="masthead-title">ServiceSDK - Chat 2.0.0</span>
     
     </div>
     <div id="headerRight">
@@ -521,9 +521,9 @@ Summary:
             <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html#length(java.lang.Integer)">length</a></span>(<a href="http://d.android.com/reference/java/lang/Integer.html">Integer</a> length)
+        <span class="sympad"><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html#mapToChatTranscriptField(java.lang.String...)">mapToChatTranscriptField</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String...</a> transcriptFields)
         
-        <div class="jd-descrdiv">The maximum length for the value this field expects.</div>
+        <div class="jd-descrdiv">A list of API Names for Live Chat Transcript Custom Fields that this Pre Chat field will map to.</div>
   
   </td></tr>
 
@@ -539,9 +539,9 @@ Summary:
             <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html#mapToChatTranscriptField(java.lang.String...)">mapToChatTranscriptField</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String...</a> transcriptFields)
+        <span class="sympad"><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html#maxValueLength(java.lang.Integer)">maxValueLength</a></span>(<a href="http://d.android.com/reference/java/lang/Integer.html">Integer</a> maxValueLength)
         
-        <div class="jd-descrdiv">A list of API Names for Live Chat Transcript Custom Fields that this Pre Chat field will map to.</div>
+        <div class="jd-descrdiv">The maximum length for the value this field expects.</div>
   
   </td></tr>
 
@@ -575,6 +575,24 @@ Summary:
             <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html#picklistOptions(com.salesforce.android.chat.core.model.PreChatField.PickListOption...)">picklistOptions</a></span>(<a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PickListOption...</a> picklistOptions)
+        
+        <div class="jd-descrdiv">Set a list of <code><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PreChatField.PickListOption</a></code> values to be associated with this field.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html#readOnly(java.lang.Boolean)">readOnly</a></span>(<a href="http://d.android.com/reference/java/lang/Boolean.html">Boolean</a> readOnly)
         
         <div class="jd-descrdiv">Used as an indicator that the value shouldn't be changed.</div>
@@ -583,7 +601,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -601,7 +619,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1148,51 +1166,6 @@ From class
 </div>
 
 
-<a id="length(java.lang.Integer)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
-      </span>
-      <span class="sympad">length</span>
-      <span class="normal">(<a href="http://d.android.com/reference/java/lang/Integer.html">Integer</a> length)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The maximum length for the value this field expects.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>length</th>
-          <td>set the maximum expected length. 0 is unlimited.</td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>A reference to this builder instance.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
 <a id="mapToChatTranscriptField(java.lang.String...)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1239,6 +1212,51 @@ From class
 </div>
 
 
+<a id="maxValueLength(java.lang.Integer)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
+      </span>
+      <span class="sympad">maxValueLength</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/Integer.html">Integer</a> maxValueLength)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The maximum length for the value this field expects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>maxValueLength</th>
+          <td>set the maximum expected length. 0 is unlimited.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>A reference to this builder instance.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="picklistOptions(java.util.List<com.salesforce.android.chat.core.model.PreChatField.PickListOption>)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -1253,6 +1271,51 @@ From class
       </span>
       <span class="sympad">picklistOptions</span>
       <span class="normal">(<a href="http://d.android.com/reference/java/util/List.html">List</a>&lt;<a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PreChatField.PickListOption</a>&gt; picklistOptions)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set a list of <code><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PreChatField.PickListOption</a></code> values to be associated with this field.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>picklistOptions</th>
+          <td>the list of <code><a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PreChatField.PickListOption</a></code> associated with this field.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>A reference to this builder instance.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="picklistOptions(com.salesforce.android.chat.core.model.PreChatField.PickListOption...)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a>
+      </span>
+      <span class="sympad">picklistOptions</span>
+      <span class="normal">(<a href="../../../../../../com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PickListOption...</a> picklistOptions)</span>
     </h4>
       <div class="api-level">
         <div>

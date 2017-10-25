@@ -65,9 +65,10 @@ var DATA = [
       { id:63, label:"com.salesforce.android.cases.ui.CaseUI", link:"com/salesforce/android/cases/ui/CaseUI.html", type:"class" },
       { id:64, label:"com.salesforce.android.cases.ui.CaseUIClient", link:"com/salesforce/android/cases/ui/CaseUIClient.html", type:"class" },
       { id:65, label:"com.salesforce.android.cases.ui.CaseUIConfiguration", link:"com/salesforce/android/cases/ui/CaseUIConfiguration.html", type:"class" },
-      { id:66, label:"com.salesforce.android.cases.ui.CasesUIAnalytics", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.html", type:"class" },
-      { id:67, label:"com.salesforce.android.cases.ui.CasesUIAnalytics.CompletionType", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html", type:"class" },
-      { id:68, label:"com.salesforce.android.cases.ui.CasesUIAnalytics.EventType", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html", type:"class" },
-      { id:69, label:"com.salesforce.android.cases.ui.CasesUIAnalytics.UserType", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html", type:"class" }
+      { id:66, label:"com.salesforce.android.cases.ui.CaseUIConfiguration.Importance", link:"com/salesforce/android/cases/ui/CaseUIConfiguration.Importance.html", type:"class" },
+      { id:67, label:"com.salesforce.android.cases.ui.CasesUIAnalytics", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.html", type:"class" },
+      { id:68, label:"com.salesforce.android.cases.ui.CasesUIAnalytics.CompletionType", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.CompletionType.html", type:"class" },
+      { id:69, label:"com.salesforce.android.cases.ui.CasesUIAnalytics.EventType", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.EventType.html", type:"class" },
+      { id:70, label:"com.salesforce.android.cases.ui.CasesUIAnalytics.UserType", link:"com/salesforce/android/cases/ui/CasesUIAnalytics.UserType.html", type:"class" }
 
     ];
