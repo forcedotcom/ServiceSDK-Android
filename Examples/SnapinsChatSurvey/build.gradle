@@ -16,17 +16,14 @@ allprojects {
     repositories {
         jcenter()
         maven {
-
-            url 'https://salesforcesos.com/android/maven/release'
-
+            url "https://maven.google.com"
         }
-
         maven {
-
-            url 'http://tokbox.bintray.com/maven/'
-            
+            url 'https://salesforcesos.com/android/maven/release'
         }
-
+        maven {
+            url 'http://tokbox.bintray.com/maven/'
+        }
     }
 }
 
