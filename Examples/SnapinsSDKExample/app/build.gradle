@@ -1,38 +1,58 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
-    defaultConfig {
-        applicationId "com.example.salesforce.snapinssdkexample"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk {
-            abiFilters "x86", "armeabi-v7a", "armeabi"
-        }
+  compileSdkVersion 26
+  buildToolsVersion "26.0.2"
+  defaultConfig {
+    applicationId "com.example.salesforce.snapinssdkexample"
+    minSdkVersion 19
+    targetSdkVersion 26
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  }
+
+  // Force the version of cardview to prevent lint errors. Confirmed 26.1.0 works with fab-speed-dial.
+  configurations.all {
+    resolutionStrategy.force "com.android.support:cardview-v7:26.1.0"
+  }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:26.+'
-    compile 'com.salesforce.service:servicesdk:210.+'
-    compile 'io.github.yavski:fab-speed-dial:1.0.6'
+  // Add Snap-Ins to the project. Alternate usages below.
+  'com.salesforce.service:servicesdk:210.0.0'
+  /*
+  * If your application only uses a subset of Snap-Ins consider excluding unneeded Snap-Ins to reduce your app size.
+  * We prefer excluding dependencies to consuming à la carte because compatibility between individual Snap-Ins SDKs cannot be guaranteed.
+  *
+  * Eg. If you only use Chat and KB
+  * compile("com.salesforce.service:servicesdk:<VersionNumber>) {
+  *          // Exclude Cases/Sos, this implies we include chat-ui/kb-ui.
+  *          exclude group: 'com.salesforce.service', module: 'case-ui'
+  *          exclude group: 'com.salesforce.service', module: 'sos'
+  *      }
+  *
+  * If you only use a single Snap-In just pull in the Snap-In you need.
+  * compile "com.salesforce.service:case-ui:<VersionNumber>"
+  */
+  compile 'com.salesforce.service:servicesdk:210.0.0'
 
-    testCompile 'junit:junit:4.12'
+  /**
+   * We use fab-speed-dial as an example to show how you can add your own views to the Knowledge Base.
+   * You don't need to use this in your app, customize as you see fit.
+   *
+   * Feel free to contribute your own view additions to improve the app.
+   * */
+  compile 'io.github.yavski:fab-speed-dial:1.0.6'
+
+  compile 'com.android.support:appcompat-v7:26.1.0'
+  compile 'com.android.support.constraint:constraint-layout:1.0.2'
+  compile 'com.android.support:design:26.1.0'
 }
