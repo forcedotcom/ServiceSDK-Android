@@ -1,8 +1,12 @@
-# Snap-ins SDK for Android
+# Snap-Ins SDK for Android
 
-* To see the Android reference documentation, go [here](http://forcedotcom.github.io/ServiceSDK-Android/).
-* To review the Android release notes, go [here](https://github.com/forcedotcom/ServiceSDK-Android/releases).
-* To see the Android developer's guide, go [here](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm).
-* To see some examples, go [here](./Examples/).
+Welcome to the Snap-ins SDK for Android GitHub repository!
 
-Latest version: October 2017 Release (210.0.0)
+## Links
+
+* [Android Release Notes](https://github.com/forcedotcom/ServiceSDK-Android/releases)
+* [Android Developer's Guide](https://developer.salesforce.com/docs/atlas.en-us.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm)
+* [Android Reference Documentation](http://forcedotcom.github.io/ServiceSDK-Android/)
+* [Android Examples](./Examples/)
+* [Trailhead Tutorial](https://trailhead.salesforce.com/modules/service_snap-ins_mobile_apps)
+
