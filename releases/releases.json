@@ -207,4 +207,20 @@
     "sdk": "sos",
     "version": "3.0.0"
   }
+{
+    "changelog": "chat/2.0.1/changelog.md",
+    "date": "2017-12-14",
+    "example": "chat/2.0.1/example.md",
+    "reference": "chat/2.0.1/api/",
+    "sdk": "chat",
+    "version": "2.0.1"
+}
+{
+    "changelog": "sos/3.1.0/changelog.md",
+    "date": "2017-12-14",
+    "example": "sos/3.1.0/example.md",
+    "reference": "sos/3.1.0/api/",
+    "sdk": "sos",
+    "version": "3.1.0"
+}
 ]
