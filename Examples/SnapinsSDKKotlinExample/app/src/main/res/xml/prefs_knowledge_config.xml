@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:defaultValue="@string/pref_case_community_url_default"
+        android:inputType="textUri"
+        android:key="pref_kb_community_url"
+        android:summary="@string/pref_kb_community_url_summary"
+        android:title="@string/pref_kb_community_url_title"/>
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_kb_data_category_group_default"
+        android:key="pref_kb_data_category_group"
+        android:summary="@string/pref_kb_data_category_group_summary"
+        android:title="@string/pref_kb_data_category_group_title"/>
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_kb_root_data_category_default"
+        android:key="pref_kb_root_data_category"
+        android:summary="@string/pref_kb_root_data_category_summary"
+        android:title="@string/pref_kb_root_data_category_title"/>
+</PreferenceScreen>

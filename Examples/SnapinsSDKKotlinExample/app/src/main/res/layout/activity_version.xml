@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/sos_label"
+        style="@style/TestAppTextStyle.BuildInfo.Label"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/sos_version_label"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/sos_version"
+        style="@style/TestAppTextStyle.BuildInfo.Value"
+        android:text=""
+        tools:text="debug"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/chat_label"
+        style="@style/TestAppTextStyle.BuildInfo.Label"
+        android:layout_below="@+id/sos_label"
+        android:text="@string/chat_version_label"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/chat_version"
+        style="@style/TestAppTextStyle.BuildInfo.Value"
+        android:layout_below="@+id/sos_version"
+        android:text=""
+        tools:text="debug"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/kb_label"
+        style="@style/TestAppTextStyle.BuildInfo.Label"
+        android:layout_below="@+id/chat_label"
+        android:text="@string/kb_version_label"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/kb_version"
+        style="@style/TestAppTextStyle.BuildInfo.Value"
+        android:layout_below="@+id/chat_version"
+        android:text=""
+        tools:text="debug"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/cases_label"
+        style="@style/TestAppTextStyle.BuildInfo.Label"
+        android:layout_below="@+id/kb_label"
+        android:text="@string/cases_version_label"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/cases_version"
+        style="@style/TestAppTextStyle.BuildInfo.Value"
+        android:layout_below="@+id/kb_version"
+        android:text=""
+        tools:text="debug"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/common_label"
+        style="@style/TestAppTextStyle.BuildInfo.Label"
+        android:layout_below="@+id/cases_label"
+        android:text="@string/common_version_label"/>
+
+    <com.salesforce.android.service.common.ui.views.SalesforceTextView
+        android:id="@+id/common_version"
+        style="@style/TestAppTextStyle.BuildInfo.Value"
+        android:layout_below="@+id/cases_version"
+        android:text=""
+        tools:text="debug"/>
+
+</RelativeLayout>
