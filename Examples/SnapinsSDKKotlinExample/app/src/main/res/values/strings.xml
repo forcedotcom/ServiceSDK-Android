@@ -1,0 +1,140 @@
+<!--
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<resources>
+    <!-- ======================================================================================= -->
+    <!-- ========================== DEFAULT CONFIGURATION VALUES =============================== -->
+    <!-- ======================================================================================= -->
+    <!-- Default Knowledge Configuration Values -->
+    <string name="pref_kb_data_category_group_default">groupDefault</string>
+    <string name="pref_kb_root_data_category_default">categoryDefault</string>
+
+    <!-- SOS Default Config Values -->
+    <string name="pref_sos_pod_url_default">sosPodUrlDefault</string>
+    <string name="pref_sos_org_id_default">sosOrgIdDefault</string>
+    <string name="pref_sos_deployment_id_default">sosDeploymentIdDefault</string>
+
+    <!-- Cases Default Config Values -->
+    <string name="pref_case_community_url_default">http://communityUrl.default</string>
+    <string name="pref_case_action_name_default_no_auth">caseActionNameNoAuthDefault</string>
+    <string name="pref_case_action_name_default_auth">CaseActionNameAuthDefault</string>
+    <string name="pref_case_list_name_default">caseListNameDefault</string>
+
+    <!-- Chat Default Config Values -->
+    <string name="pref_chat_la_pod_default">chatPodUrlDefault</string>
+    <string name="pref_chat_org_id_default">chatOrgIdDefault</string>
+    <string name="pref_chat_deployment_id_default">chatDeploymentIdDefault</string>
+    <string name="pref_chat_button_id_default">chatButtonIdDefault</string>
+    <!-- ======================================================================================= -->
+    <!-- ======================== END DEFAULT CONFIGURATION VALUES ============================= -->
+    <!-- ======================================================================================= -->
+
+    <string name="app_name">Snap-Ins SDK Sample</string>
+
+    <!-- Services SDK -->
+    <string name="account_type">com.salesforce.snapinssdkexample</string>
+
+    <!-- Menu -->
+    <string name="action_sos_settings">SOS Settings</string>
+    <string name="action_kb_settings">Knowledge Settings</string>
+    <string name="action_chat_settings">Chat Settings</string>
+    <string name="action_case_settings">Case Settings</string>
+    <string name="action_version_page">SDK Versions</string>
+    <string name="action_check_chat_agent_availability">Check Chat Agent Availability</string>
+    <string name="action_check_sos_agent_availability">Check SOS Agent Availability</string>
+
+    <!-- Versions Activity -->
+    <string name="sos_version_label">SOS Version</string>
+    <string name="chat_version_label">Chat Version</string>
+    <string name="kb_version_label">Knowledge Version</string>
+    <string name="cases_version_label">Cases Version</string>
+    <string name="common_version_label">Common Version</string>
+
+    <!-- Main Activity -->
+    <string name="launch">Launch Knowledge</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_knowledge_settings">KnowledgeSettingsActivity</string>
+    <string name="knowledge_description_title">Knowledge</string>
+    <string name="knowledge_description_text">The Knowledge feature in the SDK gives you access to your org’s knowledge base directly from within
+                                              your app. Once you point your app to your community URL with the right category group and root data
+                                              category, you can display your knowledge base to your users. Try Knowledge by launching it below.</string>
+    <string name="authentication_description_title">Authentication</string>
+    <string name="authentication_description_text">Use Knowlegde or Cases as an authenticated or unauthenticated user</string>
+
+    <!-- Support FAB -->
+    <string name="menu_case">Create Case</string>
+    <string name="menu_chat">Live Agent Chat</string>
+    <string name="menu_sos">SOS Video Chat</string>
+
+    <!-- Knowledge Settings -->
+    <string name="pref_kb_community_url_title">Community URL</string>
+    <string name="pref_kb_community_url_summary">The URL for the community under which to search for articles</string>
+    <string name="pref_kb_data_category_group_title">Data Category Group</string>
+    <string name="pref_kb_data_category_group_summary">The Data Category Group to use</string>
+    <string name="pref_kb_root_data_category_title">Root Data Category</string>
+    <string name="pref_kb_root_data_category_summary">The data category to show when first launching Knowledge UI</string>
+
+    <!-- SOS Settings -->
+    <string name="pref_sos_pod_url_title">Pod Url</string>
+    <string name="pref_sos_pod_url_summary">The URL for the Live Agent Pod</string>
+    <string name="pref_sos_org_id_title">Org Id</string>
+    <string name="pref_sos_org_id_summary">The salesforce org id to use</string>
+    <string name="pref_sos_deployment_id_title">Deployment Id</string>
+    <string name="pref_sos_deployment_id_summary">The unique id of the SOS deployment. </string>
+    <string name="pref_sos_endpoint_setting_title">Agent Settings</string>
+    <string name="pref_sos_startup_setting_title">Startup</string>
+    <string name="pref_sos_permission_ui_on_title">Enable Permission UI</string>
+    <string name="pref_sos_onboarding_ui_on_title">Enable Onboarding UI</string>
+    <string name="pref_sos_network_test_on_title">Enable Network Test</string>
+    <string name="pref_sos_sharing_setting_title">Sharing Settings</string>
+    <string name="pref_sos_two_way_video_on_title">Enable two way video</string>
+    <string name="pref_sos_field_service_on_summary">Enables 2 way video without screen sharing</string>
+    <string name="pref_sos_field_service_on_title">Enable Field Service Mode</string>
+    <string name="pref_sos_agent_join_sound_on_title">Enable agent join sound</string>
+    <string name="pref_sos_debug_setting_title">Debug</string>
+    <string name="pref_sos_local_audio_on_title">Enable device audio</string>
+    <string name="pref_sos_agent_on_summary">Enables all Open Tok communications</string>
+    <string name="pref_sos_agent_on_title">Enable OpenTok</string>
+    <string name="sos_agent_availability_change_message">SOS Agent Availability: %1$s</string>
+
+    <!-- Cases Settings -->
+    <string name="pref_case_community_url_summary">Community URL</string>
+    <string name="pref_case_community_url_title">The case community to use</string>
+    <string name="pref_case_action_name_summary">Action Name</string>
+    <string name="pref_case_action_name_title">Global Action to use</string>
+    <string name="pref_case_endpoint_setting_title">Org settings</string>
+    <string name="pref_case_list_name_summary">List Name</string>
+    <string name="pref_case_list_name_title">The Case List to display</string>
+
+    <!-- Chat Settings -->
+    <string name="pref_chat_endpoint_setting_title">Live Agent Settings</string>
+    <string name="pref_chat_la_pod_title">Pod URL</string>
+    <string name="pref_chat_la_pod_summary">The URL for the Live Agent Pod.</string>
+    <string name="pref_chat_org_id_title">Org Id</string>
+    <string name="pref_chat_org_id_summary">The salesforce org id to use</string>
+    <string name="pref_chat_deployment_id_title">Deployment Id</string>
+    <string name="pref_chat_deployment_id_summary">The Deployment id to use</string>
+    <string name="pref_chat_button_id_title">Button Id</string>
+    <string name="pref_chat_button_id_summary">The Chat Button Id to use</string>
+    <string name="prechat_agent_info_label">Agent Info Label</string>
+    <string name="prechat_enter_name_label">Enter Name</string>
+    <string name="prechat_example_id">ID%1$s</string>
+    <string name="prechat_example_selection_one">Example Seletion 1</string>
+    <string name="prechat_example_selection_two">Example Seletion 2</string>
+    <string name="prechat_selection_label_title">Selection Label Title</string>
+    <string name="chat_availability_change_message">Agent Chat Status: %1$s</string>
+
+    <!-- Logging -->
+    <string name="pref_category_logging">Logging</string>
+    <string name="pref_title_override_logging_pod">Override Logging Pod?</string>
+    <string name="pref_title_logging_pod">Logging Pod</string>
+    <string name="title_activity_chat_settings">ChatSettingsActivity</string>
+    <string name="title_activity_case_settings">CaseSettingsActivity</string>
+    <string name="pref_chat_prechat_title">Pre Chat Settings</string>
+    <string name="pref_chat_prechat_enabled_title">Pre Chat Enabled?</string>
+</resources>

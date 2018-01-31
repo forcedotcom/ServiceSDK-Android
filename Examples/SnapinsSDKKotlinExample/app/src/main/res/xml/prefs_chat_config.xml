@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/pref_chat_endpoint_setting_title">
+        <EditTextPreference
+            android:defaultValue="@string/pref_chat_la_pod_default"
+            android:inputType="textUri"
+            android:key="pref_chat_la_pod"
+            android:summary="@string/pref_chat_la_pod_summary"
+            android:title="@string/pref_chat_la_pod_title"/>
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_chat_org_id_default"
+            android:key="pref_chat_org_id"
+            android:summary="@string/pref_chat_org_id_summary"
+            android:title="@string/pref_chat_org_id_title"/>
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_chat_deployment_id_default"
+            android:key="pref_chat_deployment_id"
+            android:summary="@string/pref_chat_deployment_id_summary"
+            android:title="@string/pref_chat_deployment_id_title"/>
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_chat_button_id_default"
+            android:key="pref_chat_button_id"
+            android:summary="@string/pref_chat_button_id_summary"
+            android:title="@string/pref_chat_button_id_title"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_chat_prechat_title">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_chat_prechat_enabled"
+            android:title="@string/pref_chat_prechat_enabled_title"/>
+    </PreferenceCategory>
+</PreferenceScreen>

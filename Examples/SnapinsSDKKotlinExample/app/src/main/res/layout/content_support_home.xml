@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+
+<io.github.yavski.fabspeeddial.FabSpeedDial
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/support_home_fab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    app:fabBackgroundTint="@color/salesforce_brand_primary"
+    app:fabDrawableTint="@color/salesforce_contrast_inverted"
+    app:fabGravity="bottom_end"
+    app:fabMenu="@menu/menu_support_home"
+    app:miniFabBackgroundTint="@color/salesforce_brand_secondary"
+    app:miniFabDrawableTint="@color/salesforce_contrast_inverted"
+    app:miniFabTitleBackgroundTint="@color/salesforce_contrast_inverted"
+    app:miniFabTitleTextColor="@color/salesforce_contrast_primary"/>

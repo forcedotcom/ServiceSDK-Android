@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (c) 2018, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="pref_sos_endpoint_settings"
+        android:title="@string/pref_case_endpoint_setting_title">
+        <EditTextPreference
+            android:defaultValue="@string/pref_case_community_url_default"
+            android:inputType="textUri"
+            android:key="pref_case_community_url"
+            android:summary="@string/pref_case_community_url_summary"
+            android:title="@string/pref_case_community_url_title"/>
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_case_action_name_default_no_auth"
+            android:key="pref_case_action_name"
+            android:summary="@string/pref_case_action_name_summary"
+            android:title="@string/pref_case_action_name_title"/>
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_case_list_name_default"
+            android:key="pref_case_list_name"
+            android:summary="@string/pref_case_list_name_summary"
+            android:title="@string/pref_case_list_name_title"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>
