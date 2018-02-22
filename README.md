@@ -10,4 +10,4 @@ Welcome to the Snap-ins SDK for Android GitHub repository!
 * [Android Examples](./Examples/)
 * [Trailhead Tutorial](https://trailhead.salesforce.com/modules/service_snap-ins_mobile_apps)
 
-<!-- 210.1.0 -->
+<!-- 212.0.0 -->
