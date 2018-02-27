@@ -230,5 +230,13 @@
     "changelog": "common/6.0.0/changelog.md",
     "reference": "common/6.0.0/api/",
     "example": "common/6.0.0/example.md"
+ },
+ {
+    "sdk": "case",
+    "version": "4.0.0",
+    "date": "2018-02-27",
+    "changelog": "case/4.0.0/changelog.md",
+    "reference": "case/4.0.0/api/",
+    "example": "case/4.0.0/example.md"
  }
 ]
