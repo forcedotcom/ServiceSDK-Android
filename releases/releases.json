@@ -222,5 +222,13 @@
     "reference": "sos/3.1.0/api/",
     "sdk": "sos",
     "version": "3.1.0"
+ },
+ {
+    "sdk": "common",
+    "version": "6.0.0",
+    "date": "2018-02-27",
+    "changelog": "common/6.0.0/changelog.md",
+    "reference": "common/6.0.0/api/",
+    "example": "common/6.0.0/example.md"
  }
 ]
