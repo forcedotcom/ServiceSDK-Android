@@ -21,8 +21,6 @@ import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity
 import com.salesforce.android.knowledge.ui.KnowledgeUI
 import com.salesforce.android.knowledge.ui.KnowledgeUIClient
 import com.salesforce.android.service.common.analytics.ServiceAnalytics
-import com.salesforce.androidsdk.smartstore.app.SmartStoreSDKManager
-import com.salesforce.androidsdk.analytics.security.Encryptor
 import com.salesforce.snapinssdkexample.SupportHomeViewAddition
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
 import com.salesforce.android.chat.core.ChatCore
@@ -126,12 +124,6 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
      * Initializes configurations and listeners which should happen at startup.
      */
     private fun initializeServiceSDK() {
-        // When your app launches, initialize the Salesforce Mobile SDK.
-        // Use the SmartStoreSDKManager to ensure that local data is encrypted.
-        SmartStoreSDKManager.initNative(this, { name ->
-            Encryptor.hash(name + "12wcpn98ynwo4dryqo8273y", name + "02893o487bt32i78bqw43r")
-        }, MainActivity::class.java)
-
         setupServiceSDKListeners()
 
         initKnowledge()

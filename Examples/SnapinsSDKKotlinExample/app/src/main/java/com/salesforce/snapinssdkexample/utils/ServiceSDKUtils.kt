@@ -21,11 +21,16 @@ import com.salesforce.android.chat.core.ChatConfiguration
 import com.salesforce.android.knowledge.core.KnowledgeConfiguration
 import com.salesforce.android.knowledge.ui.KnowledgeUI
 import com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration
+import com.salesforce.android.service.common.http.AuthTokenProvider
 import com.salesforce.android.sos.api.SosAvailability
 import com.salesforce.android.sos.api.SosConfiguration
 import com.salesforce.android.sos.api.SosOptions
 import com.salesforce.androidsdk.accounts.UserAccount
 import com.salesforce.androidsdk.app.SalesforceSDKManager
+import com.salesforce.androidsdk.rest.ClientManager
+import com.salesforce.androidsdk.rest.RestClient
+import com.salesforce.snapinssdkexample.auth.MobileSDKAuthTokenProvider
+import com.salesforce.snapinssdkexample.auth.MobileSdkUser
 
 /**
  * Helper object to encapsulate building configurations of some of the Snap-ins SDKs
@@ -58,12 +63,13 @@ object ServiceSDKUtils {
                         context.getString(R.string.pref_case_community_url_default)))
 
         // If a user account is provided, configure knowledge as an authenticated user
-        userAccount.let {
+        userAccount?.let { user ->
             // Create a KnowledgeConfiguration object using the community URL and current user
             coreConfiguration = KnowledgeConfiguration.builder(
                 getStringPref(context, KnowledgeSettingsActivity.KEY_COMMUNITY_URL,
                 context.getString(R.string.pref_case_community_url_default)))
-                    .withUserAccount(userAccount).build()
+                    .withAuthConfig(getAuthTokenProvider(user), MobileSdkUser(user.userId))
+                    .build()
         }
 
         // Create a UI configuration instance from core instance
@@ -129,6 +135,7 @@ object ServiceSDKUtils {
     fun getCaseConfiguration(context: Context,
                              caseClientCallbacks: CaseClientCallbacks?,
                              userAccount: UserAccount?): CaseConfiguration {
+
         // Create a core configuration instance
         val caseConfigurationBuilder = CaseConfiguration.Builder(
                 getStringPref(context, CaseSettingsActivity.KEY_COMMUNITY_URL,
@@ -136,18 +143,18 @@ object ServiceSDKUtils {
                 getStringPref(context, CaseSettingsActivity.KEY_CREATE_CASE_ACTION_NAME,
                         context.getString(R.string.pref_case_action_name_default_no_auth)))
 
-        // Enable push notifications
-        caseConfigurationBuilder.enablePush(R.drawable.ic_case_notification)
-
         // Add case client callbacks
         caseClientCallbacks.let { caseConfigurationBuilder.callbacks(caseClientCallbacks) }
 
         // If authenticated configure cases with the user account
-        userAccount.let {
+        userAccount?.let { user ->
             caseConfigurationBuilder.caseListName(getStringPref(context,
                     CaseSettingsActivity.KEY_CASE_LIST_NAME,
                     context.getString(R.string.pref_case_list_name_default)))
-            caseConfigurationBuilder.withUserAccount(userAccount)
+
+            caseConfigurationBuilder.withAuthConfig(
+                    getAuthTokenProvider(user),
+                    MobileSdkUser(user.userId))
         }
 
         return caseConfigurationBuilder.build()
@@ -158,5 +165,18 @@ object ServiceSDKUtils {
      */
     fun getAuthenticatedUser(): UserAccount? {
         return SalesforceSDKManager.getInstance().userAccountManager.currentUser
+    }
+
+    /**
+     * Returns an MobileSDKAuthTokenProvider for the provided UserAccount.
+     */
+    private fun getAuthTokenProvider(user: UserAccount): MobileSDKAuthTokenProvider {
+        val accMgrAuthTokenProvider = ClientManager.AccMgrAuthTokenProvider(
+                SalesforceSDKManager.getInstance().clientManager,
+                user.instanceServer,
+                user.authToken,
+                user.refreshToken)
+
+        return MobileSDKAuthTokenProvider(accMgrAuthTokenProvider, user.authToken)
     }
 }
