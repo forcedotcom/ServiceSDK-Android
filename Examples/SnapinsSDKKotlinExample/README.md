@@ -31,13 +31,6 @@ and add a custom authentication domain at runtime using the menu ("change server
 See the [Developer Documentation](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/android_knowledge_auth_setup.htm) 
 for more detailed implementation instructions regarding authentication.
 
-### Push Notifications for Cases
-
-In order to use push notifications for case management, provide valid data in [bootconfig.xml](app/src/main/res/values/bootconfig.xml).
-Using [Salesforce’s push notification implementation guide](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/android_case_push_notification.htm), 
-you can send notifications from your org when activity associated with a user’s case occurs. After 
-you’ve set up notifications in your org, handle the notification from your app.
-
 
 ## What's Included
 

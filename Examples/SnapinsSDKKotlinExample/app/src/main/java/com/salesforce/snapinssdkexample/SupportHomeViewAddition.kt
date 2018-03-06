@@ -188,17 +188,6 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
             override fun getHiddenFields(): MutableMap<String, String> {
                 return mutableMapOf("Name__c" to "Jimmy Jester")
             }
-
-            override fun handleForegroundNotification(bundle: Bundle?): Boolean {
-                // Used for overriding default push notification behavior
-                // Unrelated to hidden fields...
-                return false
-            }
-            override fun handleBackgroundNotification(bundle: Bundle?): Boolean {
-                // Used for overriding default push notification behavior
-                // Unrelated to hidden fields...
-                return false
-            }
         }
 
         // Create a UI configuration instance from a core instance
