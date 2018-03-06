@@ -7,5 +7,5 @@
  */
 -->
 <servers>
-    <server name="Community Login" url="https://MY_COMMUNITY_URL.com"/>
+    <server name="Community Login" url="https://login.salesforce.com"/>
 </servers>

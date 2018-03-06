@@ -21,9 +21,13 @@ Update the required string configurations in [strings.xml](app/src/main/res/valu
 valid data to ensure the Snap-ins SDK will function as expected.
 
 
-### Using Authenticated Users
+### Using Authentication
 
-In order to use authentication, developers must provide valid data in [servers.xml](app/src/main/res/xml/servers.xml).
+Developers can either:
+* Provide a valid domain in [servers.xml](app/src/main/res/xml/servers.xml).
+* Use the provided default <a href="https://login.salesforce.com">login.salesforce.com</a> domain 
+and add a custom authentication domain at runtime using the menu ("change server" -> "Add Connection").
+
 See the [Developer Documentation](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/android_knowledge_auth_setup.htm) 
 for more detailed implementation instructions regarding authentication.
 
