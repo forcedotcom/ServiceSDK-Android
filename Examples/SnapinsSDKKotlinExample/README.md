@@ -23,10 +23,16 @@ valid data to ensure the Snap-ins SDK will function as expected.
 
 ### Using Authentication
 
-Developers can either:
+Developers can:
+* Use the provided default <a href="https://login.salesforce.com">login.salesforce.com</a> domain.
 * Provide a valid domain in [servers.xml](app/src/main/res/xml/servers.xml).
-* Use the provided default <a href="https://login.salesforce.com">login.salesforce.com</a> domain 
-and add a custom authentication domain at runtime using the menu ("change server" -> "Add Connection").
+* Add a custom authentication domain at runtime:
+  * Press the menu button (physical menu button on older devices) or the hamburger menu in the top right corner.
+  * Choose "change server".
+  * Choose "Add connection".
+  * Enter a name and url for the connection and press Apply.
+  * Press the apply button.
+  * The desired login page should be loaded.
 
 See the [Developer Documentation](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/android_knowledge_auth_setup.htm) 
 for more detailed implementation instructions regarding authentication.
