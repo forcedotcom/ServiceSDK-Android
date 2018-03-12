@@ -41,4 +41,5 @@ dependencies {
 
     // Salesforce SDKs
     implementation "com.salesforce.service:servicesdk:${rootProject.ext.serviceSdkVersion}"
+    implementation "com.salesforce.mobilesdk:SalesforceSDK:${rootProject.ext.mobilesdkVersion}"
 }
