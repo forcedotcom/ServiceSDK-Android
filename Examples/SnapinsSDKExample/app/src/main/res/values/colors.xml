@@ -7,13 +7,7 @@
  */
 -->
 <resources>
-    <color name="colorPrimary">@color/salesforce_brand_primary</color>
-    <color name="colorPrimaryDark">@color/salesforce_brand_primary</color>
-    <color name="colorAccent">@color/salesforce_brand_secondary</color>
-
-    <!-- For complete Snap-ins SDK branding instructions, see the Snap-ins Developer's Guide on UI customization. -->
-    <!-- https://developer.salesforce.com/docs/atlas.en-us.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm -->
-    <color name="salesforce_brand_primary">#007F7F</color>
-    <color name="salesforce_brand_secondary">#2872CC</color>
-    <color name="salesforce_contrast_inverted">#ffffff</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
 </resources>
