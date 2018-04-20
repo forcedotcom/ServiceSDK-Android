@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
@@ -132,10 +133,18 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
      * Configures and launches Live Agent Chat
      */
     private void launchChat() {
+        ChatConfiguration chatConfiguration;
+
         // Create a UI configuration instance from a core config object
-        ChatConfiguration chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-                .preChatFields(buildPreChatFields())
-                .build();
+        // Show an alert if any argument is invalid
+        try {
+            chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
+                    .preChatFields(buildPreChatFields())
+                    .build();
+        } catch (IllegalArgumentException e) {
+            showConfigurationErrorAlertDialog(e.getMessage());
+            return;
+        }
 
         // Configure chat session listener
         ServiceSDKApplication serviceSDKApplication = (ServiceSDKApplication) context.getApplicationContext();
@@ -195,9 +204,15 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
      * Configures and launches SOS
      */
     private boolean launchSos() {
-        Sos.session(ServiceSDKUtils.getSosOptions(context))
-                .configuration(ServiceSDKUtils.getSosConfiguration(context))
-                .start((Activity) context);
+        // Try to launch an SOS session, show an alert if any argument is invalid
+        try {
+            Sos.session(ServiceSDKUtils.getSosOptions(context))
+                    .configuration(ServiceSDKUtils.getSosConfiguration(context))
+                    .start((Activity) context);
+        } catch (IllegalArgumentException e) {
+            showConfigurationErrorAlertDialog(e.getMessage());
+        }
+
         return true;
     }
 
@@ -227,7 +242,7 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
                 )
         );
 
-        // Create a UI client UI asyncronously
+        // Create a UI client UI asynchronously
         CaseUI.with(context).uiClient().onResult(new Async.ResultHandler<CaseUIClient>() {
             @Override
             public void handleResult(Async<?> async, @NonNull CaseUIClient caseUIClient) {
@@ -235,5 +250,14 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
             }
         });
         return true;
+    }
+
+    private void showConfigurationErrorAlertDialog(String message) {
+        AlertDialog dialog = new AlertDialog.Builder(context)
+                .setPositiveButton(context.getString(R.string.ok), null)
+                .setMessage(context.getString(R.string.config_error_prefix, message))
+                .create();
+
+        dialog.show();
     }
 }

@@ -11,20 +11,20 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
-import android.os.Bundle
 import android.support.v4.app.FragmentActivity
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.salesforce.snapinssdkexample.R
 import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
 import com.salesforce.snapinssdkexample.utils.Utils
 import com.salesforce.android.cases.core.CaseClientCallbacks
 import com.salesforce.android.cases.ui.CaseUI
 import com.salesforce.android.cases.ui.CaseUIConfiguration
+import com.salesforce.android.chat.core.ChatConfiguration
 import com.salesforce.android.chat.core.model.PreChatField
 import com.salesforce.android.chat.ui.ChatUI
 import com.salesforce.android.chat.ui.ChatUIClient
@@ -112,25 +112,34 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
      * Configures and launches Live Agent Chat
      */
     private fun launchChat() {
-    // Create a UI configuration instance from a core config object
-        val chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-            .preChatFields(buildPreChatFields())
-            .build()
+        // Create a UI configuration instance from a core config object
+        var chatConfiguration: ChatConfiguration? = null
+
+        // Try to build a chat configuration, show an alert if any argument is invalid
+        try {
+            chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
+                       .preChatFields(buildPreChatFields())
+                       .build()
+        } catch (e: IllegalArgumentException) {
+            showConfigurationErrorAlertDialog(e.message)
+        }
 
         // Configure chat session listener
         val serviceSDKApplication = context.applicationContext as ServiceSDKApplication
         val chatListener = serviceSDKApplication.chatSessionListener
 
-        ChatUI.configure(ChatUIConfiguration.create(chatConfiguration))
-                .createClient(context)
-                .onResult({ _, chatUIClient: ChatUIClient ->
-                    run {
-                        // Add the configued chat session listener to the Chat UI client
-                        chatUIClient.addSessionStateListener(chatListener)
-                        // Start the live agent chat session
-                        chatUIClient.startChatSession(context as FragmentActivity)
-                    }
-                })
+        chatConfiguration?.let {
+            ChatUI.configure(ChatUIConfiguration.create(it))
+                    .createClient(context)
+                    .onResult({ _, chatUIClient: ChatUIClient ->
+                        run {
+                            // Add the configued chat session listener to the Chat UI client
+                            chatUIClient.addSessionStateListener(chatListener)
+                            // Start the live agent chat session
+                            chatUIClient.startChatSession(context as FragmentActivity)
+                        }
+                    })
+        }
     }
 
     /**
@@ -171,10 +180,15 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
      * Configures and launches SOS
      */
     private fun launchSos(): Boolean {
-        // Start an SOS session
-        Sos.session(ServiceSDKUtils.getSosOptions(context))
-                .configuration(ServiceSDKUtils.getSosConfiguration(context))
-                .start(context as Activity)
+        // Try to start an SOS session, show an alert if any argument is invalid
+        try {
+            Sos.session(ServiceSDKUtils.getSosOptions(context))
+                    .configuration(ServiceSDKUtils.getSosConfiguration(context))
+                    .start(context as Activity)
+        } catch (e: Exception) {
+            showConfigurationErrorAlertDialog(e.message)
+        }
+
         return true
     }
 
@@ -205,5 +219,13 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
         }})
 
         return true
+    }
+
+    private fun showConfigurationErrorAlertDialog(message: String?) {
+        message.let {
+            AlertDialog.Builder(context).setPositiveButton(context.getString(R.string.ok), null)
+                    .setMessage(context.getString(R.string.config_error_prefix, message))
+                    .create().show()
+        }
     }
 }

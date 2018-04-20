@@ -129,6 +129,10 @@
     <string name="prechat_selection_label_title">Selection Label Title</string>
     <string name="chat_availability_change_message">Agent Chat Status: %1$s</string>
 
+    <!-- Alerts -->
+    <string name="ok">OK</string>
+    <string name="config_error_prefix">Configuration Error: %1$s</string>
+
     <!-- Logging -->
     <string name="pref_category_logging">Logging</string>
     <string name="pref_title_override_logging_pod">Override Logging Pod?</string>
