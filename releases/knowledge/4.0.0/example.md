@@ -1,6 +1,6 @@
 ```
 repositories {
-  maven { url 'https://salesforcesos.com/android/maven/release' }
+  maven { url 'http://salesforcesos.com.s3.amazonaws.com/android/maven/release' }
 }
 
 dependencies {
