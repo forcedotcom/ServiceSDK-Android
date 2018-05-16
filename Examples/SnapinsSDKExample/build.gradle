@@ -24,7 +24,7 @@ allprojects {
         mavenLocal()
         mavenCentral()
         maven { url "https://maven.google.com" }
-        maven { url "https://salesforcesos.com/android/maven/release" }
+        maven { url "https://s3.amazonaws.com/salesforcesos.com/android/maven/release" }
         maven { url "http://tokbox.bintray.com/maven/" }
     }
 }
