@@ -25,6 +25,8 @@ class ChatSettingsActivity : AppCompatActivity() {
 
         // Boolean
         val KEY_PRECHAT_ENABLED = "pref_chat_prechat_enabled"
+        val KEY_CHATBOT_BANNER_ENABLED = "pref_chatbot_banner_enabled"
+        val KEY_CHATBOT_AVATAR_ENABLED = "pref_chatbot_avatar_enabled"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

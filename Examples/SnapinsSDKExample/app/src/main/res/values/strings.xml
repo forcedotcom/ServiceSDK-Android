@@ -129,6 +129,12 @@
     <string name="prechat_selection_label_title">Selection Label Title</string>
     <string name="chat_availability_change_message">Agent Chat Status: %1$s</string>
 
+    <!-- ChatBot -->
+    <string name="chatbot_banner_content_description">ChatBot Banner</string>
+    <string name="chatbot_banner_title">Einstein Bot</string>
+    <string name="chatbot_banner_title_2">Powered by Service Cloud</string>
+    <string name="chatbot_banner_title_3">Snapins &amp; Live Agent Chat</string>
+
     <!-- Alerts -->
     <string name="ok">OK</string>
     <string name="config_error_prefix">Configuration Error: %1$s</string>
@@ -141,4 +147,6 @@
     <string name="title_activity_case_settings">CaseSettingsActivity</string>
     <string name="pref_chat_prechat_title">Pre Chat Settings</string>
     <string name="pref_chat_prechat_enabled_title">Pre Chat Enabled?</string>
+    <string name="pref_chatbot_banner_enabled_title">ChatBot Banner Enabled</string>
+    <string name="pref_chatbot_avatar_enabled_title">ChatBot Avatar Enabled</string>
 </resources>

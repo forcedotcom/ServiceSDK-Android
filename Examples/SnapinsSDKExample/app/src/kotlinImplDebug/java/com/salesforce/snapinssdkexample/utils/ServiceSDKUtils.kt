@@ -18,17 +18,16 @@ import com.salesforce.snapinssdkexample.utils.Utils.getStringPref
 import com.salesforce.android.cases.core.CaseClientCallbacks
 import com.salesforce.android.cases.core.CaseConfiguration
 import com.salesforce.android.chat.core.ChatConfiguration
+import com.salesforce.android.chat.ui.ChatUIConfiguration
 import com.salesforce.android.knowledge.core.KnowledgeConfiguration
 import com.salesforce.android.knowledge.ui.KnowledgeUI
 import com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration
-import com.salesforce.android.service.common.http.AuthTokenProvider
 import com.salesforce.android.sos.api.SosAvailability
 import com.salesforce.android.sos.api.SosConfiguration
 import com.salesforce.android.sos.api.SosOptions
 import com.salesforce.androidsdk.accounts.UserAccount
 import com.salesforce.androidsdk.app.SalesforceSDKManager
 import com.salesforce.androidsdk.rest.ClientManager
-import com.salesforce.androidsdk.rest.RestClient
 import com.salesforce.snapinssdkexample.auth.MobileSDKAuthTokenProvider
 import com.salesforce.snapinssdkexample.auth.MobileSdkUser
 
@@ -51,6 +50,29 @@ object ServiceSDKUtils {
                 getStringPref(context, ChatSettingsActivity.KEY_LIVE_AGENT_POD,
                         context.getString(R.string.pref_chat_la_pod_default))
         )
+    }
+
+    /**
+     * Return ChatUIConfigurationBuilder configured with optional ChatBot banner and avatar.
+     */
+    fun getChatUIConfigurationBuilder(context: Context, chatConfiguration: ChatConfiguration): ChatUIConfiguration.Builder {
+        // Check if the banner and/or avatar are enabled in settings
+        val chatbotBannerEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_BANNER_ENABLED)
+        val chatbotAvatarEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_AVATAR_ENABLED)
+
+        val chatUIConfigurationBuilder: ChatUIConfiguration.Builder = ChatUIConfiguration.Builder().chatConfiguration(chatConfiguration)
+
+        if (chatbotBannerEnabled) {
+            // Set the ChatBot banner to use via layout ID
+            chatUIConfigurationBuilder.enableChatBotBanner(R.layout.chatbot_banner)
+        }
+
+        if (chatbotAvatarEnabled) {
+            // Set the ChatBot avatar to use via drawable ID
+            chatUIConfigurationBuilder.chatBotAvatar(R.drawable.ic_chatbot_avatar)
+        }
+
+        return chatUIConfigurationBuilder
     }
 
     /**

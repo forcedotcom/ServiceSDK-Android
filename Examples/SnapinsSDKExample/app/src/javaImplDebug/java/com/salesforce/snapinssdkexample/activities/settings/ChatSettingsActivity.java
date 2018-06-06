@@ -19,6 +19,8 @@ public class ChatSettingsActivity extends AppCompatActivity {
     public static final String KEY_LIVE_AGENT_POD = "pref_chat_la_pod";
 
     public static final String KEY_PRECHAT_ENABLED = "pref_chat_prechat_enabled";
+    public static final String KEY_CHATBOT_BANNER_ENABLED = "pref_chatbot_banner_enabled";
+    public static final String KEY_CHATBOT_AVATAR_ENABLED = "pref_chatbot_avatar_enabled";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
