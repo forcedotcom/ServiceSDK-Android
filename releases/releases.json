@@ -262,5 +262,13 @@
     "changelog": "chat/3.0.0/changelog.md",
     "reference": "chat/3.0.0/api/",
     "example": "chat/3.0.0/example.md"
+ },
+ {
+    "sdk": "common",
+    "version": "6.1.0",
+    "date": "2018-06-12",
+    "changelog": "common/6.1.0/changelog.md",
+    "reference": "common/6.1.0/api/",
+    "example": "common/6.1.0/example.md"
  }
 ]
