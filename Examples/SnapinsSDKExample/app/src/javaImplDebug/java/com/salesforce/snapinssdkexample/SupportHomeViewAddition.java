@@ -21,7 +21,6 @@ import com.salesforce.android.chat.core.ChatConfiguration;
 import com.salesforce.android.chat.core.model.PreChatField;
 import com.salesforce.android.chat.ui.ChatUI;
 import com.salesforce.android.chat.ui.ChatUIClient;
-import com.salesforce.android.chat.ui.ChatUIConfiguration;
 import com.salesforce.android.knowledge.ui.KnowledgeScene;
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition;
 import com.salesforce.android.service.common.utilities.control.Async;
@@ -151,7 +150,7 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
         final ChatSessionListener chatListener = serviceSDKApplication.getChatSessionListener();
 
         // Create the chat UI from the ChatUIConfiguration object
-        ChatUI.configure(ChatUIConfiguration.create(chatConfiguration))
+        ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, chatConfiguration).build())
                 .createClient(context)
                 .onResult(new Async.ResultHandler<ChatUIClient>() {
                     @Override

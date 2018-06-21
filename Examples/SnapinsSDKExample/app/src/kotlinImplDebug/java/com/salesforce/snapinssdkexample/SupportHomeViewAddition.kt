@@ -28,7 +28,6 @@ import com.salesforce.android.chat.core.ChatConfiguration
 import com.salesforce.android.chat.core.model.PreChatField
 import com.salesforce.android.chat.ui.ChatUI
 import com.salesforce.android.chat.ui.ChatUIClient
-import com.salesforce.android.chat.ui.ChatUIConfiguration
 import com.salesforce.android.knowledge.ui.KnowledgeScene
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition
 import com.salesforce.android.sos.api.Sos
@@ -118,8 +117,8 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
         // Try to build a chat configuration, show an alert if any argument is invalid
         try {
             chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-                       .preChatFields(buildPreChatFields())
-                       .build()
+                    .preChatFields(buildPreChatFields())
+                    .build()
         } catch (e: IllegalArgumentException) {
             showConfigurationErrorAlertDialog(e.message)
         }
@@ -129,16 +128,16 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
         val chatListener = serviceSDKApplication.chatSessionListener
 
         chatConfiguration?.let {
-            ChatUI.configure(ChatUIConfiguration.create(it))
+            ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, it).build())
                     .createClient(context)
-                    .onResult({ _, chatUIClient: ChatUIClient ->
+                    .onResult { _, chatUIClient: ChatUIClient ->
                         run {
                             // Add the configued chat session listener to the Chat UI client
                             chatUIClient.addSessionStateListener(chatListener)
                             // Start the live agent chat session
                             chatUIClient.startChatSession(context as FragmentActivity)
                         }
-                    })
+                    }
         }
     }
 
@@ -213,10 +212,10 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
                                 ServiceSDKUtils.getAuthenticatedUser())))
 
         // Create a UI client UI asynchronously
-        CaseUI.with(context).uiClient().onResult({ _, caseUIClient -> run {
+        CaseUI.with(context).uiClient().onResult { _, caseUIClient -> run {
             // Launch the cases client
             caseUIClient.launch(context)
-        }})
+        }}
 
         return true
     }

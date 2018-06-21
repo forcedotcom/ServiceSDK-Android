@@ -5,6 +5,7 @@ import android.content.Context;
 import com.salesforce.android.cases.core.CaseClientCallbacks;
 import com.salesforce.android.cases.core.CaseConfiguration;
 import com.salesforce.android.chat.core.ChatConfiguration;
+import com.salesforce.android.chat.ui.ChatUIConfiguration;
 import com.salesforce.android.knowledge.core.KnowledgeConfiguration;
 import com.salesforce.android.knowledge.ui.KnowledgeUI;
 import com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration;
@@ -43,6 +44,31 @@ public class ServiceSDKUtils {
                 getStringPref(context, ChatSettingsActivity.KEY_LIVE_AGENT_POD,
                         context.getString(R.string.pref_chat_button_id_default))
         );
+    }
+
+    /**
+     * Return ChatUIConfigurationBuilder configured with optional ChatBot banner and avatar.
+     */
+    public static ChatUIConfiguration.Builder getChatUIConfigurationBuilder(Context context, ChatConfiguration chatConfiguration) {
+        // Check if the banner and/or avatar are enabled in settings
+        final boolean chatbotBannerEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_BANNER_ENABLED);
+        final boolean chatbotAvatarEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_AVATAR_ENABLED);
+
+        final ChatUIConfiguration.Builder chatUIConfigurationBuilder = new ChatUIConfiguration.Builder();
+
+        chatUIConfigurationBuilder.chatConfiguration(chatConfiguration);
+
+        if (chatbotBannerEnabled) {
+            // Set the ChatBot banner to use via layout ID
+            chatUIConfigurationBuilder.enableChatBotBanner(R.layout.chatbot_banner);
+        }
+
+        if (chatbotAvatarEnabled) {
+            // Set the ChatBot avatar to use via drawable ID
+            chatUIConfigurationBuilder.chatBotAvatar(R.drawable.ic_chatbot_avatar);
+        }
+
+        return chatUIConfigurationBuilder;
     }
 
     public static KnowledgeUI getKnowledgeUI(Context context, UserAccount userAccount) {
