@@ -42,7 +42,7 @@ ext {
     fab_speed_dial_version = "1.0.6"
 
     // Android
-    appCompatV7SupportVersion = "27.0.2"
+    appCompatV7SupportVersion = "27.1.1"
 
     //Main resource dir
     mainResourceDir = ['main/res']

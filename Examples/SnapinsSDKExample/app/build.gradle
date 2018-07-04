@@ -18,7 +18,6 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -60,11 +59,14 @@ dependencies {
 
     // Android
     implementation "com.android.support:appcompat-v7:$appCompatV7SupportVersion"
+    implementation "com.android.support:cardview-v7:$appCompatV7SupportVersion"
 
-    // FAB Speeddial
+    // FAB Speeddial - Suppressing version warning, newest version is broken
+    //noinspection GradleDependency
     implementation "io.github.yavski:fab-speed-dial:$fab_speed_dial_version"
 
     // Salesforce SDKs
     implementation "com.salesforce.service:servicesdk:${rootProject.ext.serviceSdkVersion}"
+
     implementation "com.salesforce.mobilesdk:SalesforceSDK:${rootProject.ext.mobilesdkVersion}"
 }
