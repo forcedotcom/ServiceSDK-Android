@@ -310,5 +310,13 @@
     "changelog": "sos/4.0.2/changelog.md",
     "reference": "sos/4.0.2/api/",
     "example": "sos/4.0.2/example.md"
+ },
+ {
+    "sdk": "case",
+    "version": "4.1.1",
+    "date": "2018-09-11",
+    "changelog": "case/4.1.1/changelog.md",
+    "reference": "case/4.1.1/api/",
+    "example": "case/4.1.1/example.md"
  }
 ]
