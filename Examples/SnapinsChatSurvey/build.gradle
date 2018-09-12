@@ -27,7 +27,7 @@ allprojects {
 
 ext {
     // Salesforce Snap-ins SDKs
-    serviceSdkVersion = "214.0.1"
+    serviceSdkVersion = "214.0.2"
 }
 
 task clean(type: Delete) {
