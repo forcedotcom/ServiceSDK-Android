@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for ServiceSDK - Chat 3.2.0-RC.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+<title>
+
+  Class Index
+
+
+| ServiceSDK - Chat 3.2.0-RC.2
+
+</title>
+<link href="./../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="./../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="./../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="./../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="./../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="./../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("./", "./../assets/");
+</script>
+<script src="./../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="./../assets/navtree_data.js" type="text/javascript"></script>
+<script src="./../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">ServiceSDK - Chat 3.2.0-RC.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, './')"
+                      onkeyup="return search_changed(event, false, './')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="./packages.html"  >Package Index</a> | 
+                <a href="./classes.html" class="selected">Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/chat/core/package-summary.html">com.salesforce.android.chat.core</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/chat/core/exception/package-summary.html">com.salesforce.android.chat.core.exception</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/chat/core/model/package-summary.html">com.salesforce.android.chat.core.model</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/chat/ui/package-summary.html">com.salesforce.android.chat.ui</a></li>
+    <li class="api apilevel-">
+  <a href="./com/salesforce/android/chat/ui/model/package-summary.html">com.salesforce.android.chat.ui.model</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+              <script>
+                /*addLoadEvent(maxPackageHeight);*/
+              </script>
+              <p style="padding:10px">Select a package to view its members</p><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="./packages.html"  >Package Index</a> | 
+            <a href="./classes.html" class="selected">Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("./");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="jd-header">
+<h1>Class Index</h1>
+</div>
+
+<div id="jd-content">
+
+<div class="jd-letterlist">
+    <a href="#letter_A">A</a>
+    <a href="#letter_C">C</a>
+    <a href="#letter_E">E</a>
+    <a href="#letter_F">F</a>
+    <a href="#letter_P">P</a>
+    <a href="#letter_Q">Q</a>
+    <a href="#letter_S">S</a>
+</div>
+
+
+
+<h2 id="letter_A">A</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/AgentAvailabilityClient.html">AgentAvailabilityClient</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/AgentInformation.html">AgentInformation</a></td>
+            <td class="jd-descrcol" width="100%">Contains information about the Agent that has joined the Chat session.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/AgentListener.html">AgentListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for retrieving Agent information during a chat session.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/AvailabilityState.html">AvailabilityState</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/AvailabilityState.Status.html">AvailabilityState.Status</a></td>
+            <td class="jd-descrcol" width="100%">The agent availability client allows you to query the availability of agents attached to a
+ particular button id.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_C">C</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/ChatAnalytics.html">ChatAnalytics</a></td>
+            <td class="jd-descrcol" width="100%">ChatAnalytics contains identifying information for analytics data that is relayed via the
+ com.salesforce.android.service.common.analytics.ServiceAnalytics API.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/ChatBotListener.html">ChatBotListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for receiving menus from a Chat Bot.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/ChatClient.html">ChatClient</a></td>
+            <td class="jd-descrcol" width="100%">ChatClient enables the interaction with the Chat Session.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/ChatConfiguration.html">ChatConfiguration</a></td>
+            <td class="jd-descrcol" width="100%">Configuration options for Service SDK Chat.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/ChatConfiguration.Builder.html">ChatConfiguration.Builder</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/ChatCore.html">ChatCore</a></td>
+            <td class="jd-descrcol" width="100%">Entry point for configuring and creating a Service SDK Chat Session.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatEndReason.html">ChatEndReason</a></td>
+            <td class="jd-descrcol" width="100%">Reasons for why the session has ended.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatEntity.html">ChatEntity</a></td>
+            <td class="jd-descrcol" width="100%">An ChatEntity object defines a set of behavior for interacting with a Salesforce object, ie.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatEntity.Builder.html">ChatEntity.Builder</a></td>
+            <td class="jd-descrcol" width="100%">Used to construct <code><a href="./com/salesforce/android/chat/core/model/ChatEntity.html">ChatEntity</a></code> objects for interacting with Salesforce objects.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatEntityField.html">ChatEntityField</a></td>
+            <td class="jd-descrcol" width="100%">ChatEntityFields are used to define which Salesforce object fields a <code><a href="./com/salesforce/android/chat/core/model/ChatEntity.html">ChatEntity</a></code>
+ interacts with and what the behavior should be.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatEntityField.Builder.html">ChatEntityField.Builder</a></td>
+            <td class="jd-descrcol" width="100%">Used to construct <code><a href="./com/salesforce/android/chat/core/model/ChatEntityField.html">ChatEntityField</a></code> objects for interacting with the fields of a
+ Salesforce object via <code><a href="./com/salesforce/android/chat/core/model/ChatEntity.html">ChatEntity</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatFooterMenu.html">ChatFooterMenu</a></td>
+            <td class="jd-descrcol" width="100%">A footer menu provides selection options for the length of a session with a Chat Bot.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatFooterMenu.MenuItem.html">ChatFooterMenu.MenuItem</a></td>
+            <td class="jd-descrcol" width="100%">Model that represents a menu item.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatMessage.html">ChatMessage</a></td>
+            <td class="jd-descrcol" width="100%">Contains data representing a Chat Message that has been received from the Agent.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatSentMessageReceipt.html">ChatSentMessageReceipt</a></td>
+            <td class="jd-descrcol" width="100%">Delivery receipt for a sent chat message.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatSessionInfo.html">ChatSessionInfo</a></td>
+            <td class="jd-descrcol" width="100%">Contains information about the current Chat session.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatSessionState.html">ChatSessionState</a></td>
+            <td class="jd-descrcol" width="100%">The lifecycle session states for a Chat session are determined by a linear state machine.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/ChatUI.html">ChatUI</a></td>
+            <td class="jd-descrcol" width="100%">Entry-point for Chat UI.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/ChatUIClient.html">ChatUIClient</a></td>
+            <td class="jd-descrcol" width="100%">Public API for Chat UI
+&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/ChatUIConfiguration.html">ChatUIConfiguration</a></td>
+            <td class="jd-descrcol" width="100%">Configuration information pertinent to launching Chat UI and starting Chat sessions.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/ChatUIConfiguration.Builder.html">ChatUIConfiguration.Builder</a></td>
+            <td class="jd-descrcol" width="100%">Build a new <code><a href="./com/salesforce/android/chat/ui/ChatUIConfiguration.html">ChatUIConfiguration</a></code> instance.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatUserData.html">ChatUserData</a></td>
+            <td class="jd-descrcol" width="100%">A custom data entry to capture user data that can be sent to your Salesforce org and stored as a
+ field in a chat transcript.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatWindowButtonMenu.html">ChatWindowButtonMenu</a></td>
+            <td class="jd-descrcol" width="100%">A chat window button menu provides quick reply selection options provided via
+ <code><a href="./com/salesforce/android/chat/core/ChatBotListener.html#onChatButtonMenuReceived(com.salesforce.android.chat.core.model.ChatWindowButtonMenu)">onChatButtonMenuReceived(ChatWindowButtonMenu)</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatWindowButtonMenu.Button.html">ChatWindowButtonMenu.Button</a></td>
+            <td class="jd-descrcol" width="100%">Model that represents a button from the button menu.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatWindowMenu.html">ChatWindowMenu</a></td>
+            <td class="jd-descrcol" width="100%">Model that represents a menu received from a ChatBot.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/ChatWindowMenu.MenuItem.html">ChatWindowMenu.MenuItem</a></td>
+            <td class="jd-descrcol" width="100%">Model that represents a menu item.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_E">E</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/exception/EmptyChatMessageException.html">EmptyChatMessageException</a></td>
+            <td class="jd-descrcol" width="100%">Exception returned by <code><a href="./com/salesforce/android/chat/core/ChatClient.html#sendChatMessage(java.lang.String)">sendChatMessage(String)</a></code> via
+ <code><a href="null#onError(com.salesforce.android.service.common.utilities.control.Async.ErrorHandler)">onError(Async.ErrorHandler)</a></code>
+ when attempting to send an empty chat message.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_F">F</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/FileTransferAssistant.html">FileTransferAssistant</a></td>
+            <td class="jd-descrcol" width="100%">Enables sending a file to an Agent, which will be attached to a support case.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/FileTransferRequestListener.html">FileTransferRequestListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for handling File Transfer Requests from an Agent.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/FileTransferStatus.html">FileTransferStatus</a></td>
+            <td class="jd-descrcol" width="100%">Status of the current file transfer to the Agent.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_P">P</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatEntity.html">PreChatEntity</a></td>
+            <td class="jd-descrcol" width="100%">
+      <em>
+  This class is deprecated.
+      Deprecated in favor of <code><a href="./com/salesforce/android/chat/core/model/ChatEntity.html">ChatEntity</a></code>
+</em>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatEntity.Builder.html">PreChatEntity.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+      <em>
+  This class is deprecated.
+      Deprecated in favor of <code><a href="./com/salesforce/android/chat/core/model/ChatEntity.Builder.html">ChatEntity.Builder</a></code>.
+</em>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatEntityField.html">PreChatEntityField</a></td>
+            <td class="jd-descrcol" width="100%">
+      <em>
+  This class is deprecated.
+      Deprecated in favor of <code><a href="./com/salesforce/android/chat/core/model/ChatEntityField.html">ChatEntityField</a></code>
+</em>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatEntityField.Builder.html">PreChatEntityField.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+      <em>
+  This class is deprecated.
+      Deprecated in favor of <code><a href="./com/salesforce/android/chat/core/model/ChatEntityField.html">ChatEntityField</a></code>.
+</em>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatField.html">PreChatField</a></td>
+            <td class="jd-descrcol" width="100%">
+      <em>
+  This class is deprecated.
+      Deprecated in favor of <code><a href="./com/salesforce/android/chat/core/model/ChatUserData.html">ChatUserData</a></code>
+</em>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatField.Builder.html">PreChatField.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+      <em>
+  This class is deprecated.
+      Deprecated in favor of <code><a href="./com/salesforce/android/chat/core/model/ChatUserData.html">ChatUserData</a></code>.
+</em>&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatField.PickListOption.html">PreChatField.PickListOption</a></td>
+            <td class="jd-descrcol" width="100%">Represent a PickList option as a serializable tuple.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/PreChatField.Type.html">PreChatField.Type</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/model/PreChatPickListField.html">PreChatPickListField</a></td>
+            <td class="jd-descrcol" width="100%">A pre-chat field used to present pick list options to the user.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/model/PreChatPickListField.Builder.html">PreChatPickListField.Builder</a></td>
+            <td class="jd-descrcol" width="100%">Used to construct <code><a href="./com/salesforce/android/chat/ui/model/PreChatPickListField.html">PreChatPickListField</a></code> objects for presenting pick list options to the
+ user during pre-chat.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/model/PreChatPickListField.Option.html">PreChatPickListField.Option</a></td>
+            <td class="jd-descrcol" width="100%">A pick list option that can be used with <code><a href="./com/salesforce/android/chat/ui/model/PreChatPickListField.html">PreChatPickListField</a></code> and displayed on the
+ pre-chat UI.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/model/PreChatTextInputField.html">PreChatTextInputField</a></td>
+            <td class="jd-descrcol" width="100%">A pre-chat field used to request text input from the user.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/model/PreChatTextInputField.Builder.html">PreChatTextInputField.Builder</a></td>
+            <td class="jd-descrcol" width="100%">Used to construct <code><a href="./com/salesforce/android/chat/ui/model/PreChatTextInputField.html">PreChatTextInputField</a></code> objects for requesting text input from the user
+ during pre-chat.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/model/PreChatTextInputField.Validator.html">PreChatTextInputField.Validator</a></td>
+            <td class="jd-descrcol" width="100%">Validator offers an extensible way for you to perform custom validation on values applied to
+ <code><a href="./com/salesforce/android/chat/ui/model/PreChatTextInputField.html">PreChatTextInputField</a></code>.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/ui/PreChatUIListener.html">PreChatUIListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for receiving status information about the PreChat UI.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_Q">Q</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/QueueListener.html">QueueListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for retrieving queue position updates while connecting to a chat session.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_S">S</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/SensitiveDataRule.html">SensitiveDataRule</a></td>
+            <td class="jd-descrcol" width="100%">Represents a text scrubbing directive that is used to replace or remove text that occurs in
+ outgoing chat messages should they match the provided Regular Expression pattern.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/model/SensitiveDataRule.Action.html">SensitiveDataRule.Action</a></td>
+            <td class="jd-descrcol" width="100%">&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/exception/SessionDoesNotExistException.html">SessionDoesNotExistException</a></td>
+            <td class="jd-descrcol" width="100%">Exception returned by <code><a href="./com/salesforce/android/chat/core/ChatClient.html">ChatClient</a></code> via
+ <code><a href="null#onError(com.salesforce.android.service.common.utilities.control.Async.ErrorHandler)">onError(Async.ErrorHandler)</a></code>
+ when an action has been performed but the session does not exist.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/SessionInfoListener.html">SessionInfoListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for receiving information about the current Chat session.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="./com/salesforce/android/chat/core/SessionStateListener.html">SessionStateListener</a></td>
+            <td class="jd-descrcol" width="100%">Listener interface for receiving Chat session state and the reason for why a Chat session has
+ ended.&nbsp;</td>
+        </tr>
+    
+    
+</table>
+
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
