@@ -5,7 +5,7 @@ repositories {
 }
 
 dependencies {
-  compile "com.salesforce.service:case-ui:4.1.2-RC.2"
+  compile "com.salesforce.service:case-ui:4.1.2"
 }
 ```
 
