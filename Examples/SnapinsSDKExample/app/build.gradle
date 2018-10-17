@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "com.salesforce.snapinssdkexample"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
