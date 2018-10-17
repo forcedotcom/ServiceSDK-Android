@@ -1363,7 +1363,7 @@
 >
 </field>
 <field name="mHttpService"
- type="HttpService"
+ type="com.salesforce.android.knowledge.core.internal.http.HttpService"
  transient="false"
  volatile="false"
  static="false"

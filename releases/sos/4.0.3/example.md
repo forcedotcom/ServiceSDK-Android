@@ -5,7 +5,7 @@ repositories {
 }
 
 dependencies {
-  compile "com.salesforce.android:sos:4.0.3-RC.3"
+  compile "com.salesforce.android:sos:4.0.3"
 }
 ```
 
