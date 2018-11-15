@@ -366,5 +366,13 @@
     "changelog": "case/4.1.3/changelog.md",
     "reference": "case/4.1.3/api/",
     "example": "case/4.1.3/example.md"
+ },
+ {
+    "sdk": "knowledge",
+    "version": "4.2.1",
+    "date": "2018-11-15",
+    "changelog": "knowledge/4.2.1/changelog.md",
+    "reference": "knowledge/4.2.1/api/",
+    "example": "knowledge/4.2.1/example.md"
  }
 ]
