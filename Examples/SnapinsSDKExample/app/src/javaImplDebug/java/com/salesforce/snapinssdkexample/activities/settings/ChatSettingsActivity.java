@@ -14,7 +14,7 @@ import com.salesforce.snapinssdkexample.R;
 
 public class ChatSettingsActivity extends AppCompatActivity {
     public static final String KEY_ORG_ID = "pref_chat_org_id";
-    public static final String KEY_DEVELOPMENT_ID = "pref_chat_deployment_id";
+    public static final String KEY_DEPLOYMENT_ID = "pref_chat_deployment_id";
     public static final String KEY_BUTTON_ID = "pref_chat_button_id";
     public static final String KEY_LIVE_AGENT_POD = "pref_chat_la_pod";
 
