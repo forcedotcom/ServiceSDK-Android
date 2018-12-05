@@ -39,7 +39,7 @@ public class ServiceSDKUtils {
                         context.getString(R.string.pref_chat_org_id_default)),
                 getStringPref(context, ChatSettingsActivity.KEY_BUTTON_ID,
                         context.getString(R.string.pref_chat_button_id_default)),
-                getStringPref(context, ChatSettingsActivity.KEY_DEVELOPMENT_ID,
+                getStringPref(context, ChatSettingsActivity.KEY_DEPLOYMENT_ID,
                         context.getString(R.string.pref_chat_deployment_id_default)),
                 getStringPref(context, ChatSettingsActivity.KEY_LIVE_AGENT_POD,
                         context.getString(R.string.pref_chat_button_id_default))
