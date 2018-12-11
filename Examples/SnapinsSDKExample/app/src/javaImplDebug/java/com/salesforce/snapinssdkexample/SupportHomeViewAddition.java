@@ -18,9 +18,11 @@ import com.salesforce.android.cases.ui.CaseUI;
 import com.salesforce.android.cases.ui.CaseUIClient;
 import com.salesforce.android.cases.ui.CaseUIConfiguration;
 import com.salesforce.android.chat.core.ChatConfiguration;
-import com.salesforce.android.chat.core.model.PreChatField;
+import com.salesforce.android.chat.core.model.ChatUserData;
 import com.salesforce.android.chat.ui.ChatUI;
 import com.salesforce.android.chat.ui.ChatUIClient;
+import com.salesforce.android.chat.ui.model.PreChatPickListField;
+import com.salesforce.android.chat.ui.model.PreChatTextInputField;
 import com.salesforce.android.knowledge.ui.KnowledgeScene;
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition;
 import com.salesforce.android.service.common.utilities.control.Async;
@@ -138,7 +140,7 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
         // Show an alert if any argument is invalid
         try {
             chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-                    .preChatFields(buildPreChatFields())
+                    .chatUserData(buildPreChatFields())
                     .build();
         } catch (IllegalArgumentException e) {
             showConfigurationErrorAlertDialog(e.getMessage());
@@ -166,29 +168,27 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
     /**
      * Configures pre chat fields if prechat is enabled in settings
      */
-    private List<PreChatField> buildPreChatFields(){
+    private List<ChatUserData> buildPreChatFields(){
         // Create a pre-chat field for the user's name if it's enabled
-        PreChatField preChatField1 = new PreChatField.Builder()
+        ChatUserData preChatField1 = new PreChatTextInputField.Builder()
                     .build(context.getString(R.string.prechat_agent_info_label),
-                            context.getString(R.string.prechat_enter_name_label),
-                            PreChatField.STRING);
+                            context.getString(R.string.prechat_enter_name_label));
 
         // Create a pre-chat picklist field that has selecting pre-defined values
-        PreChatField preChatField2 = new PreChatField.Builder()
+        ChatUserData preChatField2 = new PreChatPickListField.Builder()
                 .required(true)
-                .addPickListOption(new PreChatField.PickListOption(
-                        context.getString(R.string.prechat_example_id) + '1',
-                        context.getString(R.string.prechat_example_selection_one)))
-                .addPickListOption(new PreChatField.PickListOption(
-                        context.getString(R.string.prechat_example_id) + 2,
-                        context.getString(R.string.prechat_example_selection_two)))
+                .addOption(new PreChatPickListField.Option(
+                        context.getString(R.string.prechat_example_selection_one),
+                        context.getString(R.string.prechat_example_id_one)))
+                .addOption(new PreChatPickListField.Option(
+                        context.getString(R.string.prechat_example_selection_two),
+                        context.getString(R.string.prechat_example_id_two)))
                 .build(context.getString(R.string.prechat_agent_info_label),
-                        context.getString(R.string.prechat_selection_label_title),
-                        PreChatField.PICKLIST);
+                        context.getString(R.string.prechat_selection_label_title));
 
         return preChatEnabled()
                 ? Utils.asMutableList(preChatField1, preChatField2)
-                : Collections.<PreChatField>emptyList();
+                : Collections.<ChatUserData>emptyList();
     }
 
     /**

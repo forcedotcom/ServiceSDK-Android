@@ -25,9 +25,11 @@ import com.salesforce.android.cases.core.CaseClientCallbacks
 import com.salesforce.android.cases.ui.CaseUI
 import com.salesforce.android.cases.ui.CaseUIConfiguration
 import com.salesforce.android.chat.core.ChatConfiguration
-import com.salesforce.android.chat.core.model.PreChatField
+import com.salesforce.android.chat.core.model.ChatUserData
 import com.salesforce.android.chat.ui.ChatUI
 import com.salesforce.android.chat.ui.ChatUIClient
+import com.salesforce.android.chat.ui.model.PreChatPickListField
+import com.salesforce.android.chat.ui.model.PreChatTextInputField
 import com.salesforce.android.knowledge.ui.KnowledgeScene
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition
 import com.salesforce.android.sos.api.Sos
@@ -117,7 +119,7 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
         // Try to build a chat configuration, show an alert if any argument is invalid
         try {
             chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-                    .preChatFields(buildPreChatFields())
+                    .chatUserData(buildPreChatFields())
                     .build()
         } catch (e: IllegalArgumentException) {
             showConfigurationErrorAlertDialog(e.message)
@@ -144,25 +146,23 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
     /**
      * Configures pre chat fields if prechat is enabled in settings
      */
-    private fun buildPreChatFields(): MutableList<PreChatField>? {
+    private fun buildPreChatFields(): MutableList<ChatUserData> {
         return if (preChatEnabled())
             Utils.asMutableList(
-                    PreChatField.Builder()
+                    PreChatTextInputField.Builder()
                             .build(context.getString(R.string.prechat_agent_info_label),
-                                    context.getString(R.string.prechat_enter_name_label),
-                                    PreChatField.STRING),
+                                    context.getString(R.string.prechat_enter_name_label)),
                     // A required picklist field
-                    PreChatField.Builder()
+                    PreChatPickListField.Builder()
                             .required(true)
-                            .addPickListOption(PreChatField.PickListOption(
-                                    String.format(context.getString(R.string.prechat_example_id), 1),
-                                    context.getString(R.string.prechat_example_selection_one)))
-                            .addPickListOption(PreChatField.PickListOption(
-                                    String.format(context.getString(R.string.prechat_example_id), 2),
-                                    context.getString(R.string.prechat_example_selection_two)))
+                            .addOption(PreChatPickListField.Option(
+                                    context.getString(R.string.prechat_example_selection_one),
+                                    context.getString(R.string.prechat_example_id_one)))
+                            .addOption(PreChatPickListField.Option(
+                                    context.getString(R.string.prechat_example_selection_two),
+                                    context.getString(R.string.prechat_example_id_two)))
                             .build(context.getString(R.string.prechat_agent_info_label),
-                                    context.getString(R.string.prechat_selection_label_title),
-                                    PreChatField.PICKLIST)
+                                    context.getString(R.string.prechat_selection_label_title))
             )
         else Collections.emptyList()
     }
