@@ -11,7 +11,7 @@ import android.content.Context
 import android.preference.PreferenceManager
 
 object Utils {
-    fun<T> asMutableList(vararg t: T): MutableList<T>? {
+    fun<T> asMutableList(vararg t: T): MutableList<T> {
         val result = ArrayList<T>()
         result += t
         return result
