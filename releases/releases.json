@@ -374,5 +374,13 @@
     "changelog": "knowledge/4.2.1/changelog.md",
     "reference": "knowledge/4.2.1/api/",
     "example": "knowledge/4.2.1/example.md"
+ },
+ {
+    "sdk": "sos",
+    "version": "4.0.4",
+    "date": "2018-12-14",
+    "changelog": "sos/4.0.4/changelog.md",
+    "reference": "sos/4.0.4/api/",
+    "example": "sos/4.0.4/example.md"
  }
 ]
