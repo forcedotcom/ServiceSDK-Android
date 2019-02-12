@@ -382,5 +382,13 @@
     "changelog": "sos/4.0.4/changelog.md",
     "reference": "sos/4.0.4/api/",
     "example": "sos/4.0.4/example.md"
+ },
+ {
+    "changelog": "common/7.1.1/changelog.md",
+    "date": "2019-02-12",
+    "example": "common/7.1.1/example.md",
+    "reference": "common/7.1.1/api/",
+    "sdk": "common",
+    "version": "7.1.1"
  }
 ]
