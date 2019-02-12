@@ -1,0 +1,8 @@
+com.salesforce.android.connectedapp
+com.salesforce.android.service.common.analytics
+com.salesforce.android.service.common.http
+com.salesforce.android.service.common.utilities.control
+com.salesforce.android.service.common.utilities.functional
+com.salesforce.android.service.common.utilities.logging
+com.salesforce.android.service.common.utilities.spatial
+
