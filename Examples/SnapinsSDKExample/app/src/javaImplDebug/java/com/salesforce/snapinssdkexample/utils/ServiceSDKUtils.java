@@ -53,6 +53,7 @@ public class ServiceSDKUtils {
         // Check if the banner and/or avatar are enabled in settings
         final boolean chatbotBannerEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_BANNER_ENABLED);
         final boolean chatbotAvatarEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_AVATAR_ENABLED);
+        final boolean defaultToMinimized = getBooleanPref(context, ChatSettingsActivity.KEY_DEFAULT_TO_MINIMIZED_ENABLED);
 
         final ChatUIConfiguration.Builder chatUIConfigurationBuilder = new ChatUIConfiguration.Builder();
 
@@ -66,6 +67,10 @@ public class ServiceSDKUtils {
         if (chatbotAvatarEnabled) {
             // Set the ChatBot avatar to use via drawable ID
             chatUIConfigurationBuilder.chatBotAvatar(R.drawable.ic_chatbot_avatar);
+        }
+
+        if (!defaultToMinimized) {
+            chatUIConfigurationBuilder.defaultToMinimized(false);
         }
 
         return chatUIConfigurationBuilder;

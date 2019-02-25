@@ -59,6 +59,7 @@ object ServiceSDKUtils {
         // Check if the banner and/or avatar are enabled in settings
         val chatbotBannerEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_BANNER_ENABLED)
         val chatbotAvatarEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_AVATAR_ENABLED)
+        val defaultToMinimized = getBooleanPref(context, ChatSettingsActivity.KEY_DEFAULT_TO_MINIMIZED_ENABLED)
 
         val chatUIConfigurationBuilder: ChatUIConfiguration.Builder = ChatUIConfiguration.Builder().chatConfiguration(chatConfiguration)
 
@@ -70,6 +71,10 @@ object ServiceSDKUtils {
         if (chatbotAvatarEnabled) {
             // Set the ChatBot avatar to use via drawable ID
             chatUIConfigurationBuilder.chatBotAvatar(R.drawable.ic_chatbot_avatar)
+        }
+
+        if (!defaultToMinimized) {
+            chatUIConfigurationBuilder.defaultToMinimized(false)
         }
 
         return chatUIConfigurationBuilder

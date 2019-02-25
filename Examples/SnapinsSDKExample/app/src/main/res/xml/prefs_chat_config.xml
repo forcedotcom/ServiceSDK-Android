@@ -52,5 +52,10 @@
             android:defaultValue="false"
             android:key="pref_chatbot_avatar_enabled"
             android:title="@string/pref_chatbot_avatar_enabled_title"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_default_to_minimized_enabled"
+            android:title="@string/pref_default_to_minimized_enabled_title"/>
     </PreferenceCategory>
 </PreferenceScreen>

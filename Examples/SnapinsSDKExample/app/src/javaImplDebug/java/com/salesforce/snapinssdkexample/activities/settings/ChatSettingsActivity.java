@@ -21,6 +21,7 @@ public class ChatSettingsActivity extends AppCompatActivity {
     public static final String KEY_PRECHAT_ENABLED = "pref_chat_prechat_enabled";
     public static final String KEY_CHATBOT_BANNER_ENABLED = "pref_chatbot_banner_enabled";
     public static final String KEY_CHATBOT_AVATAR_ENABLED = "pref_chatbot_avatar_enabled";
+    public static final String KEY_DEFAULT_TO_MINIMIZED_ENABLED ="pref_default_to_minimized_enabled";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

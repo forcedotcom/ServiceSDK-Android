@@ -150,4 +150,5 @@
     <string name="pref_chat_prechat_enabled_title">Pre Chat Enabled?</string>
     <string name="pref_chatbot_banner_enabled_title">ChatBot Banner Enabled</string>
     <string name="pref_chatbot_avatar_enabled_title">ChatBot Avatar Enabled</string>
+    <string name="pref_default_to_minimized_enabled_title">Default to Minimized</string>
 </resources>
