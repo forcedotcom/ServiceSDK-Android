@@ -58,8 +58,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Android
-    implementation "com.android.support:appcompat-v7:$appCompatV7SupportVersion"
-    implementation "com.android.support:cardview-v7:$appCompatV7SupportVersion"
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation "androidx.appcompat:appcompat:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.preference:preference:1.0.0"
 
     // FAB Speeddial - Suppressing version warning, newest version is broken
     //noinspection GradleDependency

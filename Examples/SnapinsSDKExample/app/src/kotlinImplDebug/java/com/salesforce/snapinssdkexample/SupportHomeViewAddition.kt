@@ -13,14 +13,11 @@ import android.animation.ObjectAnimator
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
-import android.support.v4.app.FragmentActivity
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
-import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
-import com.salesforce.snapinssdkexample.utils.Utils
+import androidx.fragment.app.FragmentActivity
 import com.salesforce.android.cases.core.CaseClientCallbacks
 import com.salesforce.android.cases.ui.CaseUI
 import com.salesforce.android.cases.ui.CaseUIConfiguration
@@ -33,6 +30,9 @@ import com.salesforce.android.chat.ui.model.PreChatTextInputField
 import com.salesforce.android.knowledge.ui.KnowledgeScene
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition
 import com.salesforce.android.sos.api.Sos
+import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
+import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
+import com.salesforce.snapinssdkexample.utils.Utils
 import io.github.yavski.fabspeeddial.FabSpeedDial
 import io.github.yavski.fabspeeddial.SimpleMenuListenerAdapter
 import java.util.*
@@ -41,7 +41,7 @@ import java.util.*
  * An addition to display Knowledge. Cases, Chat and SOS are launched from here as an example of
  * how these snap-ins can be displayed within an existing application.
  */
-class SupportHomeViewAddition: KnowledgeViewAddition {
+class SupportHomeViewAddition : KnowledgeViewAddition {
     lateinit var context: Context
 
     /**
@@ -78,7 +78,7 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
 
     /**
      * Determines which scenes should have the view addition.
-    */
+     */
     override fun visibleFor(knowledgeScene: KnowledgeScene): Boolean {
         // Limit visibility of the FAB to the knowledge home page
         return (knowledgeScene == KnowledgeScene.SCENE_HOME)
@@ -212,10 +212,12 @@ class SupportHomeViewAddition: KnowledgeViewAddition {
                                 ServiceSDKUtils.getAuthenticatedUser())))
 
         // Create a UI client UI asynchronously
-        CaseUI.with(context).uiClient().onResult { _, caseUIClient -> run {
-            // Launch the cases client
-            caseUIClient.launch(context)
-        }}
+        CaseUI.with(context).uiClient().onResult { _, caseUIClient ->
+            run {
+                // Launch the cases client
+                caseUIClient.launch(context)
+            }
+        }
 
         return true
     }

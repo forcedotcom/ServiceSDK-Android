@@ -1,8 +1,7 @@
 package com.salesforce.snapinssdkexample.auth;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.salesforce.android.service.common.http.AuthTokenProvider;
 import com.salesforce.android.service.common.http.ResponseSummary;
 import com.salesforce.androidsdk.rest.ClientManager;

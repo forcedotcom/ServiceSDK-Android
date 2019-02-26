@@ -2,16 +2,15 @@ package com.salesforce.snapinssdkexample.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import com.salesforce.android.chat.core.ChatConfiguration;
 import com.salesforce.android.chat.core.ChatCore;
 import com.salesforce.android.chat.core.model.AvailabilityState;
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_sos_settings:
                 return startActivityFor(SosSettingsActivity.class);
             case R.id.action_kb_settings:
@@ -253,11 +252,11 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
         SalesforceSDKManager.getInstance()
                 .getClientManager()
                 .getRestClient(this, new ClientManager.RestClientCallback() {
-            @Override
-            public void authenticatedRestClient(RestClient client) {
-                // left blank intentionally
-            }
-        });
+                    @Override
+                    public void authenticatedRestClient(RestClient client) {
+                        // left blank intentionally
+                    }
+                });
     }
 
     /**

@@ -16,9 +16,12 @@ import com.salesforce.android.chat.core.model.ChatSessionState
 /**
  * Class which listens for chat session and state and displays toasts.
  */
-class ChatSessionListener(private val context: Context): SessionStateListener {
-    override fun onSessionEnded(endReason: ChatEndReason?) { showToast(endReason.toString()) }
-    override fun onSessionStateChange(state: ChatSessionState?) { }
+class ChatSessionListener(private val context: Context) : SessionStateListener {
+    override fun onSessionEnded(endReason: ChatEndReason?) {
+        showToast(endReason.toString())
+    }
+
+    override fun onSessionStateChange(state: ChatSessionState?) {}
 
     private fun showToast(reason: String) {
         Toast.makeText(context, "Chat state: $reason", Toast.LENGTH_SHORT).show()
