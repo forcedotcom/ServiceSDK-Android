@@ -1,6 +1,6 @@
-# Snap-Ins SDK for Android
+# Embedded Service SDK for Android
 
-Welcome to the Snap-ins SDK for Android GitHub repository!
+Welcome to the Embedded Service SDK for Android GitHub repository!
 
 ## Links
 
