@@ -1,7 +1,6 @@
 package com.salesforce.snapinssdkexample.auth;
 
-import android.support.annotation.NonNull;
-
+import androidx.annotation.NonNull;
 import com.salesforce.android.service.common.http.AuthenticatedUser;
 
 public class MobileSdkUser implements AuthenticatedUser {

@@ -1,10 +1,9 @@
 package com.salesforce.snapinssdkexample.activities.settings;
 
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceFragmentCompat;
 import com.salesforce.snapinssdkexample.R;
 
 
@@ -21,20 +20,18 @@ public class ChatSettingsActivity extends AppCompatActivity {
     public static final String KEY_PRECHAT_ENABLED = "pref_chat_prechat_enabled";
     public static final String KEY_CHATBOT_BANNER_ENABLED = "pref_chatbot_banner_enabled";
     public static final String KEY_CHATBOT_AVATAR_ENABLED = "pref_chatbot_avatar_enabled";
-    public static final String KEY_DEFAULT_TO_MINIMIZED_ENABLED ="pref_default_to_minimized_enabled";
+    public static final String KEY_DEFAULT_TO_MINIMIZED_ENABLED = "pref_default_to_minimized_enabled";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
     }
 
-    public static class SettingsFragment extends PreferenceFragment {
+    public static class SettingsFragment extends PreferenceFragmentCompat {
         @Override
-        public void onCreate(@Nullable Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             addPreferencesFromResource(R.xml.prefs_chat_config);
         }
     }

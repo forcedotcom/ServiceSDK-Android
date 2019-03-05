@@ -8,12 +8,12 @@
 package com.salesforce.snapinssdkexample
 
 import android.app.Application
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.salesforce.androidsdk.app.SalesforceSDKManager
 import com.salesforce.snapinssdkexample.activities.MainActivity
 import kotlin.reflect.KClass
 
-class ServiceSDKApplication: Application() {
+class ServiceSDKApplication : Application() {
     lateinit var chatSessionListener: ChatSessionListener
 
     override fun onCreate() {
@@ -26,6 +26,6 @@ class ServiceSDKApplication: Application() {
     }
 
     private fun initializeSalesforceSDKManager(activityClass: KClass<out AppCompatActivity>) {
-        SalesforceSDKManager.initNative(this, null, activityClass.java)
+        SalesforceSDKManager.initNative(this, activityClass.java)
     }
 }

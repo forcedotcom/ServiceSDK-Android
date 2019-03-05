@@ -6,13 +6,12 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import com.salesforce.android.cases.core.CaseClientCallbacks;
 import com.salesforce.android.cases.ui.CaseUI;
 import com.salesforce.android.cases.ui.CaseUIClient;
@@ -30,14 +29,13 @@ import com.salesforce.android.sos.api.Sos;
 import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity;
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils;
 import com.salesforce.snapinssdkexample.utils.Utils;
+import io.github.yavski.fabspeeddial.FabSpeedDial;
+import io.github.yavski.fabspeeddial.SimpleMenuListenerAdapter;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import io.github.yavski.fabspeeddial.FabSpeedDial;
-import io.github.yavski.fabspeeddial.SimpleMenuListenerAdapter;
 
 import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
 
@@ -46,7 +44,7 @@ import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
  * how these snap-ins can be displayed within an existing application.
  */
 
-public class SupportHomeViewAddition implements KnowledgeViewAddition{
+public class SupportHomeViewAddition implements KnowledgeViewAddition {
     private Context context;
 
     /**
@@ -65,7 +63,7 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
     public void initView(View view, boolean visible) {
         final FabSpeedDial fab = view.findViewById(R.id.support_home_fab);
 
-        fab.setMenuListener(new SimpleMenuListenerAdapter(){
+        fab.setMenuListener(new SimpleMenuListenerAdapter() {
             @Override
             public boolean onMenuItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
@@ -119,7 +117,7 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
         return getAnimatorSet(view, 0f);
     }
 
-    private Animator getAnimatorSet(View view, Float value){
+    private Animator getAnimatorSet(View view, Float value) {
         View fab = view.findViewById(R.id.support_home_fab);
 
         AnimatorSet set = new AnimatorSet();
@@ -157,10 +155,10 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
                 .onResult(new Async.ResultHandler<ChatUIClient>() {
                     @Override
                     public void handleResult(Async<?> async, @NonNull ChatUIClient chatUIClient) {
-                            // Add the configured chat session listener to the Chat UI client
-                            chatUIClient.addSessionStateListener(chatListener);
-                            // Start the live agent chat session
-                            chatUIClient.startChatSession((FragmentActivity) context);
+                        // Add the configured chat session listener to the Chat UI client
+                        chatUIClient.addSessionStateListener(chatListener);
+                        // Start the live agent chat session
+                        chatUIClient.startChatSession((FragmentActivity) context);
                     }
                 });
     }
@@ -168,11 +166,11 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition{
     /**
      * Configures pre chat fields if prechat is enabled in settings
      */
-    private List<ChatUserData> buildPreChatFields(){
+    private List<ChatUserData> buildPreChatFields() {
         // Create a pre-chat field for the user's name if it's enabled
         ChatUserData preChatField1 = new PreChatTextInputField.Builder()
-                    .build(context.getString(R.string.prechat_agent_info_label),
-                            context.getString(R.string.prechat_enter_name_label));
+                .build(context.getString(R.string.prechat_agent_info_label),
+                        context.getString(R.string.prechat_enter_name_label));
 
         // Create a pre-chat picklist field that has selecting pre-defined values
         ChatUserData preChatField2 = new PreChatPickListField.Builder()

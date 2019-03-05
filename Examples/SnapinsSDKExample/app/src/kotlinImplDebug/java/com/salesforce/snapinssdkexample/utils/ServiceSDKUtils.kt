@@ -8,13 +8,6 @@
 package com.salesforce.snapinssdkexample.utils
 
 import android.content.Context
-import com.salesforce.snapinssdkexample.R
-import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity
-import com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref
-import com.salesforce.snapinssdkexample.utils.Utils.getStringPref
 import com.salesforce.android.cases.core.CaseClientCallbacks
 import com.salesforce.android.cases.core.CaseConfiguration
 import com.salesforce.android.chat.core.ChatConfiguration
@@ -28,8 +21,15 @@ import com.salesforce.android.sos.api.SosOptions
 import com.salesforce.androidsdk.accounts.UserAccount
 import com.salesforce.androidsdk.app.SalesforceSDKManager
 import com.salesforce.androidsdk.rest.ClientManager
+import com.salesforce.snapinssdkexample.R
+import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity
+import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
+import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity
+import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity
 import com.salesforce.snapinssdkexample.auth.MobileSDKAuthTokenProvider
 import com.salesforce.snapinssdkexample.auth.MobileSdkUser
+import com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref
+import com.salesforce.snapinssdkexample.utils.Utils.getStringPref
 
 /**
  * Helper object to encapsulate building configurations of some of the Snap-ins SDKs

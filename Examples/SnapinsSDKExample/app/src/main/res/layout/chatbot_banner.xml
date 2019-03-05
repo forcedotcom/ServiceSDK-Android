@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2018, salesforce.com, inc.
   ~ All rights reserved.
   ~
@@ -20,8 +19,7 @@
   ~ WHETHER OR NOT YOU HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
   -->
 
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="136dp"
@@ -32,27 +30,27 @@
         android:id="@+id/chat_banner_avatar"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="36dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="40dp"
+        android:layout_marginBottom="36dp"
         android:contentDescription="@string/chatbot_banner_content_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_chatbot_avatar"/>
+        app:srcCompat="@drawable/ic_chatbot_avatar" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="74dp"
         android:layout_marginStart="104dp"
         android:layout_marginTop="36dp"
+        android:layout_marginBottom="74dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/chatbot_banner_title"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,7 +62,7 @@
         android:textColor="#4d4d4d"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,6 +74,6 @@
         android:textColor="#929292"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

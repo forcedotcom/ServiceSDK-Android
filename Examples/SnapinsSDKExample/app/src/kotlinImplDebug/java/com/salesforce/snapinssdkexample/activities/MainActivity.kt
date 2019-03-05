@@ -9,30 +9,28 @@ package com.salesforce.snapinssdkexample.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.salesforce.snapinssdkexample.R
-import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.salesforce.android.chat.core.ChatCore
+import com.salesforce.android.chat.core.model.AvailabilityState
 import com.salesforce.android.knowledge.ui.KnowledgeUI
 import com.salesforce.android.knowledge.ui.KnowledgeUIClient
 import com.salesforce.android.service.common.analytics.ServiceAnalytics
-import com.salesforce.snapinssdkexample.SupportHomeViewAddition
-import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
-import com.salesforce.android.chat.core.ChatCore
-import com.salesforce.android.chat.core.model.AvailabilityState
 import com.salesforce.android.service.common.utilities.control.Async
 import com.salesforce.android.sos.api.SosAvailability
 import com.salesforce.androidsdk.app.SalesforceSDKManager
 import com.salesforce.androidsdk.rest.RestClient
-
-import kotlinx.android.synthetic.main.content_main.*
-
+import com.salesforce.snapinssdkexample.R
+import com.salesforce.snapinssdkexample.SupportHomeViewAddition
+import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity
+import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
+import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity
+import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity
+import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlin.reflect.KClass
 
 /**
@@ -101,13 +99,14 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
 
         // Create an agent availability client
         ChatCore.configureAgentAvailability(chatConfig).check()
-                .onResult({ _: Async<*>?, state: AvailabilityState -> run {
-                    // Display a toast when any agent availability state is changed
-                    Toast.makeText(this,
-                            String.format(getString(R.string.chat_availability_change_message), state.status.toString()),
-                            Toast.LENGTH_SHORT).show()
-                }
-        })
+                .onResult({ _: Async<*>?, state: AvailabilityState ->
+                    run {
+                        // Display a toast when any agent availability state is changed
+                        Toast.makeText(this,
+                                String.format(getString(R.string.chat_availability_change_message), state.status.toString()),
+                                Toast.LENGTH_SHORT).show()
+                    }
+                })
 
         return true
     }
@@ -154,8 +153,8 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
      */
     private fun setupButtons() {
         knowledge_launch_button.setOnClickListener { launchKnowledge() }
-        login_button.setOnClickListener( { login() } )
-        logout_button.setOnClickListener( { logout() } )
+        login_button.setOnClickListener({ login() })
+        logout_button.setOnClickListener({ logout() })
     }
 
     /**
@@ -198,8 +197,8 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
      * Initiates user login process.
      */
     private fun login() {
-        SalesforceSDKManager.getInstance().clientManager.getRestClient(this, {
-            client: RestClient -> run {
+        SalesforceSDKManager.getInstance().clientManager.getRestClient(this, { client: RestClient ->
+            run {
                 // left blank intentionally
             }
         })
