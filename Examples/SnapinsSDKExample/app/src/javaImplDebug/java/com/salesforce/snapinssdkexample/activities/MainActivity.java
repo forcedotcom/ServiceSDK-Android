@@ -23,6 +23,7 @@ import com.salesforce.android.sos.api.SosAvailability;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
 import com.salesforce.androidsdk.rest.ClientManager;
 import com.salesforce.androidsdk.rest.RestClient;
+import com.salesforce.snapinssdkexample.ChatLauncher;
 import com.salesforce.snapinssdkexample.R;
 import com.salesforce.snapinssdkexample.SupportHomeViewAddition;
 import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
     private KnowledgeUI mKnowledgeUI;
     private KnowledgeUIClient mKnowledgeUIClient;
     private TextView knowledgeLaunchButton;
+    private Button chatButton;
     private Button loginButton;
     private Button logoutButton;
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         knowledgeLaunchButton = findViewById(R.id.knowledge_launch_button);
+        chatButton = findViewById(R.id.chat_launch_button);
         loginButton = findViewById(R.id.login_button);
         logoutButton = findViewById(R.id.logout_button);
 
@@ -187,6 +190,12 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
                 launchKnowledge();
             }
         });
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchChat();
+            }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -199,6 +208,14 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
                 logout();
             }
         });
+    }
+
+    /**
+     * Launches Chat.
+     */
+    private void launchChat() {
+        ChatLauncher chat = new ChatLauncher();
+        chat.launchChat(this);
     }
 
     /**

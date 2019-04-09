@@ -132,69 +132,8 @@ public class SupportHomeViewAddition implements KnowledgeViewAddition {
      * Configures and launches Live Agent Chat
      */
     private void launchChat() {
-        ChatConfiguration chatConfiguration;
-
-        // Create a UI configuration instance from a core config object
-        // Show an alert if any argument is invalid
-        try {
-            chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-                    .chatUserData(buildPreChatFields())
-                    .build();
-        } catch (IllegalArgumentException e) {
-            showConfigurationErrorAlertDialog(e.getMessage());
-            return;
-        }
-
-        // Configure chat session listener
-        ServiceSDKApplication serviceSDKApplication = (ServiceSDKApplication) context.getApplicationContext();
-        final ChatSessionListener chatListener = serviceSDKApplication.getChatSessionListener();
-
-        // Create the chat UI from the ChatUIConfiguration object
-        ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, chatConfiguration).build())
-                .createClient(context)
-                .onResult(new Async.ResultHandler<ChatUIClient>() {
-                    @Override
-                    public void handleResult(Async<?> async, @NonNull ChatUIClient chatUIClient) {
-                        // Add the configured chat session listener to the Chat UI client
-                        chatUIClient.addSessionStateListener(chatListener);
-                        // Start the live agent chat session
-                        chatUIClient.startChatSession((FragmentActivity) context);
-                    }
-                });
-    }
-
-    /**
-     * Configures pre chat fields if prechat is enabled in settings
-     */
-    private List<ChatUserData> buildPreChatFields() {
-        // Create a pre-chat field for the user's name if it's enabled
-        ChatUserData preChatField1 = new PreChatTextInputField.Builder()
-                .build(context.getString(R.string.prechat_agent_info_label),
-                        context.getString(R.string.prechat_enter_name_label));
-
-        // Create a pre-chat picklist field that has selecting pre-defined values
-        ChatUserData preChatField2 = new PreChatPickListField.Builder()
-                .required(true)
-                .addOption(new PreChatPickListField.Option(
-                        context.getString(R.string.prechat_example_selection_one),
-                        context.getString(R.string.prechat_example_id_one)))
-                .addOption(new PreChatPickListField.Option(
-                        context.getString(R.string.prechat_example_selection_two),
-                        context.getString(R.string.prechat_example_id_two)))
-                .build(context.getString(R.string.prechat_agent_info_label),
-                        context.getString(R.string.prechat_selection_label_title));
-
-        return preChatEnabled()
-                ? Utils.asMutableList(preChatField1, preChatField2)
-                : Collections.<ChatUserData>emptyList();
-    }
-
-    /**
-     * Helper method to determine if pre chat is enabled
-     */
-    private boolean preChatEnabled() {
-        return getBooleanPref(
-                context, ChatSettingsActivity.KEY_PRECHAT_ENABLED);
+        ChatLauncher chat = new ChatLauncher();
+        chat.launchChat(this.context);
     }
 
     /**

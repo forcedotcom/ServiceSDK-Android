@@ -113,66 +113,8 @@ class SupportHomeViewAddition : KnowledgeViewAddition {
      * Configures and launches Live Agent Chat
      */
     private fun launchChat() {
-        // Create a UI configuration instance from a core config object
-        var chatConfiguration: ChatConfiguration? = null
-
-        // Try to build a chat configuration, show an alert if any argument is invalid
-        try {
-            chatConfiguration = ServiceSDKUtils.getChatConfigurationBuilder(context)
-                    .chatUserData(buildPreChatFields())
-                    .build()
-        } catch (e: IllegalArgumentException) {
-            showConfigurationErrorAlertDialog(e.message)
-        }
-
-        // Configure chat session listener
-        val serviceSDKApplication = context.applicationContext as ServiceSDKApplication
-        val chatListener = serviceSDKApplication.chatSessionListener
-
-        chatConfiguration?.let {
-            ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, it).build())
-                    .createClient(context)
-                    .onResult { _, chatUIClient: ChatUIClient ->
-                        run {
-                            // Add the configued chat session listener to the Chat UI client
-                            chatUIClient.addSessionStateListener(chatListener)
-                            // Start the live agent chat session
-                            chatUIClient.startChatSession(context as FragmentActivity)
-                        }
-                    }
-        }
-    }
-
-    /**
-     * Configures pre chat fields if prechat is enabled in settings
-     */
-    private fun buildPreChatFields(): MutableList<ChatUserData> {
-        return if (preChatEnabled())
-            Utils.asMutableList(
-                    PreChatTextInputField.Builder()
-                            .build(context.getString(R.string.prechat_agent_info_label),
-                                    context.getString(R.string.prechat_enter_name_label)),
-                    // A required picklist field
-                    PreChatPickListField.Builder()
-                            .required(true)
-                            .addOption(PreChatPickListField.Option(
-                                    context.getString(R.string.prechat_example_selection_one),
-                                    context.getString(R.string.prechat_example_id_one)))
-                            .addOption(PreChatPickListField.Option(
-                                    context.getString(R.string.prechat_example_selection_two),
-                                    context.getString(R.string.prechat_example_id_two)))
-                            .build(context.getString(R.string.prechat_agent_info_label),
-                                    context.getString(R.string.prechat_selection_label_title))
-            )
-        else Collections.emptyList()
-    }
-
-    /**
-     * Helper method to determine if pre chat is enabled
-     */
-    private fun preChatEnabled(): Boolean {
-        return Utils.getBooleanPref(
-                context, ChatSettingsActivity.KEY_PRECHAT_ENABLED)
+        val chat = ChatLauncher()
+        chat.launchChat(context)
     }
 
     /**

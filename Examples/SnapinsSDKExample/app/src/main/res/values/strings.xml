@@ -55,16 +55,18 @@
     <string name="common_version_label">Common Version</string>
 
     <!-- Main Activity -->
-    <string name="launch">Launch Knowledge</string>
+    <string name="launch_kb">Launch Knowledge</string>
+    <string name="launch_chat">Launch Chat</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="title_activity_knowledge_settings">KnowledgeSettingsActivity</string>
     <string name="knowledge_description_title">Knowledge</string>
-    <string name="knowledge_description_text">The Knowledge feature in the SDK gives you access to your org’s knowledge base directly from within
-                                              your app. Once you point your app to your community URL with the right category group and root data
-                                              category, you can display your knowledge base to your users. Try Knowledge by launching it below.</string>
+    <string name="knowledge_description_text">This feature gives you access to your org’s knowledge base. Once you point your app to your community URL with the right category group and root data
+                                              category, you can display your knowledge base to your users.</string>
+    <string name="chat_description_title">Chat</string>
+    <string name="chat_description_text">This feature gives you access to chat. Once you add the config settings to this app, you can chat with an agent or a chatbot.</string>
     <string name="authentication_description_title">Authentication</string>
-    <string name="authentication_description_text">Use Knowlegde or Cases as an authenticated or unauthenticated user</string>
+    <string name="authentication_description_text">Use Knowledge or Cases as an authenticated or unauthenticated user</string>
 
     <!-- Support FAB -->
     <string name="menu_case">Create Case</string>
