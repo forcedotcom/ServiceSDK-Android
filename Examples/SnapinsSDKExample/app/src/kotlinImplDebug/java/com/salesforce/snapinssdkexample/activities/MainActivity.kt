@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
     }
 
     /**
-     * Initializes Knowledge and adds the view addition.
+     * Initializes Chat.
      */
     private fun startChat() {
         val chat = ChatLauncher()

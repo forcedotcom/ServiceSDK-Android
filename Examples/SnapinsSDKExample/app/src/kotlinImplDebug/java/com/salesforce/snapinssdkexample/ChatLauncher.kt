@@ -98,7 +98,7 @@ class ChatLauncher {
 
         // Create an entity mapping for a Case record type
         // (All this entity stuff is only required if you
-        // want to map transcript fields to other Salesforce records.)
+        // want to map pre-chat fields to other Salesforce records.)
         val caseEntity = ChatEntity.Builder()
                 .showOnCreate(true)
                 .linkToTranscriptField("Case")
@@ -136,7 +136,7 @@ class ChatLauncher {
                 .build("Contact")
 
         // Update chat entity mapping list
-        // (This is only required if you want to map transcript
+        // (This is only required if you want to map pre-chat
         // fields to other Salesforce records.)
         chatEntitiesList = Utils.asMutableList(caseEntity, contactEntity)
     }
