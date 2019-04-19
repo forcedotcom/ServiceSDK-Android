@@ -10,7 +10,6 @@ import com.salesforce.android.chat.core.model.ChatEntityField
 import com.salesforce.android.chat.core.model.ChatUserData
 import com.salesforce.android.chat.ui.ChatUI
 import com.salesforce.android.chat.ui.ChatUIClient
-import com.salesforce.android.chat.ui.model.PreChatPickListField
 import com.salesforce.android.chat.ui.model.PreChatTextInputField
 import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils

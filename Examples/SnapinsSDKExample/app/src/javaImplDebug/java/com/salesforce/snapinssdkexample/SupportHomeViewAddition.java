@@ -11,33 +11,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import com.salesforce.android.cases.core.CaseClientCallbacks;
 import com.salesforce.android.cases.ui.CaseUI;
 import com.salesforce.android.cases.ui.CaseUIClient;
 import com.salesforce.android.cases.ui.CaseUIConfiguration;
-import com.salesforce.android.chat.core.ChatConfiguration;
-import com.salesforce.android.chat.core.model.ChatUserData;
-import com.salesforce.android.chat.ui.ChatUI;
-import com.salesforce.android.chat.ui.ChatUIClient;
-import com.salesforce.android.chat.ui.model.PreChatPickListField;
-import com.salesforce.android.chat.ui.model.PreChatTextInputField;
 import com.salesforce.android.knowledge.ui.KnowledgeScene;
 import com.salesforce.android.knowledge.ui.KnowledgeViewAddition;
 import com.salesforce.android.service.common.utilities.control.Async;
 import com.salesforce.android.sos.api.Sos;
-import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity;
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils;
-import com.salesforce.snapinssdkexample.utils.Utils;
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 import io.github.yavski.fabspeeddial.SimpleMenuListenerAdapter;
 
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
 
 /**
  * An addition to display Knowledge. Cases, Chat and SOS are launched from here as an example of

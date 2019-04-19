@@ -123,13 +123,6 @@
     <string name="pref_chat_deployment_id_summary">The Deployment id to use</string>
     <string name="pref_chat_button_id_title">Button Id</string>
     <string name="pref_chat_button_id_summary">The Chat Button Id to use</string>
-    <string name="prechat_agent_info_label">Agent Info Label</string>
-    <string name="prechat_enter_name_label">Enter Name</string>
-    <string name="prechat_example_id_one">ID1</string>
-    <string name="prechat_example_id_two">ID2</string>
-    <string name="prechat_example_selection_one">Example Selection 1</string>
-    <string name="prechat_example_selection_two">Example Selection 2</string>
-    <string name="prechat_selection_label_title">Selection Label Title</string>
     <string name="chat_availability_change_message">Agent Chat Status: %1$s</string>
 
     <!-- ChatBot -->
