@@ -1,7 +1,7 @@
-# Snap-Ins SDK Example Application
+# Embedded Service SDK Example Application
 
 
-An example implementation of the Snap-ins SDK using both [Kotlin](https://kotlinlang.org/) and 
+An example implementation of the Embedded Service SDK using both [Kotlin](https://kotlinlang.org/) and 
 [Java](https://java.com/).
 
 See the [Developer Documentation](https://developer.salesforce.com/docs/atlas.en-us.noversion.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm)
