@@ -4,7 +4,7 @@ repositories {
 }
 
 dependencies {
-  compile "com.salesforce.service:chat-ui:3.4.0-RC.2"
+  compile "com.salesforce.service:chat-ui:3.4.0"
 }
 ```
 

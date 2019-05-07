@@ -10,6 +10,7 @@
 
 ## Customer-facing Bug Fixes
  - Added Right-to-Left (RTL) support for Chatbot quick reply buttons
+ - Localize queue position in minimize view
 
 ## Internal Bug Fixes
 
