@@ -1,7 +1,7 @@
 Common 7.2.0
 
 ## New Features
-- Changed the contrastSecondary color from #767676 to #737373
+- Changed the salesforce_contrast_secondary color from #767676 to #6D6D6D
 
 ## API Changes
 
