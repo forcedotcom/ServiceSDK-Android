@@ -1,0 +1,4390 @@
+<api>
+<package name="com.salesforce.android.chat.core"
+>
+<interface name="AgentAvailabilityClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="check"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.core.model.AvailabilityState&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="verifyLiveAgentPod"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.core.model.AvailabilityState&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="AgentListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onAgentIsTyping"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isAgentTyping" type="boolean">
+</parameter>
+</method>
+<method name="onAgentJoined"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentInformation" type="com.salesforce.android.chat.core.model.AgentInformation">
+</parameter>
+</method>
+<method name="onAgentJoinedConference"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentName" type="java.lang.String">
+</parameter>
+</method>
+<method name="onAgentLeftConference"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentName" type="java.lang.String">
+</parameter>
+</method>
+<method name="onChatMessageReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatMessage" type="com.salesforce.android.chat.core.model.ChatMessage">
+</parameter>
+</method>
+<method name="onTransferToButtonInitiated"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="ChatAnalytics"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ChatAnalytics"
+ type="com.salesforce.android.chat.core.ChatAnalytics"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="DATA_AGENT_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_AGENT_ID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_AGENT_NAME"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_AGENT_NAME&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_BUTTON_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_BUTTON_ID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_CURRENT_LIFECYCLE_STATE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_CURRENT_LIFECYCLE_STATE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_DEPLOYMENT_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_DEPLOYMENT_ID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_END_REASON"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_END_REASON&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_ERROR"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_ERROR&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_LIVE_AGENT_POD"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_LIVE_AGENT_POD&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_LIVE_AGENT_SESSION_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_LIVE_AGENT_SESSION_ID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_ORGANIZATION_ID"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_ORGANIZATION_ID&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_PREVIOUS_LIFECYCLE_STATE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_PREVIOUS_LIFECYCLE_STATE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DATA_TIMESTAMP"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_DATA_TIMESTAMP&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="FILE_TRANSFER_BYTES"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_FILE_TRANSFER_BYTES&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="FILE_TRANSFER_STATUS"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_FILE_TRANSFER_STATUS&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="FILE_TRANSFER_TYPE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_FILE_TRANSFER_TYPE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_CANCEL_FILE_TRANSFER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_CANCEL_FILE_TRANSFER&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_HAS_FINISHED_TYPING"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_HAS_FINISHED_TYPING&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_IS_TYPING"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_IS_TYPING&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_JOINED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_JOINED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_JOINED_CONFERENCE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_JOINED_CONFERENCE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_LEFT_CONFERENCE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_LEFT_CONFERENCE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_AGENT_REQUEST_FILE_TRANSFER"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_AGENT_REQUEST_FILE_TRANSFER&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_ERROR"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_ERROR&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_FILE_TRANSFER_COMPLETE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_FILE_TRANSFER_COMPLETE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_FILE_TRANSFER_FAILED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_FILE_TRANSFER_FAILED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_INITIALIZED_CLIENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_INITIALIZED_CLIENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_LIFECYCLE_CHANGE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_LIFECYCLE_CHANGE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_MESSAGE_RECEIVED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_MESSAGE_RECEIVED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_MESSAGE_SENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_MESSAGE_SENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_SESSION_CREATED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_SESSION_CREATED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="RESPONSE_SESSION_ENDED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_RESPONSE_SESSION_ENDED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_END_SESSION"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_USER_END_SESSION&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_FILE_TRANSFER_UPLOAD_INITIATED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_USER_FILE_TRANSFER_UPLOAD_INITIATED&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_HAS_FINISHED_TYPING"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_USER_HAS_FINISHED_TYPING&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_INITIALIZE_CLIENT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_USER_INITIALIZE_CLIENT&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_IS_TYPING"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_USER_IS_TYPING&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="USER_SEND_MESSAGE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;CHAT_USER_SEND_MESSAGE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<interface name="ChatBotListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onChatButtonMenuReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatWindowButtonMenu" type="com.salesforce.android.chat.core.model.ChatWindowButtonMenu">
+</parameter>
+</method>
+<method name="onChatFooterMenuReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatFooterMenu" type="com.salesforce.android.chat.core.model.ChatFooterMenu">
+</parameter>
+</method>
+<method name="onChatMenuReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatWindowMenu" type="com.salesforce.android.chat.core.model.ChatWindowMenu">
+</parameter>
+</method>
+</interface>
+<interface name="ChatClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addAgentListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentListener" type="com.salesforce.android.chat.core.AgentListener">
+</parameter>
+</method>
+<method name="addChatBotListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatBotListener" type="com.salesforce.android.chat.core.ChatBotListener">
+</parameter>
+</method>
+<method name="addFileTransferRequestListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fileTransferRequestListener" type="com.salesforce.android.chat.core.FileTransferRequestListener">
+</parameter>
+</method>
+<method name="addQueueListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="queueListener" type="com.salesforce.android.chat.core.QueueListener">
+</parameter>
+</method>
+<method name="addSessionInfoListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionInfoListener" type="com.salesforce.android.chat.core.SessionInfoListener">
+</parameter>
+</method>
+<method name="addSessionStateListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="endChatSession"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSessionState"
+ return="com.salesforce.android.chat.core.model.ChatSessionState"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="removeAgentListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentListener" type="com.salesforce.android.chat.core.AgentListener">
+</parameter>
+</method>
+<method name="removeChatBotListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatBotListener" type="com.salesforce.android.chat.core.ChatBotListener">
+</parameter>
+</method>
+<method name="removeFileTransferRequestListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fileTransferRequestListener" type="com.salesforce.android.chat.core.FileTransferRequestListener">
+</parameter>
+</method>
+<method name="removeQueueListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="queueListener" type="com.salesforce.android.chat.core.QueueListener">
+</parameter>
+</method>
+<method name="removeSessionInfoListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionInfoListener" type="com.salesforce.android.chat.core.SessionInfoListener">
+</parameter>
+</method>
+<method name="removeSessionStateListener"
+ return="com.salesforce.android.chat.core.ChatClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="sendButtonSelection"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="buttonIndex" type="int">
+</parameter>
+</method>
+<method name="sendButtonSelection"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="button" type="com.salesforce.android.chat.core.model.ChatWindowButtonMenu.Button">
+</parameter>
+</method>
+<method name="sendChatMessage"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.core.model.ChatSentMessageReceipt&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="sendFooterMenuSelection"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="itemIndex" type="int">
+</parameter>
+<parameter name="dialogId" type="java.lang.String">
+</parameter>
+</method>
+<method name="sendFooterMenuSelection"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="menuItem" type="com.salesforce.android.chat.core.model.ChatFooterMenu.MenuItem">
+</parameter>
+</method>
+<method name="sendMenuSelection"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="itemIndex" type="int">
+</parameter>
+</method>
+<method name="sendMenuSelection"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="menuItem" type="com.salesforce.android.chat.core.model.ChatWindowMenu.MenuItem">
+</parameter>
+</method>
+<method name="sendSneakPeekMessage"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sneakPeekMessage" type="java.lang.String">
+</parameter>
+</method>
+<method name="setIsUserTyping"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Void&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isUserTyping" type="boolean">
+</parameter>
+</method>
+</interface>
+<class name="ChatConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="getButtonId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getChatEntities"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.ChatEntity&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getChatUserData"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.ChatUserData&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeploymentId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLiveAgentPod"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOrganizationId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPreChatEntities"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.PreChatEntity&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPreChatFields"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.PreChatField&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVisitorName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatConfiguration.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="organizationId" type="java.lang.String">
+</parameter>
+<parameter name="buttonId" type="java.lang.String">
+</parameter>
+<parameter name="deploymentId" type="java.lang.String">
+</parameter>
+<parameter name="liveAgentPod" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.chat.core.ChatConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="chatEntities"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatEntities" type="java.util.List&lt;com.salesforce.android.chat.core.model.ChatEntity&gt;">
+</parameter>
+</method>
+<method name="chatEntities"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatEntities" type="com.salesforce.android.chat.core.model.ChatEntity...">
+</parameter>
+</method>
+<method name="chatUserData"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatUserData" type="java.util.List&lt;com.salesforce.android.chat.core.model.ChatUserData&gt;">
+</parameter>
+</method>
+<method name="chatUserData"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatUserData" type="com.salesforce.android.chat.core.model.ChatUserData...">
+</parameter>
+</method>
+<method name="liveAgentPod"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="liveAgentPod" type="java.lang.String">
+</parameter>
+</method>
+<method name="preChatEntities"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<parameter name="preChatEntities" type="java.util.List&lt;T&gt;">
+</parameter>
+</method>
+<method name="preChatFields"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<parameter name="preChatFields" type="java.util.List&lt;T&gt;">
+</parameter>
+</method>
+<method name="visitorName"
+ return="com.salesforce.android.chat.core.ChatConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="visitorName" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="ChatCore"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="configure"
+ return="com.salesforce.android.chat.core.ChatCore"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</method>
+<method name="configureAgentAvailability"
+ return="com.salesforce.android.chat.core.AgentAvailabilityClient"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</method>
+<method name="createClient"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.core.ChatClient&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+<method name="isActive"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="FileTransferAssistant"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="uploadFile"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Float&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fileBytes" type="byte[]">
+</parameter>
+<parameter name="contentType" type="java.lang.String">
+</parameter>
+</method>
+</interface>
+<interface name="FileTransferRequestListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onFileTransferRequest"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fileTransferAssistant" type="com.salesforce.android.chat.core.FileTransferAssistant">
+</parameter>
+</method>
+<method name="onFileTransferStatusChanged"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="status" type="com.salesforce.android.chat.core.model.FileTransferStatus">
+</parameter>
+</method>
+</interface>
+<interface name="QueueListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onQueuePositionUpdate"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="queuePosition" type="int">
+</parameter>
+</method>
+</interface>
+<interface name="SessionInfoListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onSessionInfoReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatSessionInfo" type="com.salesforce.android.chat.core.model.ChatSessionInfo">
+</parameter>
+</method>
+</interface>
+<interface name="SessionStateListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onSessionEnded"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="endReason" type="com.salesforce.android.chat.core.model.ChatEndReason">
+</parameter>
+</method>
+<method name="onSessionStateChange"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="state" type="com.salesforce.android.chat.core.model.ChatSessionState">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.chat.core.exception"
+>
+<class name="EmptyChatMessageException"
+ extends="java.lang.RuntimeException"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EmptyChatMessageException"
+ type="com.salesforce.android.chat.core.exception.EmptyChatMessageException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="EmptyChatMessageException"
+ type="com.salesforce.android.chat.core.exception.EmptyChatMessageException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="triggeredSensitiveDataRules" type="com.salesforce.android.chat.core.model.SensitiveDataRule...">
+</parameter>
+</constructor>
+<method name="getTriggeredSensitiveDataRules"
+ return="com.salesforce.android.chat.core.model.SensitiveDataRule[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="SessionDoesNotExistException"
+ extends="java.lang.RuntimeException"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SessionDoesNotExistException"
+ type="com.salesforce.android.chat.core.exception.SessionDoesNotExistException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+</package>
+<package name="com.salesforce.android.chat.core.model"
+>
+<interface name="AgentInformation"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getAgentId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAgentName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isChatBot"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isSneakPeekEnabled"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="AvailabilityState"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getLiveAgentPod"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getStatus"
+ return="com.salesforce.android.chat.core.model.AvailabilityState.Status"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="AvailabilityState.Status"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.chat.core.model.AvailabilityState.Status"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.chat.core.model.AvailabilityState.Status[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatEndReason"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.chat.core.model.ChatEndReason"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.chat.core.model.ChatEndReason[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatEntity"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="getChatEntityFields"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.ChatEntityField&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLinkedSalesforceObjectFieldName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLinkedSalesforceObjectType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLinkedTranscriptFieldName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSalesforceObjectType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getShowOnCreate"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatEntity.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.model.ChatEntity.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addChatEntityField"
+ return="com.salesforce.android.chat.core.model.ChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatEntityField" type="com.salesforce.android.chat.core.model.ChatEntityField">
+</parameter>
+</method>
+<method name="build"
+ return="com.salesforce.android.chat.core.model.ChatEntity"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="objectType" type="java.lang.String">
+</parameter>
+</method>
+<method name="linkToAnotherSalesforceObject"
+ return="com.salesforce.android.chat.core.model.ChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="objectType" type="java.lang.String">
+</parameter>
+<parameter name="objectFieldName" type="java.lang.String">
+</parameter>
+</method>
+<method name="linkToAnotherSalesforceObject"
+ return="com.salesforce.android.chat.core.model.ChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatEntity" type="com.salesforce.android.chat.core.model.ChatEntity">
+</parameter>
+<parameter name="objectFieldName" type="java.lang.String">
+</parameter>
+</method>
+<method name="linkToTranscriptField"
+ return="com.salesforce.android.chat.core.model.ChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transcriptFieldName" type="java.lang.String">
+</parameter>
+</method>
+<method name="showOnCreate"
+ return="com.salesforce.android.chat.core.model.ChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="showOnCreate" type="boolean">
+</parameter>
+</method>
+</class>
+<class name="ChatEntityField"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<method name="doCreate"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="doFind"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMappedChatUserData"
+ return="com.salesforce.android.chat.core.model.ChatUserData"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSalesforceObjectFieldName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isExactMatch"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatEntityField.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.model.ChatEntityField.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.chat.core.model.ChatEntityField"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="objectFieldName" type="java.lang.String">
+</parameter>
+<parameter name="chatUserData" type="com.salesforce.android.chat.core.model.ChatUserData">
+</parameter>
+</method>
+<method name="doCreate"
+ return="com.salesforce.android.chat.core.model.ChatEntityField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="doCreate" type="boolean">
+</parameter>
+</method>
+<method name="doFind"
+ return="com.salesforce.android.chat.core.model.ChatEntityField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="doFind" type="boolean">
+</parameter>
+</method>
+<method name="isExactMatch"
+ return="com.salesforce.android.chat.core.model.ChatEntityField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isExactMatch" type="boolean">
+</parameter>
+</method>
+</class>
+<interface name="ChatFooterMenu"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getMenuItems"
+ return="com.salesforce.android.chat.core.model.ChatFooterMenu.MenuItem[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatFooterMenu.MenuItem"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getDialogId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getIndex"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getText"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatMessage"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getAgentId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAgentName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getText"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTimestamp"
+ return="java.util.Date"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatSentMessageReceipt"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getOriginalText"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getScrubbedText"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTriggeredSensitiveDataRules"
+ return="com.salesforce.android.chat.core.model.SensitiveDataRule[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isScrubbed"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatSessionInfo"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getSensitiveDataRules"
+ return="com.salesforce.android.chat.core.model.SensitiveDataRule[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSessionId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVisitorId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="ChatSessionState"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="isPostSession"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="valueOf"
+ return="com.salesforce.android.chat.core.model.ChatSessionState"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.chat.core.model.ChatSessionState[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatUserData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<constructor name="ChatUserData"
+ type="com.salesforce.android.chat.core.model.ChatUserData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentLabel" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="ChatUserData"
+ type="com.salesforce.android.chat.core.model.ChatUserData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentLabel" type="java.lang.String">
+</parameter>
+<parameter name="isDisplayedToAgent" type="boolean">
+</parameter>
+<parameter name="transcriptFieldNames" type="java.lang.String...">
+</parameter>
+</constructor>
+<constructor name="ChatUserData"
+ type="com.salesforce.android.chat.core.model.ChatUserData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentLabel" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+<parameter name="isDisplayedToAgent" type="boolean">
+</parameter>
+<parameter name="transcriptFieldNames" type="java.lang.String...">
+</parameter>
+</constructor>
+<method name="getAgentLabel"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTranscriptFieldNames"
+ return="java.lang.String[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isDisplayedToAgent"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+</method>
+</class>
+<interface name="ChatWindowButtonMenu"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getButtons"
+ return="com.salesforce.android.chat.core.model.ChatWindowButtonMenu.Button[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatWindowButtonMenu.Button"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getIndex"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLabel"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatWindowMenu"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getHeaderText"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMenuItems"
+ return="com.salesforce.android.chat.core.model.ChatWindowMenu.MenuItem[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTimestamp"
+ return="java.util.Date"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatWindowMenu.MenuItem"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getIndex"
+ return="int"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLabel"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<class name="FileTransferStatus"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.salesforce.android.chat.core.model.FileTransferStatus"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.salesforce.android.chat.core.model.FileTransferStatus[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="PreChatEntity"
+ extends="com.salesforce.android.chat.core.model.ChatEntity"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<method name="getLinkToEntityField"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLinkToEntityName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPreChatEntityFields"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.ChatEntityField&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSaveToTranscript"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="PreChatEntity.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addPreChatEntityField"
+ return="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="preChatEntityField" type="com.salesforce.android.chat.core.model.PreChatEntityField">
+</parameter>
+</method>
+<method name="build"
+ return="com.salesforce.android.chat.core.model.PreChatEntity"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="linkToEntityField"
+ return="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="linkToEntityField" type="java.lang.String">
+</parameter>
+</method>
+<method name="linkToEntityName"
+ return="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="linkToEntityName" type="java.lang.String">
+</parameter>
+</method>
+<method name="preChatEntityFields"
+ return="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="preChatEntityFields" type="java.util.List&lt;? extends com.salesforce.android.chat.core.model.ChatEntityField&gt;">
+</parameter>
+</method>
+<method name="saveToTranscript"
+ return="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="saveToTranscript" type="java.lang.String">
+</parameter>
+</method>
+<method name="showOnCreate"
+ return="com.salesforce.android.chat.core.model.PreChatEntity.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="showOnCreate" type="boolean">
+</parameter>
+</method>
+</class>
+<class name="PreChatEntityField"
+ extends="com.salesforce.android.chat.core.model.ChatEntityField"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="PreChatEntityField.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.model.PreChatEntityField.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.chat.core.model.PreChatEntityField"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fieldName" type="java.lang.String">
+</parameter>
+<parameter name="label" type="java.lang.String">
+</parameter>
+</method>
+<method name="doCreate"
+ return="com.salesforce.android.chat.core.model.PreChatEntityField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="doCreate" type="boolean">
+</parameter>
+</method>
+<method name="doFind"
+ return="com.salesforce.android.chat.core.model.PreChatEntityField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="doFind" type="java.lang.Boolean">
+</parameter>
+</method>
+<method name="isExactMatch"
+ return="com.salesforce.android.chat.core.model.PreChatEntityField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isExactMatch" type="java.lang.Boolean">
+</parameter>
+</method>
+</class>
+<class name="PreChatField"
+ extends="com.salesforce.android.chat.core.model.ChatUserData"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<method name="getDisplayName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getExtraTypeInfo"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFieldName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMaxValueLength"
+ return="java.lang.Integer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPickListOptions"
+ return="java.util.List&lt;com.salesforce.android.chat.core.model.PreChatField.PickListOption&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSelectedPickListIndex"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTranscriptFields"
+ return="java.lang.String[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isHidden"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isPickListItemSelected"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isReadOnly"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isRequired"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isSatisfied"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setSelectedPickListIndex"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="index" type="int">
+</parameter>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.io.Serializable">
+</parameter>
+</method>
+<method name="unsetSelectedPickListIndex"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="EMAIL"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;email&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PHONE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;phone&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PICKLIST"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;picklist&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="STRING"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;string&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="PreChatField.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addPickListOption"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pickListOption" type="com.salesforce.android.chat.core.model.PreChatField.PickListOption">
+</parameter>
+</method>
+<method name="build"
+ return="com.salesforce.android.chat.core.model.PreChatField"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fieldName" type="java.lang.String">
+</parameter>
+<parameter name="displayName" type="java.lang.String">
+</parameter>
+<parameter name="type" type="java.lang.String">
+</parameter>
+</method>
+<method name="displayedToAgent"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isDisplayedToAgent" type="boolean">
+</parameter>
+</method>
+<method name="extraTypeInfo"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="extraTypeInfo" type="java.lang.String">
+</parameter>
+</method>
+<method name="hidden"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isHidden" type="boolean">
+</parameter>
+</method>
+<method name="mapToChatTranscriptField"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transcriptFields" type="java.lang.String...">
+</parameter>
+</method>
+<method name="maxValueLength"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxValueLength" type="java.lang.Integer">
+</parameter>
+</method>
+<method name="picklistOptions"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="picklistOptions" type="java.util.List&lt;com.salesforce.android.chat.core.model.PreChatField.PickListOption&gt;">
+</parameter>
+</method>
+<method name="picklistOptions"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="picklistOptions" type="com.salesforce.android.chat.core.model.PreChatField.PickListOption...">
+</parameter>
+</method>
+<method name="readOnly"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="readOnly" type="java.lang.Boolean">
+</parameter>
+</method>
+<method name="required"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="required" type="java.lang.Boolean">
+</parameter>
+</method>
+<method name="value"
+ return="com.salesforce.android.chat.core.model.PreChatField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.io.Serializable">
+</parameter>
+</method>
+</class>
+<class name="PreChatField.PickListOption"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.io.Serializable">
+</implements>
+<constructor name="PickListOption"
+ type="com.salesforce.android.chat.core.model.PreChatField.PickListOption"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLabel"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="PreChatField.Type"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+<interface name="SensitiveDataRule"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getAction"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPatterns"
+ return="java.util.regex.Pattern[]"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getReplacement"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="ACTION_REMOVE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;Remove&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="ACTION_REPLACE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;Replace&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="SensitiveDataRule.Action"
+ extends="java.lang.Object"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.lang.annotation.Annotation">
+</implements>
+</class>
+</package>
+<package name="com.salesforce.android.chat.ui"
+>
+<interface name="ChatEventListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="agentIsTyping"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isUserTyping" type="boolean">
+</parameter>
+</method>
+<method name="agentJoined"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="agentInformation" type="com.salesforce.android.chat.core.model.AgentInformation">
+</parameter>
+</method>
+<method name="didReceiveMessage"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatMessage" type="com.salesforce.android.chat.core.model.ChatMessage">
+</parameter>
+</method>
+<method name="didSelectButtonItem"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="buttonItem" type="com.salesforce.android.chat.core.model.ChatWindowButtonMenu.Button">
+</parameter>
+</method>
+<method name="didSelectFooterMenuItem"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="footerMenuItem" type="com.salesforce.android.chat.core.model.ChatFooterMenu.MenuItem">
+</parameter>
+</method>
+<method name="didSelectMenuItem"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="menuItem" type="com.salesforce.android.chat.core.model.ChatWindowMenu.MenuItem">
+</parameter>
+</method>
+<method name="processedOutgoingMessage"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="transferToButtonInitiated"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+<interface name="ChatKnowledgeArticlePreviewClickListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onClick"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="articleIdOrTitle" type="java.lang.String">
+</parameter>
+</method>
+</interface>
+<interface name="ChatKnowledgeArticlePreviewDataHelper"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onPreviewDataReceived"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="title" type="java.lang.String">
+</parameter>
+<parameter name="summary" type="java.lang.String">
+</parameter>
+</method>
+</interface>
+<interface name="ChatKnowledgeArticlePreviewDataProvider"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onPreviewDataRequested"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="articleIdOrTitle" type="java.lang.String">
+</parameter>
+<parameter name="onPreviewDataReceived" type="com.salesforce.android.chat.ui.ChatKnowledgeArticlePreviewDataHelper">
+</parameter>
+</method>
+</interface>
+<class name="ChatUI"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="configure"
+ return="com.salesforce.android.chat.ui.ChatUI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatUIConfiguration" type="com.salesforce.android.chat.ui.ChatUIConfiguration">
+</parameter>
+</method>
+<method name="createClient"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;com.salesforce.android.chat.ui.ChatUIClient&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</method>
+</class>
+<interface name="ChatUIClient"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addPreChatUIListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="preChatUIListener" type="com.salesforce.android.chat.ui.PreChatUIListener">
+</parameter>
+</method>
+<method name="addSessionInfoListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionInfoListener" type="com.salesforce.android.chat.core.SessionInfoListener">
+</parameter>
+</method>
+<method name="addSessionStateListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="endChatSession"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCurrentSessionState"
+ return="com.salesforce.android.chat.core.model.ChatSessionState"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="removePreChatUIListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="preChatUIListener" type="com.salesforce.android.chat.ui.PreChatUIListener">
+</parameter>
+</method>
+<method name="removeSessionInfoListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionInfoListener" type="com.salesforce.android.chat.core.SessionInfoListener">
+</parameter>
+</method>
+<method name="removeSessionStateListener"
+ return="com.salesforce.android.chat.ui.ChatUIClient"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionStateListener" type="com.salesforce.android.chat.core.SessionStateListener">
+</parameter>
+</method>
+<method name="startChatSession"
+ return="com.salesforce.android.service.common.utilities.control.Async&lt;java.lang.Boolean&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+</method>
+</interface>
+<class name="ChatUIConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="create"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatConfiguration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</method>
+<method name="getChatBotAvatarDrawableId"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getChatBotBannerLayoutId"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getChatCoreConfiguration"
+ return="com.salesforce.android.chat.core.ChatConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getChatEventListener"
+ return="com.salesforce.android.chat.ui.ChatEventListener"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getKnowledgeArticlePreviewClickListener"
+ return="com.salesforce.android.chat.ui.ChatKnowledgeArticlePreviewClickListener"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getKnowledgeArticlePreviewDataProvider"
+ return="com.salesforce.android.chat.ui.ChatKnowledgeArticlePreviewDataProvider"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getKnowledgeCommunityUrl"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPhotoDirectoryName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isChatBotBannerEnabled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isDefaultToMinimized"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isHyperlinkPreviewEnabled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isPreChatDisabled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isQueuePositionHidden"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ChatUIConfiguration.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="chatBotAvatar"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatBotAvatarDrawableId" type="int">
+</parameter>
+</method>
+<method name="chatConfiguration"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatConfiguration" type="com.salesforce.android.chat.core.ChatConfiguration">
+</parameter>
+</method>
+<method name="chatEventListener"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatEventListener" type="com.salesforce.android.chat.ui.ChatEventListener">
+</parameter>
+</method>
+<method name="defaultToMinimized"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+</method>
+<method name="disablePreChatView"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="disablePreChatView" type="boolean">
+</parameter>
+</method>
+<method name="enableChatBotBanner"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="chatBotBannerLayoutId" type="int">
+</parameter>
+</method>
+<method name="enableHyperlinkPreview"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="enabled" type="boolean">
+</parameter>
+</method>
+<method name="hideQueuePosition"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="hideQueuePosition" type="boolean">
+</parameter>
+</method>
+<method name="knowledgeArticlePreviewClickListener"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.salesforce.android.chat.ui.ChatKnowledgeArticlePreviewClickListener">
+</parameter>
+</method>
+<method name="knowledgeArticlePreviewDataProvider"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="provider" type="com.salesforce.android.chat.ui.ChatKnowledgeArticlePreviewDataProvider">
+</parameter>
+</method>
+<method name="knowledgeCommunityUrl"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="url" type="java.lang.String">
+</parameter>
+</method>
+<method name="photoDirectoryName"
+ return="com.salesforce.android.chat.ui.ChatUIConfiguration.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="photoDirectoryName" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<interface name="PreChatUIListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onPreChatCancelled"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onPreChatSubmitted"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</interface>
+</package>
+<package name="com.salesforce.android.chat.ui.model"
+>
+<class name="PreChatPickListField"
+ extends="com.salesforce.android.chat.ui.model.PreChatInputField"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="deselect"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getOptions"
+ return="java.util.List&lt;com.salesforce.android.chat.ui.model.PreChatPickListField.Option&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSelectedOption"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Option"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSelectedOptionIndex"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isOptionSelected"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="selectedOption" type="com.salesforce.android.chat.ui.model.PreChatPickListField.Option">
+</parameter>
+</method>
+</class>
+<class name="PreChatPickListField.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addOption"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="option" type="com.salesforce.android.chat.ui.model.PreChatPickListField.Option">
+</parameter>
+</method>
+<method name="build"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayLabel" type="java.lang.String">
+</parameter>
+<parameter name="agentLabel" type="java.lang.String">
+</parameter>
+</method>
+<method name="displayedToAgent"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isDisplayedToAgent" type="boolean">
+</parameter>
+</method>
+<method name="initialValue"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="initialValue" type="com.salesforce.android.chat.ui.model.PreChatPickListField.Option">
+</parameter>
+</method>
+<method name="mapToChatTranscriptFieldName"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transcriptFieldName" type="java.lang.String">
+</parameter>
+</method>
+<method name="readOnly"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isReadOnly" type="boolean">
+</parameter>
+</method>
+<method name="required"
+ return="com.salesforce.android.chat.ui.model.PreChatPickListField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="required" type="boolean">
+</parameter>
+</method>
+</class>
+<class name="PreChatPickListField.Option"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Option"
+ type="com.salesforce.android.chat.ui.model.PreChatPickListField.Option"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayLabel" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.Object">
+</parameter>
+</constructor>
+<method name="getDisplayLabel"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="PreChatTextInputField"
+ extends="com.salesforce.android.chat.ui.model.PreChatInputField"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getInputType"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMaxValueLength"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isCounterEnabled"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.CharSequence">
+</parameter>
+</method>
+</class>
+<class name="PreChatTextInputField.Builder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Builder"
+ type="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="build"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayLabel" type="java.lang.String">
+</parameter>
+<parameter name="agentLabel" type="java.lang.String">
+</parameter>
+</method>
+<method name="counterEnabled"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isCounterEnabled" type="boolean">
+</parameter>
+</method>
+<method name="displayedToAgent"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isDisplayedToAgent" type="boolean">
+</parameter>
+</method>
+<method name="initialValue"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="initialValue" type="java.lang.CharSequence">
+</parameter>
+</method>
+<method name="inputType"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="inputType" type="int">
+</parameter>
+</method>
+<method name="mapToChatTranscriptFieldName"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transcriptFieldName" type="java.lang.String">
+</parameter>
+</method>
+<method name="maxValueLength"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxValueLength" type="int">
+</parameter>
+</method>
+<method name="readOnly"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isReadOnly" type="boolean">
+</parameter>
+</method>
+<method name="required"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="isRequired" type="boolean">
+</parameter>
+</method>
+<method name="validator"
+ return="com.salesforce.android.chat.ui.model.PreChatTextInputField.Builder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="validator" type="com.salesforce.android.chat.ui.model.PreChatTextInputField.Validator">
+</parameter>
+</method>
+</class>
+<interface name="PreChatTextInputField.Validator"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="isValid"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.CharSequence">
+</parameter>
+</method>
+</interface>
+</package>
+</api>
