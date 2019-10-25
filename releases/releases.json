@@ -534,5 +534,13 @@
     "changelog": "sos/4.0.8/changelog.md",
     "reference": "sos/4.0.8/api/",
     "example": "sos/4.0.8/example.md"
+ },
+ {
+    "sdk": "chat",
+    "version": "4.1.0",
+    "date": "2019-10-25",
+    "changelog": "chat/4.1.0/changelog.md",
+    "reference": "chat/4.1.0/api/",
+    "example": "chat/4.1.0/example.md"
  }
 ]
