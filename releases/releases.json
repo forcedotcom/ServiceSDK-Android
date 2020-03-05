@@ -542,5 +542,45 @@
     "changelog": "chat/4.1.0/changelog.md",
     "reference": "chat/4.1.0/api/",
     "example": "chat/4.1.0/example.md"
+ },
+ {
+    "sdk": "common",
+    "version": "8.0.2",
+    "date": "2020-03-04",
+    "changelog": "common/8.0.2/changelog.md",
+    "reference": "common/8.0.2/api/",
+    "example": "common/8.0.2/example.md"
+ },
+ {
+    "sdk": "knowledge",
+    "version": "4.3.4",
+    "date": "2020-03-04",
+    "changelog": "knowledge/4.3.4/changelog.md",
+    "reference": "knowledge/4.3.4/api/",
+    "example": "knowledge/4.3.4/example.md"
+ },
+ {
+    "sdk": "case",
+    "version": "4.2.4",
+    "date": "2020-03-04",
+    "changelog": "case/4.2.4/changelog.md",
+    "reference": "case/4.2.4/api/",
+    "example": "case/4.2.4/example.md"
+ },
+ {
+    "sdk": "chat",
+    "version": "4.1.1",
+    "date": "2020-03-04",
+    "changelog": "chat/4.1.1/changelog.md",
+    "reference": "chat/4.1.1/api/",
+    "example": "chat/4.1.1/example.md"
+ },
+ {
+    "sdk": "sos",
+    "version": "4.0.9",
+    "date": "2020-03-04",
+    "changelog": "sos/4.0.9/changelog.md",
+    "reference": "sos/4.0.9/api/",
+    "example": "sos/4.0.9/example.md"
  }
 ]
