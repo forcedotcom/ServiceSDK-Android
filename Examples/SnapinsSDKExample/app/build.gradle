@@ -10,12 +10,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.salesforce.snapinssdkexample"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdkVersion 23
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }

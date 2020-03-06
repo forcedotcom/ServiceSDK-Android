@@ -13,7 +13,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.android.tools.build:gradle:3.6.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -35,8 +35,8 @@ task clean(type: Delete) {
 
 ext {
     // Salesforce Snap-ins SDKs
-    serviceSdkVersion = "222.0.1"
-    mobilesdkVersion = "7.0.0"
+    serviceSdkVersion = "224.0.0"
+    mobilesdkVersion = "8.1.0"
 
     // FAB Speed dial for launching cases, chat and SOS above knowledge
     fab_speed_dial_version = "1.0.6"
