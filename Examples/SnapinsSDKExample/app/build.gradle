@@ -24,6 +24,7 @@ android {
         kotlinImplDebug {
             initWith debug
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true
         }
@@ -31,6 +32,7 @@ android {
         javaImplDebug {
             initWith debug
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true
         }
