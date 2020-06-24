@@ -53,6 +53,10 @@
 }
 # ------------------ Gson End --------------------------------
 
+# ------------------ Gson ----------------------------
+-keepclassmembers,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
 
 ###### SALESFORCE MOBILE SDK ######
 # You can delete this section if you are not using Knowledge or Cases
