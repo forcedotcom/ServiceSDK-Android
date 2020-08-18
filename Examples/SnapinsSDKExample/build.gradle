@@ -35,7 +35,7 @@ task clean(type: Delete) {
 
 ext {
     // Salesforce Snap-ins SDKs
-    serviceSdkVersion = "224.0.0"
+    serviceSdkVersion = "224.0.1"
     mobilesdkVersion = "8.1.0"
 
     // FAB Speed dial for launching cases, chat and SOS above knowledge
