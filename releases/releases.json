@@ -598,5 +598,13 @@
     "changelog": "chat/4.1.2/changelog.md",
     "reference": "chat/4.1.2/api/",
     "example": "chat/4.1.2/example.md"
- }
+ },
+  {
+    "sdk": "chat",
+    "version": "4.2.0",
+    "date": "2021-03-31",
+    "changelog": "chat/4.2.0/changelog.md",
+    "reference": "chat/4.2.0/api/",
+    "example": "chat/4.2.0/example.md"
+  }
 ]
