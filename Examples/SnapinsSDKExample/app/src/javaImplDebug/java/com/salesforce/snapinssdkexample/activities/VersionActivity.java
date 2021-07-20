@@ -2,8 +2,10 @@ package com.salesforce.snapinssdkexample.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.salesforce.android.chat.core.BuildConfig;
 import com.salesforce.snapinssdkexample.R;
 
@@ -22,7 +24,6 @@ public class VersionActivity extends AppCompatActivity {
 
     private void populateVersionText() {
         ((TextView) findViewById(R.id.chat_version)).setText(BuildConfig.VERSION_NAME);
-        ((TextView) findViewById(R.id.sos_version)).setText(com.salesforce.android.sos.BuildConfig.VERSION_NAME);
         ((TextView) findViewById(R.id.kb_version)).setText(com.salesforce.android.knowledge.core.BuildConfig.VERSION_NAME);
         ((TextView) findViewById(R.id.cases_version)).setText(com.salesforce.android.cases.core.BuildConfig.VERSION_NAME);
         ((TextView) findViewById(R.id.common_version)).setText(com.salesforce.android.service.common.ui.BuildConfig.VERSION_NAME);
