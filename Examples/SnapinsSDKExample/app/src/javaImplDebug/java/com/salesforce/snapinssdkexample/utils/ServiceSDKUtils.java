@@ -9,9 +9,6 @@ import com.salesforce.android.chat.ui.ChatUIConfiguration;
 import com.salesforce.android.knowledge.core.KnowledgeConfiguration;
 import com.salesforce.android.knowledge.ui.KnowledgeUI;
 import com.salesforce.android.knowledge.ui.KnowledgeUIConfiguration;
-import com.salesforce.android.sos.api.SosAvailability;
-import com.salesforce.android.sos.api.SosConfiguration;
-import com.salesforce.android.sos.api.SosOptions;
 import com.salesforce.androidsdk.accounts.UserAccount;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
 import com.salesforce.androidsdk.rest.ClientManager;
@@ -19,7 +16,6 @@ import com.salesforce.snapinssdkexample.R;
 import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity;
 import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity;
 import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity;
-import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity;
 import com.salesforce.snapinssdkexample.auth.MobileSDKAuthTokenProvider;
 import com.salesforce.snapinssdkexample.auth.MobileSdkUser;
 
@@ -100,53 +96,6 @@ public class ServiceSDKUtils {
                         context.getString(R.string.pref_kb_root_data_category_default)));
 
         return KnowledgeUI.configure(uiConfiguration);
-    }
-
-    /**
-     * Creates SOS Options based on SOS settings or uses sensible default values.
-     */
-    public static SosOptions getSosOptions(Context context) {
-        // Create an SOS Options Object
-        return new SosOptions(
-                getStringPref(context, SosSettingsActivity.KEY_POD_URL,
-                        context.getString(R.string.pref_sos_pod_url_default)),
-                getStringPref(context, SosSettingsActivity.KEY_ORG_ID,
-                        context.getString(R.string.pref_sos_org_id_default)),
-                getStringPref(context, SosSettingsActivity.KEY_DEPLOY_ID,
-                        context.getString(R.string.pref_sos_deployment_id_default))
-        );
-    }
-
-    /**
-     * Creates a SOS configuration based on SOS settings or uses sensible default values.
-     */
-    public static SosConfiguration getSosConfiguration(Context context) {
-        // Create an SOS Configuration
-        return new SosConfiguration.Builder()
-                .permissionUi(getBooleanPref(context, SosSettingsActivity.KEY_SOS_PERMISSIONS_SETTING))
-                .onboardingUi(getBooleanPref(context, SosSettingsActivity.KEY_SOS_ONBOARDING_SETTING))
-                .networkTestEnabled(getBooleanPref(context, SosSettingsActivity.KEY_SOS_NETWORK_TEST_SETTING))
-                .twoWayVideo(getBooleanPref(context, SosSettingsActivity.KEY_SOS_TWO_WAY_VIDEO_SETTING))
-                .fieldServices(getBooleanPref(context, SosSettingsActivity.KEY_SOS_FS_SETTING))
-                .audio(getBooleanPref(context, SosSettingsActivity.KEY_SOS_AUDIO_SETTING))
-                .build();
-    }
-
-    /**
-     * Helper method to enable SOS polling based on SOS settings or uses sensible default values.
-     */
-    public static void startSosPolling(Context context) {
-        // Start polling for SOS status update (UNKNOWN, AVAILABLE, or UNAVAILABLE)
-        if (!SosAvailability.isPolling()) {
-            SosAvailability.startPolling(context,
-                    getStringPref(context, SosSettingsActivity.KEY_ORG_ID,
-                            context.getString(R.string.pref_sos_org_id_default)),
-                    getStringPref(context, SosSettingsActivity.KEY_DEPLOY_ID,
-                            context.getString(R.string.pref_sos_deployment_id_default)),
-                    getStringPref(context, SosSettingsActivity.KEY_POD_URL,
-                            context.getString(R.string.pref_sos_pod_url_default))
-            );
-        }
     }
 
     /**

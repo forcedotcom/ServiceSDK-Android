@@ -35,7 +35,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.salesforce.snapinssdkexample.activities.VersionActivity" />
-        <activity android:name="com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity" />
         <activity
             android:name="com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity"
             android:label="@string/title_activity_knowledge_settings"
