@@ -20,6 +20,7 @@ buildscript {
 
 allprojects {
     repositories {
+        jcenter()
         google()
         mavenLocal()
         mavenCentral()
@@ -33,7 +34,7 @@ task clean(type: Delete) {
 
 ext {
     // Salesforce Snap-ins SDKs
-    serviceSdkVersion = "224.1.1-RC.2"
+    serviceSdkVersion = "224.1.0"
     mobilesdkVersion = "9.1.1"
 
     // Android

@@ -10,20 +10,20 @@
     <!-- ========================== DEFAULT CONFIGURATION VALUES =============================== -->
     <!-- ======================================================================================= -->
     <!-- Default Knowledge Configuration Values -->
-    <string name="pref_kb_data_category_group_default">Travel</string>
-    <string name="pref_kb_root_data_category_default">All</string>
+    <string name="pref_kb_data_category_group_default">groupDefault</string>
+    <string name="pref_kb_root_data_category_default">categoryDefault</string>
 
     <!-- Cases Default Config Values -->
-    <string name="pref_case_community_url_default">https://sandbox-beats-14c75fb0723-14d6e32f888.cs4.force.com</string>
-    <string name="pref_case_action_name_default_no_auth">NewCaseAndroidNoAuth</string>
-    <string name="pref_case_action_name_default_auth">NewCaseAndroid</string>
-    <string name="pref_case_list_name_default">MyCases</string>
+    <string name="pref_case_community_url_default">http://communityUrl.default</string>
+    <string name="pref_case_action_name_default_no_auth">caseActionNameNoAuthDefault</string>
+    <string name="pref_case_action_name_default_auth">CaseActionNameAuthDefault</string>
+    <string name="pref_case_list_name_default">caseListNameDefault</string>
 
     <!-- Chat Default Config Values -->
-    <string name="pref_chat_la_pod_default">d.gla3-phx.gus.salesforce.com</string>
-    <string name="pref_chat_org_id_default">00DB0000000KRNF</string>
-    <string name="pref_chat_deployment_id_default">572B0000000HAhN</string>
-    <string name="pref_chat_button_id_default">573B00000005tA1</string>
+    <string name="pref_chat_la_pod_default">chatPodUrlDefault</string>
+    <string name="pref_chat_org_id_default">chatOrgIdDefault</string>
+    <string name="pref_chat_deployment_id_default">chatDeploymentIdDefault</string>
+    <string name="pref_chat_button_id_default">chatButtonIdDefault</string>
     <!-- ======================================================================================= -->
     <!-- ======================== END DEFAULT CONFIGURATION VALUES ============================= -->
     <!-- ======================================================================================= -->
