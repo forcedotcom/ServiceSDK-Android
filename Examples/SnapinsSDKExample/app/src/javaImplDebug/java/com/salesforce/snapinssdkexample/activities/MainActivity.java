@@ -1,5 +1,6 @@
 package com.salesforce.snapinssdkexample.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,9 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.salesforce.android.cases.core.CaseClientCallbacks;
+import com.salesforce.android.cases.ui.CaseUI;
+import com.salesforce.android.cases.ui.CaseUIClient;
+import com.salesforce.android.cases.ui.CaseUIConfiguration;
 import com.salesforce.android.chat.core.ChatConfiguration;
 import com.salesforce.android.chat.core.ChatCore;
 import com.salesforce.android.chat.core.model.AvailabilityState;
@@ -19,32 +26,30 @@ import com.salesforce.android.knowledge.ui.KnowledgeUIClient;
 import com.salesforce.android.service.common.analytics.ServiceAnalytics;
 import com.salesforce.android.service.common.analytics.ServiceAnalyticsListener;
 import com.salesforce.android.service.common.utilities.control.Async;
-import com.salesforce.android.sos.api.SosAvailability;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
 import com.salesforce.androidsdk.rest.ClientManager;
 import com.salesforce.androidsdk.rest.RestClient;
 import com.salesforce.snapinssdkexample.ChatLauncher;
 import com.salesforce.snapinssdkexample.R;
-import com.salesforce.snapinssdkexample.SupportHomeViewAddition;
 import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity;
 import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity;
 import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity;
-import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity;
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Main test activity supporting basic functionality:
  * <ul>
- * <li>Launching Knowledge UI {@link SupportHomeViewAddition}</li>
  * <li>Authentication (Logging in or out)</li>
  * </ul>
  */
-public class MainActivity extends AppCompatActivity implements SosAvailability.Listener {
+public class MainActivity extends AppCompatActivity {
     private KnowledgeUI mKnowledgeUI;
     private KnowledgeUIClient mKnowledgeUIClient;
     private TextView knowledgeLaunchButton;
+    private Button caseLaunchButton;
     private Button chatButton;
     private Button loginButton;
     private Button logoutButton;
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
 
         knowledgeLaunchButton = findViewById(R.id.knowledge_launch_button);
         chatButton = findViewById(R.id.chat_launch_button);
+        caseLaunchButton = findViewById(R.id.case_launch_button);
         loginButton = findViewById(R.id.login_button);
         logoutButton = findViewById(R.id.logout_button);
 
@@ -68,17 +74,6 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        // Clean up SOS
-        if (SosAvailability.isPolling()) {
-            SosAvailability.stopPolling();
-            SosAvailability.removeListener(this);
-        }
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -87,8 +82,6 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_sos_settings:
-                return startActivityFor(SosSettingsActivity.class);
             case R.id.action_kb_settings:
                 return startActivityFor(KnowledgeSettingsActivity.class);
             case R.id.action_chat_settings:
@@ -99,21 +92,9 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
                 return startActivityFor(VersionActivity.class);
             case R.id.action_check_chat_agent_availability:
                 return showLiveAgentChatAvailability();
-            case R.id.action_check_sos_agent_availability:
-                return showSosAgentAvailability();
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    /**
-     * Called when the SOS availability status changes
-     */
-    @Override
-    public void onSosAvailabilityChange(SosAvailability.Status status) {
-        Toast.makeText(this,
-                getString(R.string.sos_agent_availability_change_message) + status.name(),
-                Toast.LENGTH_SHORT).show();
     }
 
     public boolean startActivityFor(Class<? extends AppCompatActivity> activityClass) {
@@ -139,15 +120,6 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
         return true;
     }
 
-    private Boolean showSosAgentAvailability() {
-        Toast.makeText(this,
-                String.format(getString(R.string.sos_agent_availability_change_message),
-                        SosAvailability.getStatus().name()),
-                Toast.LENGTH_SHORT).show();
-
-        return true;
-    }
-
     /**
      * Initializes configurations and listeners which should happen at startup.
      */
@@ -155,15 +127,6 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
         setupServiceSDKListeners();
 
         initKnowledge();
-        initSosAvailabilityListener();
-    }
-
-    /**
-     * Adds listeners for SOS.
-     */
-    private void initSosAvailabilityListener() {
-        SosAvailability.addListener(this);
-        ServiceSDKUtils.startSosPolling(getApplicationContext());
     }
 
     /**
@@ -194,6 +157,12 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
             @Override
             public void onClick(View view) {
                 launchChat();
+            }
+        });
+        caseLaunchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchCases();
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -227,8 +196,6 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
             mKnowledgeUI = ServiceSDKUtils.getKnowledgeUI(
                     getApplicationContext(),
                     ServiceSDKUtils.authenticatedUser());
-            // Add the view addition
-            mKnowledgeUI.viewAddition(new SupportHomeViewAddition());
         }
     }
 
@@ -261,6 +228,43 @@ public class MainActivity extends AppCompatActivity implements SosAvailability.L
             });
         }
     }
+
+    /**
+     * Configures and launches Cases
+     */
+    private void launchCases() {
+        Context context = this;
+        // Create configuration callback function
+        CaseClientCallbacks caseClientCallbacks = new CaseClientCallbacks() {
+            // Populate hidden fields
+            @Override
+            public Map<String, String> getHiddenFields() {
+                Map<String, String> hiddenFields = new HashMap<>();
+                hiddenFields.put("Name__c", "Jimmy Jester");
+                return hiddenFields;
+            }
+        };
+
+        // Create a UI configuration instance from a core instance
+        CaseUI.with(context).configure(
+                CaseUIConfiguration.create(
+                        ServiceSDKUtils.getCaseConfiguration(
+                                context,
+                                caseClientCallbacks,
+                                ServiceSDKUtils.authenticatedUser()
+                        )
+                )
+        );
+
+        // Create a UI client UI asynchronously
+        CaseUI.with(context).uiClient().onResult(new Async.ResultHandler<CaseUIClient>() {
+            @Override
+            public void handleResult(Async<?> async, @NonNull CaseUIClient caseUIClient) {
+                caseUIClient.launch(context);
+            }
+        });
+    }
+
 
     /**
      * Initiates user login process.
