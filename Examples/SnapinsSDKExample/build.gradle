@@ -13,7 +13,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -32,8 +32,8 @@ task clean(type: Delete) {
 
 ext {
     // Salesforce Snap-ins SDKs
-    serviceSdkVersion = "224.1.1"
-    mobilesdkVersion = "9.1.1"
+    serviceSdkVersion = "224.1.2"
+    mobilesdkVersion = "9.2.0"
 
     // Android
     appCompatV7SupportVersion = "28.0.0"
