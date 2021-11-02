@@ -638,5 +638,37 @@
     "changelog": "chat/4.2.1/changelog.md",
     "reference": "chat/4.2.1/api/",
     "example": "chat/4.2.1/example.md"
- }
+ },
+ {
+    "sdk": "common",
+    "version": "8.0.4",
+    "date": "2021-11-02",
+    "changelog": "common/8.0.4/changelog.md",
+    "reference": "common/8.0.4/api/",
+    "example": "common/8.0.4/example.md"
+ },
+ {
+    "sdk": "knowledge",
+    "version": "4.3.6",
+    "date": "2021-11-02",
+    "changelog": "knowledge/4.3.6/changelog.md",
+    "reference": "knowledge/4.3.6/api/",
+    "example": "knowledge/4.3.6/example.md"
+ },
+ {
+    "sdk": "case",
+    "version": "4.2.7",
+    "date": "2021-11-02",
+    "changelog": "case/4.2.7/changelog.md",
+    "reference": "case/4.2.7/api/",
+    "example": "case/4.2.7/example.md"
+ },
+ {
+    "sdk": "chat",
+    "version": "4.2.2",
+    "date": "2021-11-02",
+    "changelog": "chat/4.2.2/changelog.md",
+    "reference": "chat/4.2.2/api/",
+    "example": "chat/4.2.2/example.md"
+}
 ]
