@@ -7,32 +7,36 @@
 
 package com.salesforce.snapinssdkexample.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import com.salesforce.android.cases.core.CaseClientCallbacks
+import com.salesforce.android.cases.ui.CaseUI
+import com.salesforce.android.cases.ui.CaseUIConfiguration
 import com.salesforce.android.chat.core.ChatCore
 import com.salesforce.android.chat.core.model.AvailabilityState
 import com.salesforce.android.knowledge.ui.KnowledgeUI
 import com.salesforce.android.knowledge.ui.KnowledgeUIClient
 import com.salesforce.android.service.common.analytics.ServiceAnalytics
 import com.salesforce.android.service.common.utilities.control.Async
-import com.salesforce.android.sos.api.SosAvailability
 import com.salesforce.androidsdk.app.SalesforceSDKManager
 import com.salesforce.androidsdk.rest.RestClient
 import com.salesforce.snapinssdkexample.ChatLauncher
 import com.salesforce.snapinssdkexample.R
-import com.salesforce.snapinssdkexample.SupportHomeViewAddition
 import com.salesforce.snapinssdkexample.activities.settings.CaseSettingsActivity
 import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
 import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity
-import com.salesforce.snapinssdkexample.activities.settings.SosSettingsActivity
 import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
+import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils.getCaseConfiguration
 import kotlin.reflect.KClass
+
 
 /**
  * Main test activity supporting basic functionality:
@@ -41,26 +45,30 @@ import kotlin.reflect.KClass
  *     <li>Authentication (Logging in or out)</li>
  * </ul>
  */
-class MainActivity : AppCompatActivity(), SosAvailability.Listener {
+class MainActivity : AppCompatActivity() {
     private var mKnowledgeUI: KnowledgeUI? = null
     private var mKnowledgeUIClient: KnowledgeUIClient? = null
+    private lateinit var knowledgeLaunchButton: TextView
+    private lateinit var caseLaunchButton: Button
+    private lateinit var chatButton: Button
+    private lateinit var loginButton: Button
+    private lateinit var logoutButton: Button
+    private var chatLauncher: ChatLauncher? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
 
+        knowledgeLaunchButton = findViewById(R.id.knowledge_launch_button);
+        chatButton = findViewById(R.id.chat_launch_button);
+        caseLaunchButton = findViewById(R.id.case_launch_button);
+        loginButton = findViewById(R.id.login_button);
+        logoutButton = findViewById(R.id.logout_button);
+
+        setSupportActionBar(toolbar);
         initializeServiceSDK()
-
         setupButtons()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        // Clean up SOS
-        if (SosAvailability.isPolling()) SosAvailability.stopPolling()
-        SosAvailability.removeListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,24 +78,13 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_sos_settings -> startActivityFor(SosSettingsActivity::class)
             R.id.action_kb_settings -> startActivityFor(KnowledgeSettingsActivity::class)
             R.id.action_chat_settings -> startActivityFor(ChatSettingsActivity::class)
             R.id.action_case_settings -> startActivityFor(CaseSettingsActivity::class)
             R.id.action_version_page -> startActivityFor(VersionActivity::class)
             R.id.action_check_chat_agent_availability -> showLiveAgentChatAvailability()
-            R.id.action_check_sos_agent_availability -> showSosAgentAvailability()
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    /**
-     * Called when the SOS availability status changes
-     */
-    override fun onSosAvailabilityChange(status: SosAvailability.Status?) {
-        Toast.makeText(this,
-                String.format(getString(R.string.sos_agent_availability_change_message), status?.name),
-                Toast.LENGTH_SHORT).show()
     }
 
     fun startActivityFor(activityClass: KClass<out AppCompatActivity>): Boolean {
@@ -100,23 +97,20 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
 
         // Create an agent availability client
         ChatCore.configureAgentAvailability(chatConfig).check()
-                .onResult { _: Async<*>?, state: AvailabilityState ->
-                    run {
-                        // Display a toast when any agent availability state is changed
-                        Toast.makeText(this,
-                                String.format(getString(R.string.chat_availability_change_message), state.status.toString()),
-                                Toast.LENGTH_SHORT).show()
-                    }
+            .onResult { _: Async<*>?, state: AvailabilityState ->
+                run {
+                    // Display a toast when any agent availability state is changed
+                    Toast.makeText(
+                        this,
+                        String.format(
+                            getString(R.string.chat_availability_change_message),
+                            state.status.toString()
+                        ),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
+            }
 
-        return true
-    }
-
-    private fun showSosAgentAvailability(): Boolean {
-        Toast.makeText(this,
-                String.format(getString(R.string.sos_agent_availability_change_message),
-                        SosAvailability.getStatus().name),
-                Toast.LENGTH_SHORT).show()
         return true
     }
 
@@ -127,15 +121,6 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
         setupServiceSDKListeners()
 
         initKnowledge()
-        initSosAvailabilityListener()
-    }
-
-    /**
-     * Adds listeners for SOS.
-     */
-    private fun initSosAvailabilityListener() {
-        SosAvailability.addListener(this)
-        ServiceSDKUtils.startSosPolling(applicationContext)
     }
 
     /**
@@ -150,33 +135,73 @@ class MainActivity : AppCompatActivity(), SosAvailability.Listener {
     }
 
     /**
-     * Adds click listeners to the main activity buttons.
-     */
-    private fun setupButtons() {
-        knowledge_launch_button.setOnClickListener { launchKnowledge() }
-        chat_launch_button.setOnClickListener({ startChat() })
-        login_button.setOnClickListener({ login() })
-        logout_button.setOnClickListener({ logout() })
-    }
-
-    /**
      * Initializes Knowledge and adds the view addition.
      */
     private fun initKnowledge() {
         if (mKnowledgeUI == null) {
             // Create the KnowledgeUI Configuration
-            mKnowledgeUI = ServiceSDKUtils.getKnowledgeUI(applicationContext, ServiceSDKUtils.getAuthenticatedUser())
-            // Add the view addition
-            mKnowledgeUI?.viewAddition(SupportHomeViewAddition())
+            mKnowledgeUI = ServiceSDKUtils.getKnowledgeUI(
+                applicationContext,
+                ServiceSDKUtils.getAuthenticatedUser()
+            )
+        }
+    }
+
+    /**
+     * Configures and launches Cases
+     */
+    private fun launchCases() {
+        val context: Context = this
+        // Create configuration callback function
+        val caseClientCallbacks = CaseClientCallbacks {
+            val hiddenFields: MutableMap<String, String> = HashMap()
+            hiddenFields["Name__c"] = "Jimmy Jester"
+            hiddenFields
+        }
+
+        // Create a UI configuration instance from a core instance
+        CaseUI.with(context).configure(
+            CaseUIConfiguration.create(
+                getCaseConfiguration(
+                    context,
+                    caseClientCallbacks,
+                    ServiceSDKUtils.getAuthenticatedUser()
+                )
+            )
+        )
+
+        // Create a UI client UI asynchronously
+        CaseUI.with(context).uiClient()
+            .onResult { async, caseUIClient -> caseUIClient.launch(context) }
+    }
+
+    /**
+     * Adds click listeners to the main activity buttons.
+     */
+    private fun setupButtons() {
+        knowledgeLaunchButton.setOnClickListener {
+            launchKnowledge()
+        }
+        chatButton.setOnClickListener {
+            launchChat()
+        }
+        caseLaunchButton.setOnClickListener {
+            launchCases()
+        }
+        loginButton.setOnClickListener {
+            login()
+        }
+        logoutButton.setOnClickListener {
+            logout()
         }
     }
 
     /**
      * Initializes Chat.
      */
-    private fun startChat() {
-        val chat = ChatLauncher()
-        chat.launchChat(this)
+    private fun launchChat() {
+        chatLauncher = ChatLauncher()
+        chatLauncher?.launchChat(this)
     }
 
     /**

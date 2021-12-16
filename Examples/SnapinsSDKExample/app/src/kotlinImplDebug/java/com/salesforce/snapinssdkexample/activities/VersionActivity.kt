@@ -8,9 +8,9 @@
 package com.salesforce.snapinssdkexample.activities
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.salesforce.snapinssdkexample.R
-import kotlinx.android.synthetic.main.activity_version.*
 
 /**
  * Activity to display the versions of the snap-ins SDKs
@@ -24,10 +24,13 @@ class VersionActivity : AppCompatActivity() {
     }
 
     fun populateVersionText() {
-        chat_version.text = com.salesforce.android.chat.core.BuildConfig.VERSION_NAME
-        sos_version.text = com.salesforce.android.sos.BuildConfig.VERSION_NAME
-        kb_version.text = com.salesforce.android.knowledge.core.BuildConfig.VERSION_NAME
-        cases_version.text = com.salesforce.android.cases.BuildConfig.VERSION_NAME
-        common_version.text = com.salesforce.android.service.common.ui.BuildConfig.VERSION_NAME
+        findViewById<TextView>(R.id.chat_version).text =
+            com.salesforce.android.chat.core.BuildConfig.VERSION_NAME
+        findViewById<TextView>(R.id.kb_version).text =
+            com.salesforce.android.knowledge.core.BuildConfig.VERSION_NAME
+        findViewById<TextView>(R.id.cases_version).text =
+            com.salesforce.android.cases.BuildConfig.VERSION_NAME
+        findViewById<TextView>(R.id.common_version).text =
+            com.salesforce.android.service.common.ui.BuildConfig.VERSION_NAME
     }
 }

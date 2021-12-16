@@ -25,4 +25,6 @@ public class ServiceSDKApplication extends Application {
     public ChatSessionListener getChatSessionListener() {
         return chatSessionListener;
     }
+
+
 }

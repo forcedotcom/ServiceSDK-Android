@@ -11,17 +11,17 @@ import android.content.Context
 import android.preference.PreferenceManager
 
 object Utils {
-    fun<T> asMutableList(vararg t: T): MutableList<T> {
+    fun <T> asMutableList(vararg t: T): MutableList<T> {
         val result = ArrayList<T>()
         result += t
         return result
     }
 
-    fun getStringPref(context: Context, key: String, default: String): String {
+    fun getStringPref(context: Context, key: String, default: String): String? {
         return PreferenceManager.getDefaultSharedPreferences(context).getString(key, default)
     }
 
-    fun getBooleanPref(context: Context, key:String): Boolean {
+    fun getBooleanPref(context: Context, key: String): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, false)
     }
 }

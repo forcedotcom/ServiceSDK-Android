@@ -68,7 +68,13 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.preference:preference:1.1.1"
 
-    implementation "com.salesforce.service:servicesdk:${rootProject.ext.serviceSdkVersion}"
-
     implementation "com.salesforce.mobilesdk:SalesforceSDK:${rootProject.ext.mobilesdkVersion}"
+
+    //implementation "com.salesforce.service:servicesdk:${rootProject.ext.serviceSdkVersion}"
+
+    // Can include individual SDKs instead
+    implementation "com.salesforce.service:chat-ui:4.3.2"
+    implementation "com.salesforce.service:case-ui:4.2.7"
+    implementation "com.salesforce.service:knowledge-ui:4.3.6"
+
 }

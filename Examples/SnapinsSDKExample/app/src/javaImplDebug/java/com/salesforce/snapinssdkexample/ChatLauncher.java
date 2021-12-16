@@ -1,9 +1,22 @@
 package com.salesforce.snapinssdkexample;
 
+import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+
 import com.salesforce.android.chat.core.ChatConfiguration;
 import com.salesforce.android.chat.core.model.ChatEntity;
 import com.salesforce.android.chat.core.model.ChatEntityField;
 import com.salesforce.android.chat.core.model.ChatUserData;
+import com.salesforce.android.chat.ui.AppLinkClickListener;
 import com.salesforce.android.chat.ui.ChatUI;
 import com.salesforce.android.chat.ui.ChatUIClient;
 import com.salesforce.android.chat.ui.model.PreChatTextInputField;
@@ -14,15 +27,6 @@ import com.salesforce.snapinssdkexample.utils.Utils;
 
 import java.util.Collections;
 import java.util.List;
-
-import android.app.AlertDialog;
-import android.content.Context;
-import android.view.inputmethod.EditorInfo;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-
-import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
 
 public class ChatLauncher {
     private Context context;
@@ -56,17 +60,45 @@ public class ChatLauncher {
         final ChatSessionListener chatListener = serviceSDKApplication.getChatSessionListener();
 
         // Create the chat UI from the ChatUIConfiguration object
-        ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, chatConfiguration).build())
+        ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, chatConfiguration)
+                .appLinkClickListener(new ChatAppLinkClickListener((Activity) this.context))
+                .build())
                 .createClient(context)
                 .onResult(new Async.ResultHandler<ChatUIClient>() {
                     @Override
                     public void handleResult(Async<?> async, @NonNull ChatUIClient chatUIClient) {
                         // Add the configured chat session listener to the Chat UI client
                         chatUIClient.addSessionStateListener(chatListener);
+                        chatUIClient.minimize();
                         // Start the live agent chat session
                         chatUIClient.startChatSession((FragmentActivity) context);
                     }
                 });
+    }
+
+    // Example of a AppLinkClickListener implementation.
+    public static class ChatAppLinkClickListener implements AppLinkClickListener {
+
+        private final Activity mActivity;
+
+        public ChatAppLinkClickListener(Activity activity) {
+            mActivity = activity;
+        }
+
+        @Override
+        public void didReceiveAppEventWithURL(@NonNull String url) {
+            if (url.contains("settings")) {
+                Intent intent = new Intent(mActivity, ChatSettingsActivity.class);
+                mActivity.startActivity(intent);
+            }
+            if (url.contains("alert")) {
+                Toast.makeText(
+                        mActivity.getApplicationContext(),
+                        "An Example of an Alert",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+        }
     }
 
     /**

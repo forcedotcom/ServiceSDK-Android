@@ -1,10 +1,14 @@
 package com.salesforce.snapinssdkexample.utils;
 
+import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
+import static com.salesforce.snapinssdkexample.utils.Utils.getStringPref;
+
 import android.content.Context;
 
 import com.salesforce.android.cases.core.CaseClientCallbacks;
 import com.salesforce.android.cases.core.CaseConfiguration;
 import com.salesforce.android.chat.core.ChatConfiguration;
+import com.salesforce.android.chat.core.model.AppEventList;
 import com.salesforce.android.chat.ui.ChatUIConfiguration;
 import com.salesforce.android.knowledge.core.KnowledgeConfiguration;
 import com.salesforce.android.knowledge.ui.KnowledgeUI;
@@ -18,9 +22,6 @@ import com.salesforce.snapinssdkexample.activities.settings.ChatSettingsActivity
 import com.salesforce.snapinssdkexample.activities.settings.KnowledgeSettingsActivity;
 import com.salesforce.snapinssdkexample.auth.MobileSDKAuthTokenProvider;
 import com.salesforce.snapinssdkexample.auth.MobileSdkUser;
-
-import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
-import static com.salesforce.snapinssdkexample.utils.Utils.getStringPref;
 
 /**
  * Helper object to encapsulate building configurations of some of the Snap-ins SDKs
@@ -51,9 +52,19 @@ public class ServiceSDKUtils {
         final boolean chatbotAvatarEnabled = getBooleanPref(context, ChatSettingsActivity.KEY_CHATBOT_AVATAR_ENABLED);
         final boolean defaultToMinimized = getBooleanPref(context, ChatSettingsActivity.KEY_DEFAULT_TO_MINIMIZED_ENABLED);
 
+        // App links (This app event list will have to be customized for your own deployment)
+        AppEventList appEventList = new AppEventList("<scheme>");
+        appEventList.addDescriptionForPath("action/1", "Action 1");
+        appEventList.addDescriptionForPath("action/2", "Action 2");
+        appEventList.addDescriptionForPath("action/3", "Action 3");
+        appEventList.addDescriptionForPath("action/4", "Action 4");
+        appEventList.addDescriptionForPath("action/5", "Action 5");
+        appEventList.addDescriptionForExpression("<expression>", "Everything else");
+
         final ChatUIConfiguration.Builder chatUIConfigurationBuilder = new ChatUIConfiguration.Builder();
 
         chatUIConfigurationBuilder.chatConfiguration(chatConfiguration);
+        chatUIConfigurationBuilder.appEventList(appEventList);
 
         if (chatbotBannerEnabled) {
             // Set the ChatBot banner to use via layout ID
