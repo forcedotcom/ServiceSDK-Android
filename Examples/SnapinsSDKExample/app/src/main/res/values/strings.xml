@@ -34,6 +34,7 @@
     <string name="account_type">com.salesforce.snapinssdkexample</string>
 
     <!-- Menu -->
+    <string name="maximize_chat">Maximize Chat</string>
     <string name="action_sos_settings">SOS Settings</string>
     <string name="action_kb_settings">Knowledge Settings</string>
     <string name="action_chat_settings">Chat Settings</string>

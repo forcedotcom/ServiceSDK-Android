@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             R.id.action_case_settings -> startActivityFor(CaseSettingsActivity::class)
             R.id.action_version_page -> startActivityFor(VersionActivity::class)
             R.id.action_check_chat_agent_availability -> showLiveAgentChatAvailability()
+            R.id.action_maximize -> chatLauncher?.chatClient?.maximize().run { return true }
             else -> super.onOptionsItemSelected(item)
         }
     }

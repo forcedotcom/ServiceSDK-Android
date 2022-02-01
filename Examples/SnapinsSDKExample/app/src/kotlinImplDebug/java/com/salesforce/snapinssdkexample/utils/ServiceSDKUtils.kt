@@ -11,6 +11,7 @@ import android.content.Context
 import com.salesforce.android.cases.core.CaseClientCallbacks
 import com.salesforce.android.cases.core.CaseConfiguration
 import com.salesforce.android.chat.core.ChatConfiguration
+import com.salesforce.android.chat.core.model.AppEventList
 import com.salesforce.android.chat.ui.ChatUIConfiguration
 import com.salesforce.android.knowledge.core.KnowledgeConfiguration
 import com.salesforce.android.knowledge.ui.KnowledgeUI
@@ -26,6 +27,7 @@ import com.salesforce.snapinssdkexample.auth.MobileSDKAuthTokenProvider
 import com.salesforce.snapinssdkexample.auth.MobileSdkUser
 import com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref
 import com.salesforce.snapinssdkexample.utils.Utils.getStringPref
+
 
 /**
  * Helper object to encapsulate building configurations of some of the Snap-ins SDKs
@@ -71,8 +73,15 @@ object ServiceSDKUtils {
         val defaultToMinimized =
             getBooleanPref(context, ChatSettingsActivity.KEY_DEFAULT_TO_MINIMIZED_ENABLED)
 
+        // App links (This app event list will have to be customized for your own deployment)
+        val appEventList = AppEventList("servicesdk")
+        appEventList.addDescriptionForPath("action/settings", "Open Settings")
+        appEventList.addDescriptionForExpression("action\\/a.*", "Click for an Alert")
+
         val chatUIConfigurationBuilder: ChatUIConfiguration.Builder =
             ChatUIConfiguration.Builder().chatConfiguration(chatConfiguration)
+
+        chatUIConfigurationBuilder.appEventList(appEventList)
 
         if (chatbotBannerEnabled) {
             // Set the ChatBot banner to use via layout ID

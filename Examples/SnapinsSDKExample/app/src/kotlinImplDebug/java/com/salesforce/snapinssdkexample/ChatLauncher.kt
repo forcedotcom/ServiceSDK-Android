@@ -1,13 +1,17 @@
 package com.salesforce.snapinssdkexample
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.salesforce.android.chat.core.ChatConfiguration
 import com.salesforce.android.chat.core.model.ChatEntity
 import com.salesforce.android.chat.core.model.ChatEntityField
 import com.salesforce.android.chat.core.model.ChatUserData
+import com.salesforce.android.chat.ui.AppLinkClickListener
 import com.salesforce.android.chat.ui.ChatUI
 import com.salesforce.android.chat.ui.ChatUIClient
 import com.salesforce.android.chat.ui.model.PreChatTextInputField
@@ -16,12 +20,13 @@ import com.salesforce.snapinssdkexample.utils.ServiceSDKUtils
 import com.salesforce.snapinssdkexample.utils.Utils
 import java.util.*
 
+
 class ChatLauncher {
     lateinit var context: Context
 
     private var chatUserDataList: MutableList<ChatUserData> = Collections.emptyList()
     private var chatEntitiesList: MutableList<ChatEntity> = Collections.emptyList()
-    private var chatClient: ChatUIClient? = null;
+    var chatClient: ChatUIClient? = null;
 
     /**
      * Configures and launches Live Agent Chat
@@ -49,7 +54,16 @@ class ChatLauncher {
         val chatListener = serviceSDKApplication.chatSessionListener
 
         chatConfiguration?.let {
-            ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, it).build())
+            ChatUI.configure(
+                ServiceSDKUtils.getChatUIConfigurationBuilder(context, it)
+                    .appLinkClickListener(
+                        ChatAppLinkClickListener(
+                            (this.context as Activity),
+                            this
+                        )
+                    )
+                    .build()
+            )
                 .createClient(context)
                 .onResult { _, chatUIClient: ChatUIClient ->
                     run {
@@ -60,6 +74,27 @@ class ChatLauncher {
                         chatUIClient.startChatSession(context as FragmentActivity)
                     }
                 }
+        }
+    }
+
+    // Example of a AppLinkClickListener implementation.
+    class ChatAppLinkClickListener(
+        private val mActivity: Activity,
+        private val chatLauncher: ChatLauncher
+    ) : AppLinkClickListener {
+        override fun didReceiveAppEventWithURL(url: String) {
+            if (url.contains("settings")) {
+                val intent = Intent(mActivity, ChatSettingsActivity::class.java)
+                mActivity.startActivity(intent)
+            }
+            if (url.contains("alert")) {
+                Toast.makeText(
+                    mActivity.applicationContext,
+                    "An Example of an Alert",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            chatLauncher.chatClient?.minimize()
         }
     }
 

@@ -6,8 +6,15 @@
  */
 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.salesforce.android.fullapp.com.salesforce.android.testapp.fullapp.fullapp.MainActivity">
+
+    <item
+        android:id="@+id/action_maximize"
+        android:icon="@drawable/chat_minimized_message_indicator"
+        android:title="@string/maximize_chat"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_kb_settings"
