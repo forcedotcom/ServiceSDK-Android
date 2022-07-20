@@ -1,5 +1,14 @@
 package com.salesforce.snapinssdkexample;
 
+import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.view.inputmethod.EditorInfo;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+
 import com.salesforce.android.chat.core.ChatConfiguration;
 import com.salesforce.android.chat.core.model.ChatEntity;
 import com.salesforce.android.chat.core.model.ChatEntityField;
@@ -15,19 +24,11 @@ import com.salesforce.snapinssdkexample.utils.Utils;
 import java.util.Collections;
 import java.util.List;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.view.inputmethod.EditorInfo;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-
-import static com.salesforce.snapinssdkexample.utils.Utils.getBooleanPref;
-
 public class ChatLauncher {
     private Context context;
     private List<ChatUserData> chatUserData;
     private List<ChatEntity> chatEntities;
+    private ChatUIClient mChatClient;
 
     /**
      * Configures and launches Live Agent Chat
@@ -61,12 +62,19 @@ public class ChatLauncher {
                 .onResult(new Async.ResultHandler<ChatUIClient>() {
                     @Override
                     public void handleResult(Async<?> async, @NonNull ChatUIClient chatUIClient) {
+                        mChatClient = chatUIClient;
                         // Add the configured chat session listener to the Chat UI client
                         chatUIClient.addSessionStateListener(chatListener);
                         // Start the live agent chat session
                         chatUIClient.startChatSession((FragmentActivity) context);
                     }
                 });
+    }
+
+    public void endChatSession() {
+        if (mChatClient != null) {
+            mChatClient.endChatSession();
+        }
     }
 
     /**
