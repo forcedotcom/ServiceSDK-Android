@@ -48,6 +48,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private KnowledgeUI mKnowledgeUI;
     private KnowledgeUIClient mKnowledgeUIClient;
+    private ChatLauncher mChatLauncher;
     private TextView knowledgeLaunchButton;
     private Button caseLaunchButton;
     private Button chatButton;
@@ -71,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
         initializeServiceSDK();
 
         setupButtons();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mChatLauncher != null) {
+            mChatLauncher.endChatSession();
+        }
+        super.onDestroy();
     }
 
     @Override
@@ -183,8 +192,8 @@ public class MainActivity extends AppCompatActivity {
      * Launches Chat.
      */
     private void launchChat() {
-        ChatLauncher chat = new ChatLauncher();
-        chat.launchChat(this);
+        mChatLauncher = new ChatLauncher();
+        mChatLauncher.launchChat(this);
     }
 
     /**
