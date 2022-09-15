@@ -32,7 +32,7 @@ task clean(type: Delete) {
 
 ext {
     // Salesforce Snap-ins SDKs
-    serviceSdkVersion = "224.2.3"
+    serviceSdkVersion = "224.2.4"
     mobilesdkVersion = "9.2.0"
 
     // Android
