@@ -9,4 +9,4 @@ Welcome to the Embedded Service SDK for Android GitHub repository!
 * [Android Reference Documentation](http://forcedotcom.github.io/ServiceSDK-Android/)
 * [Android Examples](./Examples/)
 
-<!-- 224.2.3 -->
+<!-- 224.2.4 -->
