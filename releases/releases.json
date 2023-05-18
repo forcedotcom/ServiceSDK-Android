@@ -14,5 +14,13 @@
     "changelog": "chat/4.3.4/changelog.md",
     "reference": "chat/4.3.4/api/",
     "example": "chat/4.3.4/example.md"
+},
+{
+    "sdk": "chat",
+    "version": "4.3.5",
+    "date": "2023-05-18",
+    "changelog": "chat/4.3.5/changelog.md",
+    "reference": "chat/4.3.5/api/",
+    "example": "chat/4.3.5/example.md"
 }
 ]
