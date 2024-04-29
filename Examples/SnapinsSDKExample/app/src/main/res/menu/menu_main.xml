@@ -8,16 +8,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.salesforce.android.fullapp.com.salesforce.android.testapp.fullapp.fullapp.MainActivity">
-
-    <item
-        android:id="@+id/action_kb_settings"
-        android:title="@string/action_kb_settings" />
     <item
         android:id="@+id/action_chat_settings"
         android:title="@string/action_chat_settings" />
-    <item
-        android:id="@+id/action_case_settings"
-        android:title="@string/action_case_settings" />
     <item
         android:id="@+id/action_version_page"
         android:title="@string/action_version_page" />
