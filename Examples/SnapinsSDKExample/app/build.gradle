@@ -69,6 +69,4 @@ dependencies {
     implementation "androidx.preference:preference:1.1.1"
 
     implementation "com.salesforce.service:servicesdk:${rootProject.ext.serviceSdkVersion}"
-
-    implementation "com.salesforce.mobilesdk:SalesforceSDK:${rootProject.ext.mobilesdkVersion}"
 }
